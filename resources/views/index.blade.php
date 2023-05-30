@@ -49,7 +49,7 @@
         <div class="container-fluid bg-dark px-0">
             <div class="row gx-0">
                 <div class="col-lg-3 bg-dark d-none d-lg-block">
-                    <a href="index.html"
+                    <a href="/"
                         class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
                         <h1 class="m-0 text-light text-uppercase">Homiekost</h1>
                     </a>
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                     <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
-                        <a href="index.html" class="navbar-brand d-block d-lg-none">
+                        <a href="/" class="navbar-brand d-block d-lg-none">
                             <h1 class="m-0 text-primary text-uppercase">Homiekost</h1>
                         </a>
                         <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
@@ -86,13 +86,13 @@
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
-                                <a href="index.html" class="nav-item nav-link active">Home</a>
-                                <a href="about.html" class="nav-item nav-link ">About</a>
-                                <a href="kos_card.html" class="nav-item nav-link">Kost</a>
-                                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                                <a href="/" class="nav-item nav-link active">Home</a>
+                                <a href="/about" class="nav-item nav-link ">About</a>
+                                <a href="/kos_card" class="nav-item nav-link">Kost</a>
+                                <a href="/contact" class="nav-item nav-link">Contact</a>
                             </div>
                         </div>
-                        <a href="login.html" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Login<i
+                        <a href="/login" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Login<i
                                 class="fa fa-arrow-right ms-3"></i></a>
                     </nav>
                 </div>
@@ -113,7 +113,7 @@
                                 </h6>
                                 <h1 class="display-3 text-white mb-4 animated slideInDown">Temukan lebih banyak pilihan
                                     kos</h1>
-                                <a href="kos_card.html"
+                                <a href="/kos_card"
                                     class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Lihat kos</a>
                                 <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Ajukan sewa</a>
                             </div>
@@ -127,7 +127,7 @@
                                 </h6>
                                 <h1 class="display-3 text-white mb-4 animated slideInDown">Temukan lebih banyak pilihan
                                     kos</h1>
-                                <a href="kos_card.html"
+                                <a href="/kos_card"
                                     class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Lihat kos</a>
                                 <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Ajukan sewa</a>
                             </div>
@@ -381,7 +381,7 @@
                     </div>
                 </div>
                 <div class="col-mb-12" style="text-align: right;">
-                    <a class="btn btn-primary py-2 px-3 mt-2" style="align-content: right;" href="kos_card.html"><i
+                    <a class="btn btn-primary py-2 px-3 mt-2" style="align-content: right;" href="/kos_card"><i
                             class="bi bi-arrow-right-circle-fill" style="font-size:20px"></i></a>
                 </div>
             </div>
@@ -398,7 +398,7 @@
                         <h1 class="text-white mb-4">Website pencarian kos sekitar USU</h1>
                         <p class="text-white mb-4"> Mencari kos kini jauh lebih mudah. </p>
                         <a href="" class="btn btn-primary py-md-3 px-md-5 me-3">Jelajahi kos</a>
-                        <a href="sewa.html" class="btn btn-light py-md-3 px-md-5">Ajukan sewa</a>
+                        <a href="/sewa" class="btn btn-light py-md-3 px-md-5">Ajukan sewa</a>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -534,7 +534,7 @@
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-4">
                         <div class="bg-primary rounded p-4">
-                            <a href="index.html">
+                            <a href="/">
                                 <h1 class="text-white text-uppercase mb-3">Homiekost</h1>
                             </a>
                             <p class="text-white mb-0">
