@@ -9,7 +9,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="{{ asset('img/favicon.ico') }}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,16 +22,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
+
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="{{ asset('lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css') }}" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -49,7 +50,7 @@
         <div class="container-fluid bg-dark px-0">
             <div class="row gx-0">
                 <div class="col-lg-3 bg-dark d-none d-lg-block">
-                    <a href="index.html"
+                    <a href="/"
                         class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
                         <h1 class="m-0 text-primary text-uppercase">Homiekost</h1>
                     </a>
@@ -77,7 +78,7 @@
                         </div>
                     </div>
                     <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
-                        <a href="index.html" class="navbar-brand d-block d-lg-none">
+                        <a href="/" class="navbar-brand d-block d-lg-none">
                             <h1 class="m-0 text-primary text-uppercase">Homiekost</h1>
                         </a>
                         <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
@@ -86,10 +87,10 @@
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
-                                <a href="index.html" class="nav-item nav-link">Home</a>
-                                <a href="about.html" class="nav-item nav-link active">About</a>
-                                <a href="kos_card.html" class="nav-item nav-link">Kost</a>
-                                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                                <a href="/" class="nav-item nav-link">Home</a>
+                                <a href="/about" class="nav-item nav-link active">About</a>
+                                <a href="/kos_card" class="nav-item nav-link">Kost</a>
+                                <a href="/contact" class="nav-item nav-link">Contact</a>
                             </div>
                         </div>
                     </nav>
@@ -122,20 +123,20 @@
                     <div class="col-lg-6">
                         <div class="row g-3">
                             <div class="col-6 text-end">
-                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="img/kos3.jpg"
-                                    style="margin-top: 25%;">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s"
+                                    src="{{ asset('img/kos3.jpg') }}" style="margin-top: 25%;">
                             </div>
                             <div class="col-6 text-start">
                                 <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s"
-                                    src="img/kos2.jpg">
+                                    src="{{ asset('img/kos2.jpg') }}">
                             </div>
                             <div class="col-6 text-end">
                                 <img class="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s"
-                                    src="img/kamar6.jpg">
+                                    src="{{ asset('img/kamar6.jpg') }}">
                             </div>
                             <div class="col-6 text-start">
                                 <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s"
-                                    src="img/kamar2.jpg">
+                                    src="{{ asset('img/kamar2.jpg') }}">
                             </div>
                         </div>
                     </div>
@@ -198,16 +199,6 @@
                                                 <label for="Deskripsi">Deskripsi Kos</label>
                                             </div>
                                         </div>
-                                        <div class="col-md-12" style="font-weight: bold;">
-                                            Foto Bangunan Kos (Foto dapat lebih dari 1)
-                                        </div>
-                                        <div class=" col-md-6">
-                                            <div class="form-floating">
-                                                <input type="file" id="files" accept="image/x-png,image/gif,image/jpeg"
-                                                    name="files" multiple>
-                                            </div>
-                                        </div>
-
                                     </div>
                                 </div>
                                 <!-- step 1 end -->
@@ -231,94 +222,13 @@
                                                 <label for="alamat">Harga</label>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
-                                            <div class="form-floating">
-                                                <textarea class="form-control" placeholder="Deskripsi" id="message"
-                                                    style="height: 100px"></textarea>
-                                                <label for="Deskripsi">Deskripsi Kamar </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12" style="font-weight: bold;">
-                                            Foto kamar (Foto dapat lebih dari 1)
-                                        </div>
-                                        <div class=" col-md-6">
-                                            <div class="form-floating">
-                                                <input type="file" id="files" accept="image/x-png,image/gif,image/jpeg"
-                                                    name="files" multiple>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- step 2 end -->
-
-                                <!-- step 3 start -->
-                                <div class="step">
-                                    <div class="row g-3">
-                                        <div class="col-md-12" style="text-align: center;">
-                                            <h6 class="section-title text-center text-primary text-uppercase">
-                                                Fasilitas 
-                                            </h6>
-                                        </div>
-                                                                                <div class="col-md-12" style="font-weight: bold;">
-                                            Fasilitas Umum
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckpos">
-                                            <label class="form-check-label" for="flexCheckpos">
-                                                Post Pengaman
-                                            </label>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckpmobil">
-                                            <label class="form-check-label" for="flexCheckpmobil">
-                                                Parkir Mobil
-                                            </label>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckpmotor">
-                                            <label class="form-check-label" for="flexCheckpmotor">
-                                                Parkir Motor
-                                            </label>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckdapur">
-                                            <label class="form-check-label" for="flexCheckdapur">
-                                                Dapur
-                                            </label>
-                                        </div>
-
-                                        <div class="col-md-12" style="font-weight: bold;">
-                                            Fasilitas Kamar Mandi
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckKMD">
-                                            <label class="form-check-label" for="flexCheckKMD">
-                                                K. mandi dalam
-                                            </label>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckKML">
-                                            <label class="form-check-label" for="flexCheckKML">
-                                                K. mandi luar
-                                            </label>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckKlosetD">
-                                            <label class="form-check-label" for="flexCheckKlosetD">
-                                                Kloset duduk
-                                            </label>
-                                        </div>
                                         <div class="col-md-12" style="font-weight: bold;">
                                             Fasilitas Kamar
                                         </div>
                                         <div class="col-md-2">
                                             <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckwifi">
-                                            <label class="form-check-label" for="flexCheckwifi">
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
                                                 Wifi
                                             </label>
                                         </div>
@@ -335,6 +245,7 @@
                                                 Kasur
                                             </label>
                                         </div>
+
                                         <div class="col-md-2">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckMeja">
                                             <label class="form-check-label" for="flexCheckMeja">
@@ -348,10 +259,84 @@
                                                 Lemari
                                             </label>
                                         </div>
+                                        <div class="col-md-2">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckJendela">
+                                            <label class="form-check-label" for="flexCheckJendela">
+                                                Jendela
+                                            </label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckBantal">
+                                            <label class="form-check-label" for="flexCheckBantal">
+                                                Bantal
+                                            </label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckVentilasi">
+                                            <label class="form-check-label" for="flexCheckVentilasi">
+                                                Ventilasi
+                                            </label>
+                                        </div>
+                                        <div class="col-md-12" style="font-weight: bold;">
+                                            Fasilitas Kamar Mandi
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckKMD">
+                                            <label class="form-check-label" for="flexCheckKMD">
+                                                K. mandi dalam
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckKML">
+                                            <label class="form-check-label" for="flexCheckKML">
+                                                K. mandi luar
+                                            </label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckShower">
+                                            <label class="form-check-label" for="flexCheckShower">
+                                                Shower
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckWHater">
+                                            <label class="form-check-label" for="flexCheckWHater">
+                                                Water Heater
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckKlosetD">
+                                            <label class="form-check-label" for="flexCheckKlosetD">
+                                                Kloset duduk
+                                            </label>
+                                        </div>
+                                        <div class="col-md-12" style="font-weight: bold;">
+                                            Foto kamar
+                                        </div>
+                                        <div class=" col-md-6">
+                                            <div class="form-floating">
+                                                <input type="file" id="files" accept="image/x-png,image/gif,image/jpeg"
+                                                    name="files" multiple>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-floating">
+                                                <textarea class="form-control" placeholder="Deskripsi" id="message"
+                                                    style="height: 100px"></textarea>
+                                                <label for="Deskripsi">Deskripsi Kamar </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                        </div>
                                     </div>
                                 </div>
-                                <!-- step 3 end -->
-
+                                <!-- step 2 end -->
                                 <div class="col-12" style=" margin-top: 20px;">
                                     <div class="buttons" style="text-align: right;">
                                         <button class="btn btn-primary w-70 py-1" type="button"
@@ -394,7 +379,7 @@
             <div class="row g-5">
                 <div class="col-md-6 col-lg-4">
                     <div class="bg-primary rounded p-4">
-                        <a href="index.html">
+                        <a href="/">
                             <h1 class="text-white text-uppercase mb-3">Hotelier</h1>
                         </a>
                         <p class="text-white mb-0">
@@ -469,7 +454,6 @@
 
     <!-- script multistep -->
     <script>
-
         // Ambil elemen-elemen yang diperlukan
         const form = document.getElementById('multistep-form');
         const prevBtn = document.getElementById('prev-btn');
@@ -487,7 +471,7 @@
                 steps[i].style.display = 'none';
             }
 
-            if (stepIndex > steps.length - 1) return;
+            if(stepIndex > steps.length -1) return;
 
             // Tampilkan langkah yang sedang aktif
             steps[stepIndex].style.display = 'block';
@@ -506,7 +490,7 @@
                 prevBtn.style.display = 'none';
                 nextBtn.style.display = 'none';
             }
-            else {
+             else {
                 prevBtn.style.display = 'none';
                 nextBtn.style.display = 'none';
             }
@@ -534,33 +518,33 @@
                 currentStep--;
             }
 
-            showStep(currentStep);
+        showStep(currentStep);
+        
+    }
 
+    // Event listener untuk tombol Previous dan Next
+    prevBtn.addEventListener('click', () => changeStep('prev'));
+    nextBtn.addEventListener('click', () => changeStep('next'));
+
+    // Fungsi untuk mengirim data form
+    function submitForm() {
+        // Implementasikan logika pengiriman data form sesuai kebutuhan Anda
+        // Misalnya, menggunakan AJAX untuk mengirim data ke server
+
+        // Setelah pengiriman berhasil, tampilkan pesan sukses atau arahkan ke halaman lain
+        alert('Form submitted successfully!');
+        // window.location.href = 'halaman-berhasil.html';
+    }
+
+    // Event listener untuk pengiriman form
+    form.addEventListener('submit', (e) => {
+        e.preventDefault(); // Mencegah submit form langsung
+
+        // Panggil fungsi pengiriman form jika sudah pada langkah terakhir
+        if (currentStep === steps.length - 1) {
+            submitForm();
         }
-
-        // Event listener untuk tombol Previous dan Next
-        prevBtn.addEventListener('click', () => changeStep('prev'));
-        nextBtn.addEventListener('click', () => changeStep('next'));
-
-        // Fungsi untuk mengirim data form
-        function submitForm() {
-            // Implementasikan logika pengiriman data form sesuai kebutuhan Anda
-            // Misalnya, menggunakan AJAX untuk mengirim data ke server
-
-            // Setelah pengiriman berhasil, tampilkan pesan sukses atau arahkan ke halaman lain
-            alert('Form submitted successfully!');
-            // window.location.href = 'halaman-berhasil.html';
-        }
-
-        // Event listener untuk pengiriman form
-        form.addEventListener('submit', (e) => {
-            e.preventDefault(); // Mencegah submit form langsung
-
-            // Panggil fungsi pengiriman form jika sudah pada langkah terakhir
-            if (currentStep === steps.length - 1) {
-                submitForm();
-            }
-        });
+    });
 
     </script>
     <!-- script multistep end -->
@@ -571,17 +555,17 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="{{ asset('lib/wow/wow.min.js') }}"></script>
+    <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
+    <script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ asset('lib/counterup/counterup.min.js') }}"></script>
+    <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('lib/tempusdominus/js/moment.min.js') }}"></script>
+    <script src="{{ asset('lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
+    <script src="{{ asset('lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 
 </html>

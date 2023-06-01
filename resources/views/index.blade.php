@@ -10,23 +10,29 @@
             <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="w-100" src="img/kos1.jpg" alt="Image">
+                        <img class="w-100" src="{{ asset('img/kos1.jpg') }}" alt="Image">
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div class="p-3" style="max-width: 700px;">
-                                <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Homiekost</h6>
-                                <h1 class="display-3 text-white mb-4 animated slideInDown">Temukan lebih banyak pilihan kos</h1>
-                                <a href="kos_card.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Lihat kos</a>
+                                <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Homiekost
+                                </h6>
+                                <h1 class="display-3 text-white mb-4 animated slideInDown">Temukan lebih banyak pilihan
+                                    kos</h1>
+                                <a href="/kos_card"
+                                    class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Lihat kos</a>
                                 <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Ajukan sewa</a>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="w-100" src="img/kos2.jpg" alt="Image">
+                        <img class="w-100" src="{{ asset('img/kos2.jpg') }}" alt="Image">
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div class="p-3" style="max-width: 700px;">
-                                <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Homiekost</h6>
-                                <h1 class="display-3 text-white mb-4 animated slideInDown">Temukan lebih banyak pilihan kos</h1>
-                                <a href="kos_card.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Lihat kos</a>
+                                <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Homiekost
+                                </h6>
+                                <h1 class="display-3 text-white mb-4 animated slideInDown">Temukan lebih banyak pilihan
+                                    kos</h1>
+                                <a href="/kos_card"
+                                    class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Lihat kos</a>
                                 <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Ajukan sewa</a>
                             </div>
                         </div>
@@ -58,8 +64,10 @@
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6">
                         <h6 class="section-title text-start text-primary"></h6>
-                        <h1 class="mb-4">Selamat datang di <span class="text-primary text-uppercase">Homiekost</span></h1>
-                        <p class="mb-4">Homiekost, sebuah website pencarian kos di sekitar Universitas Sumatera Utara. Kini kamu dapat menemukan kos impian kamu melalui platform digital. </p>
+                        <h1 class="mb-4">Selamat datang di <span class="text-primary text-uppercase">Homiekost</span>
+                        </h1>
+                        <p class="mb-4">Homiekost, sebuah website pencarian kos di sekitar Universitas Sumatera Utara.
+                            Kini kamu dapat menemukan kos impian kamu melalui platform digital. </p>
                         <div class="row g-3 pb-4">
                             <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
                                 <div class="border rounded p-1">
@@ -75,10 +83,10 @@
                                     <div class="border rounded text-center p-4">
                                         <i class="fa fa-users-cog fa-2x text-primary mb-2"></i>
                                         <div class="row">
-                                            <div class="column" >
+                                            <div class="column">
                                                 <h2 class="mb-1" data-toggle="counter-up"> 965 </h2>
                                             </div>
-                                           
+
                                         </div>
                                         <p class="mb-0">Kamar</p>
                                     </div>
@@ -98,16 +106,20 @@
                     <div class="col-lg-6">
                         <div class="row g-3">
                             <div class="col-6 text-end">
-                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="img/kos3.jpg" style="margin-top: 25%;">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s"
+                                    src="{{ asset('img/kos3.jpg') }}" style="margin-top: 25%;">
                             </div>
                             <div class="col-6 text-start">
-                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="img/kos10.jpg">
+                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s"
+                                    src="{{ asset('img/kos10.jpg') }}">
                             </div>
                             <div class="col-6 text-end">
-                                <img class="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s" src="img/kos8.jpg">
+                                <img class="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s"
+                                    src="{{ asset('img/kos8.jpg') }}">
                             </div>
                             <div class="col-6 text-start">
-                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s" src="img/kos2.jpg">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s"
+                                    src="{{ asset('img/kos2.jpg') }}">
                             </div>
                         </div>
                     </div>
@@ -127,8 +139,9 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="room-item shadow rounded overflow-hidden">
                             <div class="position-relative">
-                                <img class="img-fluid" src="img/room-1.jpg" alt="">
-                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">Campur</small>
+                                <img class="img-fluid" src="{{ asset('img/room-1.jpg') }}" alt="">
+                                <small
+                                    class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">Campur</small>
                             </div>
                             <div class="p-4 mt-2">
                                 <div class="d-flex justify-content-between mb-3">
@@ -142,12 +155,14 @@
                                     </div>
                                 </div>
                                 <div class="d-flex mb-3">
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>1 Kasur</small>
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>K. Mandi Dalam</small>
+                                    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>1
+                                        Kasur</small>
+                                    <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>K.
+                                        Mandi Dalam</small>
                                     <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
                                 </div>
                                 <p class="text-body mb-3">Medan Selayang <br>
-                                 Rp 850.000/ Bulan
+                                    Rp 850.000/ Bulan
                                 </p>
                                 <div class="d-flex justify-content-between">
                                     <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">Selengkapnya</a>
@@ -159,8 +174,9 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="room-item shadow rounded overflow-hidden">
                             <div class="position-relative">
-                                <img class="img-fluid" src="img/room-2.jpg" alt="">
-                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">Putri</small>
+                                <img class="img-fluid" src="{{ asset('img/room-2.jpg') }}" alt="">
+                                <small
+                                    class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">Putri</small>
                             </div>
                             <div class="p-4 mt-2">
                                 <div class="d-flex justify-content-between mb-3">
@@ -174,8 +190,10 @@
                                     </div>
                                 </div>
                                 <div class="d-flex mb-3">
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>1 Kasur</small>
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>K. Mandi Dalam</small>
+                                    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>1
+                                        Kasur</small>
+                                    <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>K.
+                                        Mandi Dalam</small>
                                     <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
                                 </div>
                                 <p class="text-body mb-3">
@@ -192,8 +210,9 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
                         <div class="room-item shadow rounded overflow-hidden">
                             <div class="position-relative">
-                                <img class="img-fluid" src="img/room-3.jpg" alt="">
-                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">Campur</small>
+                                <img class="img-fluid" src="{{ asset('img/room-3.jpg') }}" alt="">
+                                <small
+                                    class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">Campur</small>
                             </div>
                             <div class="p-4 mt-2">
                                 <div class="d-flex justify-content-between mb-3">
@@ -207,11 +226,13 @@
                                     </div>
                                 </div>
                                 <div class="d-flex mb-3">
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>1 kasur</small>
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>K. Mandi dalam</small>
+                                    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>1
+                                        kasur</small>
+                                    <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>K.
+                                        Mandi dalam</small>
                                     <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
                                 </div>
-                                <p class="text-body mb-3"> 
+                                <p class="text-body mb-3">
                                     Medan Selayang <br>
                                     Rp 1.400.000/ Bulan
                                 </p>
@@ -224,7 +245,8 @@
                     </div>
                 </div>
                 <div class="col-mb-12" style="text-align: right;">
-                    <a class="btn btn-primary py-2 px-3 mt-2"  style="align-content: right;"href="kos_card.html"><i class="bi bi-arrow-right-circle-fill" style="font-size:20px"></i></a>
+                    <a class="btn btn-primary py-2 px-3 mt-2" style="align-content: right;" href="/kos_card"><i
+                            class="bi bi-arrow-right-circle-fill" style="font-size:20px"></i></a>
                 </div>
             </div>
         </div>
@@ -240,11 +262,11 @@
                         <h1 class="text-white mb-4">Website pencarian kos sekitar USU</h1>
                         <p class="text-white mb-4"> Mencari kos kini jauh lebih mudah. </p>
                         <a href="" class="btn btn-primary py-md-3 px-md-5 me-3">Jelajahi kos</a>
-                        <a href="sewa.html" class="btn btn-light py-md-3 px-md-5">Ajukan sewa</a>
+                        <a href="/sewa" class="btn btn-light py-md-3 px-md-5">Ajukan sewa</a>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <img class="img-fluid" src="img/kos1.jpg" alt="">
+                    <img class="img-fluid" src="{{ asset('img/kos1.jpg') }}" alt="">
                 </div>
             </div>
         </div>
@@ -259,8 +281,8 @@
                     <div class="modal-body">
                         <!-- 16:9 aspect ratio -->
                         <div class="ratio ratio-16x9">
-                            <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                                allow="autoplay"></iframe>
+                            <iframe class="embed-responsive-item" src="" id="video" allowfullscreen
+                                allowscriptaccess="always" allow="autoplay"></iframe>
                         </div>
                     </div>
                 </div>
@@ -355,10 +377,12 @@
                 <div class="col-lg-10 border rounded p-1">
                     <div class="border rounded text-center p-1">
                         <div class="bg-white rounded text-center p-5">
-                            <h4 class="mb-4 text-dark text-uppercase">Masukkan email untuk mendapatkan info terbaru</span></h4>
+                            <h4 class="mb-4 text-dark text-uppercase">Masukkan email untuk mendapatkan info
+                                terbaru</span></h4>
                             <div class="position-relative mx-auto" style="max-width: 400px;">
                                 <input class="form-control w-100 py-3 ps-4 pe-5" type="text" placeholder="email">
-                                <button type="button" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Kirim</button>
+                                <button type="button"
+                                    class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Kirim</button>
                             </div>
                         </div>
                     </div>
@@ -374,9 +398,11 @@
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-4">
                         <div class="bg-primary rounded p-4">
-                            <a href="index.html"><h1 class="text-white text-uppercase mb-3">Homiekost</h1></a>
+                            <a href="/">
+                                <h1 class="text-white text-uppercase mb-3">Homiekost</h1>
+                            </a>
                             <p class="text-white mb-0">
-							</p>
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
@@ -409,7 +435,7 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Homiekost</a>, All Right Reserved. 							
+                            &copy; <a class="border-bottom" href="#">Homiekost</a>, All Right Reserved.
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
