@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('index');
+}) -> name('home');
+Route::get('/About', function () {
+    return view('about');
+}) -> name('about');
+Route::get('/Cost-List', function () {
+    return view('kos-card');
+}) -> name('cost-list');
+Route::get('/Contact', function () {
+    return view('contact');
+}) -> name('contact');
+// routes/web.php
