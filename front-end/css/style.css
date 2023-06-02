@@ -4,6 +4,12 @@
     --light: #F1F8FF;
     --dark: #0F172B;
 }
+
+.color-primary {
+    color: var(--primary);
+}
+
+
 .icondetail{
  margin-left: 3%;
  padding-right: 0%;
@@ -98,7 +104,7 @@ i{
     padding: 25px 0;
     color: #FFFFFF;
     font-size: 15px;
-    text-transform: uppercase;
+    font-weight: 600;
     outline: none;
 }
 
@@ -141,7 +147,7 @@ i{
         position: relative;
         min-height: 450px;
     }
-    
+
     #header-carousel .carousel-item img {
         position: absolute;
         width: 100%;
