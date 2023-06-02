@@ -59,7 +59,9 @@ i{
 .btn.btn-secondary {
     color: #FFFFFF;
 }
-
+.color-primary {
+    color: var(--primary);
+}
 .btn-square {
     width: 38px;
     height: 38px;

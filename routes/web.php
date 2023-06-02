@@ -27,6 +27,9 @@ Route::get('/Contact', function () {
 }) -> name('contact');
 // routes/web.php
 
+Route::get('/Owner-Registration-Form', function () {
+    return view('form');
+})-> name('daftar-penyewa');
 
 
 
@@ -43,25 +46,20 @@ Route::get('/daftarKos', function () {
 Route::get('/detailKos', function () {
     return view('detailKos');
 });
-Route::get('/form', function () {
-    return view('form');
-});
 
 Route::get('/forms', function () {
     return view('forms');
 });
 
-// Route::get('/kos_card', function () {
-//     return view('kos_card');
-// });
+use App\Http\Controllers\AuthController;
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
+Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/register', function () {
-    return view('register');
-});
+
 
 Route::get('/service', function () {
     return view('service');
