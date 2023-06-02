@@ -158,22 +158,6 @@
                             <!-- Register buttons -->
                             <div class="text-center">
                                 <p>Belum punya akun? <a href="/register">Daftar</a></p>
-                                <!-- <p>or sign up with:</p>
-                        <button type="button" class="btn btn-link btn-floating mx-1">
-                            <i class="fab fa-facebook-f"></i>
-                        </button>
-
-                        <button type="button" class="btn btn-link btn-floating mx-1">
-                            <i class="fab fa-google"></i>
-                        </button>
-
-                        <button type="button" class="btn btn-link btn-floating mx-1">
-                            <i class="fab fa-twitter"></i>
-                        </button>
-
-                        <button type="button" class="btn btn-link btn-floating mx-1">
-                            <i class="fab fa-github"></i>
-                        </button> -->
                             </div>
                         </form>
                     </div>
@@ -183,11 +167,9 @@
                 <!-- Newsletter Start -->
                 <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
                     <div class="row justify-content-center">
-                        <div class="col-lg-10 border rounded p-1">
-                            <div class="border rounded text-center p-1">
-                                <div class="bg-dark rounded text-center p-5">
-                                    <div class="position-relative mx-auto">
-                                    </div>
+                        <div class="col-lg-10 ">
+                            <div class="rounded text-center p-1">
+                                <div class="rounded text-center p-5">
                                 </div>
                             </div>
                         </div>
@@ -248,9 +230,6 @@
                             <div class="row">
                                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                                     &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
-
-                                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
                                 </div>
                                 <div class="col-md-6 text-center text-md-end">
                                     <div class="footer-menu">

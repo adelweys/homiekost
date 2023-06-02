@@ -61,10 +61,6 @@
                                 <i class="fa fa-envelope text-primary me-2"></i>
                                 <p class="mb-0">info@homiekost.com</p>
                             </div>
-                            <div class="h-100 d-inline-flex align-items-center py-2">
-                                <i class="fa fa-phone-alt text-primary me-2"></i>
-                                <p class="mb-0">+62 123 456 789</p>
-                            </div>
                         </div>
                         <div class="col-lg-5 px-5 text-end">
                             <div class="d-inline-flex align-items-center py-2">

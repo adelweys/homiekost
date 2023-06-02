@@ -78,3 +78,7 @@ Route::get('/team', function () {
 Route::get('/testimonial', function () {
     return view('testimonial');
 });
+
+Route::get('/foto', function () {
+    return view('foto');
+});

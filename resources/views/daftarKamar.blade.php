@@ -123,20 +123,20 @@
                     <div class="col-lg-6">
                         <div class="row g-3">
                             <div class="col-6 text-end">
-                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s"
-                                    src="{{ asset('img/kos3.jpg') }}" style="margin-top: 25%;">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="img/kos3.jpg"
+                                    style="margin-top: 25%;">
                             </div>
                             <div class="col-6 text-start">
                                 <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s"
-                                    src="{{ asset('img/kos2.jpg') }}">
+                                    src="img/kos2.jpg">
                             </div>
                             <div class="col-6 text-end">
                                 <img class="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s"
-                                    src="{{ asset('img/kamar6.jpg') }}">
+                                    src="img/kamar6.jpg">
                             </div>
                             <div class="col-6 text-start">
                                 <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s"
-                                    src="{{ asset('img/kamar2.jpg') }}">
+                                    src="img/kamar2.jpg">
                             </div>
                         </div>
                     </div>
@@ -199,6 +199,16 @@
                                                 <label for="Deskripsi">Deskripsi Kos</label>
                                             </div>
                                         </div>
+                                        <div class="col-md-12" style="font-weight: bold;">
+                                            Foto Bangunan Kos (Foto dapat lebih dari 1)
+                                        </div>
+                                        <div class=" col-md-6">
+                                            <div class="form-floating">
+                                                <input type="file" id="files" accept="image/x-png,image/gif,image/jpeg"
+                                                    name="files" multiple>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                                 <!-- step 1 end -->
@@ -222,13 +232,94 @@
                                                 <label for="alamat">Harga</label>
                                             </div>
                                         </div>
+                                        <div class="col-md-12">
+                                            <div class="form-floating">
+                                                <textarea class="form-control" placeholder="Deskripsi" id="message"
+                                                    style="height: 100px"></textarea>
+                                                <label for="Deskripsi">Deskripsi Kamar </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12" style="font-weight: bold;">
+                                            Foto kamar (Foto dapat lebih dari 1)
+                                        </div>
+                                        <div class=" col-md-6">
+                                            <div class="form-floating">
+                                                <input type="file" id="files" accept="image/x-png,image/gif,image/jpeg"
+                                                    name="files" multiple>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- step 2 end -->
+
+                                <!-- step 3 start -->
+                                <div class="step">
+                                    <div class="row g-3">
+                                        <div class="col-md-12" style="text-align: center;">
+                                            <h6 class="section-title text-center text-primary text-uppercase">
+                                                Fasilitas 
+                                            </h6>
+                                        </div>
+                                                                                <div class="col-md-12" style="font-weight: bold;">
+                                            Fasilitas Umum
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckpos">
+                                            <label class="form-check-label" for="flexCheckpos">
+                                                Post Pengaman
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckpmobil">
+                                            <label class="form-check-label" for="flexCheckpmobil">
+                                                Parkir Mobil
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckpmotor">
+                                            <label class="form-check-label" for="flexCheckpmotor">
+                                                Parkir Motor
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckdapur">
+                                            <label class="form-check-label" for="flexCheckdapur">
+                                                Dapur
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-12" style="font-weight: bold;">
+                                            Fasilitas Kamar Mandi
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckKMD">
+                                            <label class="form-check-label" for="flexCheckKMD">
+                                                K. mandi dalam
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckKML">
+                                            <label class="form-check-label" for="flexCheckKML">
+                                                K. mandi luar
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckKlosetD">
+                                            <label class="form-check-label" for="flexCheckKlosetD">
+                                                Kloset duduk
+                                            </label>
+                                        </div>
                                         <div class="col-md-12" style="font-weight: bold;">
                                             Fasilitas Kamar
                                         </div>
                                         <div class="col-md-2">
                                             <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                                id="flexCheckwifi">
+                                            <label class="form-check-label" for="flexCheckwifi">
                                                 Wifi
                                             </label>
                                         </div>
@@ -245,7 +336,6 @@
                                                 Kasur
                                             </label>
                                         </div>
-
                                         <div class="col-md-2">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckMeja">
                                             <label class="form-check-label" for="flexCheckMeja">
@@ -259,84 +349,9 @@
                                                 Lemari
                                             </label>
                                         </div>
-                                        <div class="col-md-2">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckJendela">
-                                            <label class="form-check-label" for="flexCheckJendela">
-                                                Jendela
-                                            </label>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckBantal">
-                                            <label class="form-check-label" for="flexCheckBantal">
-                                                Bantal
-                                            </label>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckVentilasi">
-                                            <label class="form-check-label" for="flexCheckVentilasi">
-                                                Ventilasi
-                                            </label>
-                                        </div>
-                                        <div class="col-md-12" style="font-weight: bold;">
-                                            Fasilitas Kamar Mandi
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckKMD">
-                                            <label class="form-check-label" for="flexCheckKMD">
-                                                K. mandi dalam
-                                            </label>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckKML">
-                                            <label class="form-check-label" for="flexCheckKML">
-                                                K. mandi luar
-                                            </label>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckShower">
-                                            <label class="form-check-label" for="flexCheckShower">
-                                                Shower
-                                            </label>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckWHater">
-                                            <label class="form-check-label" for="flexCheckWHater">
-                                                Water Heater
-                                            </label>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckKlosetD">
-                                            <label class="form-check-label" for="flexCheckKlosetD">
-                                                Kloset duduk
-                                            </label>
-                                        </div>
-                                        <div class="col-md-12" style="font-weight: bold;">
-                                            Foto kamar
-                                        </div>
-                                        <div class=" col-md-6">
-                                            <div class="form-floating">
-                                                <input type="file" id="files" accept="image/x-png,image/gif,image/jpeg"
-                                                    name="files" multiple>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-floating">
-                                                <textarea class="form-control" placeholder="Deskripsi" id="message"
-                                                    style="height: 100px"></textarea>
-                                                <label for="Deskripsi">Deskripsi Kamar </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                        </div>
                                     </div>
                                 </div>
-                                <!-- step 2 end -->
+                                <!-- step 3 end -->
                                 <div class="col-12" style=" margin-top: 20px;">
                                     <div class="buttons" style="text-align: right;">
                                         <button class="btn btn-primary w-70 py-1" type="button"
@@ -357,95 +372,81 @@
     <!-- KAMAR KOST END -->
 
 
-    <!-- Newsletter Start -->
-    <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="row justify-content-center">
-            <div class="col-lg-10 border rounded p-1">
-                <div class="border rounded text-center p-1">
-                    <div class="bg-white rounded text-center p-5">
-                        <div class="position-relative mx-auto" style="max-width: 400px;">
+       <!-- Newsletter Start -->
+       <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 border rounded p-1">
+                    <div class="border rounded text-center p-1">
+                        <div class="bg-white rounded text-center p-5">
+                            <h4 class="mb-4 text-dark text-uppercase">Masukkan email untuk mendapatkan info terbaru</span></h4>
+                            <div class="position-relative mx-auto" style="max-width: 400px;">
+                                <input class="form-control w-100 py-3 ps-4 pe-5" type="text" placeholder="email">
+                                <button type="button" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Kirim</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Newsletter Start -->
+        <!-- Newsletter Start -->
 
+       
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
-        <div class="container pb-5">
-            <div class="row g-5">
-                <div class="col-md-6 col-lg-4">
-                    <div class="bg-primary rounded p-4">
-                        <a href="/">
-                            <h1 class="text-white text-uppercase mb-3">Hotelier</h1>
-                        </a>
-                        <p class="text-white mb-0">
-                            Download <a class="text-dark fw-medium"
-                                href="https://htmlcodex.com/hotel-html-template-pro">Hotelier – Premium Version</a>,
-                            build a professional website for your hotel business and grab the attention of new
-                            visitors upon your site’s launch.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <h6 class="section-title text-start text-primary text-uppercase mb-4">Contact</h6>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-12">
-                    <div class="row gy-5 g-4">
-                        <div class="col-md-6">
-                            <h6 class="section-title text-start text-primary text-uppercase mb-4">Company</h6>
-                            <a class="btn btn-link" href="">About Us</a>
-                            <a class="btn btn-link" href="">Contact Us</a>
-                            <a class="btn btn-link" href="">Privacy Policy</a>
-                            <a class="btn btn-link" href="">Terms & Condition</a>
-                            <a class="btn btn-link" href="">Support</a>
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container pb-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="bg-primary rounded p-4">
+                            <a href="index.html"><h1 class="text-white text-uppercase mb-3">Homiekost</h1></a>
+                            <p class="text-white mb-0">
+							</p>
                         </div>
-                        <div class="col-md-6">
-                            <h6 class="section-title text-start text-primary text-uppercase mb-4">Services</h6>
-                            <a class="btn btn-link" href="">Food & Restaurant</a>
-                            <a class="btn btn-link" href="">Spa & Fitness</a>
-                            <a class="btn btn-link" href="">Sports & Gaming</a>
-                            <a class="btn btn-link" href="">Event & Party</a>
-                            <a class="btn btn-link" href="">GYM & Yoga</a>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h6 class="section-title text-start text-primary text-uppercase mb-4">Contact</h6>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Medan, Indonesia</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62 123 456 789</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@homiekost.com</p>
+                        <div class="d-flex pt-2">
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-12">
+                        <div class="row gy-5 g-4">
+                            <div class="col-md-6">
+                                <h6 class="section-title text-start text-primary text-uppercase mb-4">Company</h6>
+                                <a class="btn btn-link" href="">About Us</a>
+                                <a class="btn btn-link" href="">Contact Us</a>
+                                <a class="btn btn-link" href="">Privacy Policy</a>
+                                <a class="btn btn-link" href="">Terms & Condition</a>
+                                <a class="btn btn-link" href="">Support</a>
+                            </div>
+                            <div class="col-md-6">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">Homiekost</a>, All Right Reserved. 							
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+        <!-- Footer End -->
 
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <div class="footer-menu">
-                            <a href="">Home</a>
-                            <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
 
 
     <!-- Back to Top -->
