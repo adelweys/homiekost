@@ -38,9 +38,10 @@ class CostController extends Controller
     }
     
     // Ambil data kamar yang terkait dengan kost
-    $rooms = $cost->rooms();
     
-    return view('main.detailKos', compact('cost', 'rooms'));
+    
+    return view('main.detailKos', compact('cost'));
+
 }
 
 }
