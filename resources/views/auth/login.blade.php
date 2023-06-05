@@ -14,46 +14,37 @@
                         <div class="text-center wow fadeInUp mb-4" data-wow-delay="0.1s">
                             <h3 class="section-title text-center text-primary text-uppercase">Masuk Ke Homiekost</h3>
                         </div>
-                        <form>
+                        <form action="{{ route('login.submit') }}" method="POST">
+                            @csrf
                             <!-- Email input -->
                             <div class="form-outline mb-4">
-                                <label class="form-label" for="form2Example1">Email</label>
-                                <input type="email" id="form2Example1" class="form-control" placeholder="Email" />
+                                <label class="form-label" for="email">Email</label>
+                                <input type="email" id="email" class="form-control" name="email" placeholder="Email" required>
                             </div>
-
+                        
                             <!-- Password input -->
                             <div class="form-outline mb-4">
-                                <label class="form-label" for="form2Example2">Kata sandi</label>
-                                <input type="password" id="form2Example2" class="form-control"
-                                    placeholder="Kata sandi" />
+                                <label class="form-label" for="password">Kata sandi</label>
+                                <input type="password" id="password" class="form-control" name="password" placeholder="Kata sandi" required>
                             </div>
-
-                            <div class="row mb-4">
-                                <div class="col d-flex justify-content-end">
-                                    <!-- Checkbox -->
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="form2Example31"
-                                            checked />
-                                        <label class="form-check-label" for="form2Example31"> ingat saya </label>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <!-- Simple link -->
-                                    <a href="#!">Lupa kata sandi?</a>
-                                </div>
+                        
+                            <!-- Checkbox -->
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" value="" id="remember" name="remember">
+                                <label class="form-check-label" for="remember">Ingat saya</label>
                             </div>
-
+                        
                             <!-- Submit button -->
                             <div class="d-grid mb-4">
-                                <button class="btn btn-primary" type="button">Masuk</button>
+                                <button class="btn btn-primary" type="submit">Masuk</button>
                             </div>
-
+                        
                             <!-- Register buttons -->
                             <div class="text-center">
-                                <p>Belum punya akun? <a href="/register">Daftar</a></p>
+                                <p>Belum punya akun? <a href="{{ route('register') }}">Daftar</a></p>
                             </div>
                         </form>
+                        
                     </div>
                 </div>
                 <!-- Login End -->

@@ -12,10 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\CostController;
+// route untuk index
+Route::get('/', [CostController::class, 'index'])->name('index');
 
-Route::get('/', function () {
-    return view('index');
-}) -> name('home');
 Route::get('/About', function () {
     return view('about');
 }) -> name('about');

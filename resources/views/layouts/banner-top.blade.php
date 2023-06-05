@@ -10,13 +10,13 @@
         <div class="col-lg-9">
             <div class="row gx-0 bg-white d-none d-lg-flex">
                 <div class="col-lg-7 px-5 text-start">
-                    <div class="h-100 d-inline-flex align-items-center py-2 me-4">
+                    <div class="d-inline-flex align-items-center py-1 me-4">
                         <i class="fa fa-envelope text-primary me-2"></i>
                         <p class="mb-0">info@homiekost.com</p>
                     </div>
-                    <div class="h-100 d-inline-flex align-items-center py-2">
-                        <i class="fa fa-phone-alt text-primary me-2"></i>
-                        <p class="mb-0">+62 123 456 789</p>
+                    <div class="d-inline-flex align-items-center py-1">
+                        <i class="fa fa-phone-alt text-primary m-2"></i>
+                        <p class="mb-0">+628123456789</p>
                     </div>
                 </div>
                 <div class="col-lg-5 px-5 text-end">
@@ -38,22 +38,26 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-                        <a class="nav-item nav-link {{ Route::currentRouteName() === 'home' ? ' active' : '' }}" href="{{ route('home') }}">Home</a>
+                        <a class="nav-item nav-link {{ Route::currentRouteName() === 'index' ? ' active' : '' }}" href="{{ route('index') }}">Home</a>
                         <a class="nav-item nav-link {{ Route::currentRouteName() === 'cost-list' ? ' active' : '' }}" href="{{ route('cost-list') }}">Kost</a>
                         <a class="nav-item nav-link {{ Route::currentRouteName() === 'about' ? ' active' : '' }}" href="{{ route('about') }}">About</a>
                         <a class="nav-item nav-link {{ Route::currentRouteName() === 'contact' ? ' active' : '' }}" href="{{ route('contact') }}">Contact</a>
                     </div>
                 </div>
+                
                 @auth
                 <!-- Tombol Logout -->
-                
-                <form action="" method="POST"></form>
-                <a href="{{ route('logout') }}" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Logout<i class="fa fa-arrow-right ms-3"></i></a>
-                @else
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-flex">Logout<i class="fa fa-arrow-right ms-3"></i></button>
+                </form>
+            @else
                 <!-- Tombol Login -->
-                
-                <a href="{{ route('login') }}" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Login<i class="fa fa-arrow-right ms-3"></i></a>
-                @endauth
+                @guest
+                    <a href="{{ route('login') }}" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-flex">Login<i class="fa fa-arrow-right ms-3"></i></a>
+                @endguest
+            @endauth
+            
             </nav>
         </div>
     </div>

@@ -45,50 +45,44 @@
                     <!-- Nama input -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="name">Nama</label>
-                        <input type="text" id="name" class="form-control" name="name" placeholder="Nama" required />
+                        <input type="text" id="name" class="form-control" name="name" placeholder="Nama" required>
                     </div>
-
+                
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="email">Email</label>
-                        <input type="email" id="email" class="form-control" name="email" placeholder="Email" required />
+                        <input type="email" id="email" class="form-control" name="email" placeholder="Email" required>
                     </div>
-
+                
                     <!-- Password input -->
-                    <div class="form-outline position-relative mb-4">
+                    <div class="form-outline mb-4">
                         <label class="form-label" for="password">Kata sandi</label>
-                        <input type="password" id="password" class="form-control" name="password"
-                            placeholder="Kata sandi" required />
-                        <span toggle="#password" class="password-toggle-icon"></span>
+                        <input type="password" id="password" class="form-control" name="password" placeholder="Kata sandi" required>
                     </div>
-
+                
                     <!-- Konfirmasi Password input -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="password_confirmation">Konfirmasi Kata sandi</label>
-                        <input type="password" id="password_confirmation" class="form-control"
-                            name="password_confirmation" placeholder="Konfirmasi Kata sandi" required />
+                        <input type="password" id="password_confirmation" class="form-control" name="password_confirmation" placeholder="Konfirmasi Kata sandi" required>
                     </div>
-
-                    <div class="row mb-4">
-                        <div class="col d-flex left-content-end">
-                            <!-- Checkbox -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="ingat" />
-                                <label class="form-check-label" for="ingat">Ingat saya</label>
-                            </div>
-                        </div>
+                
+                    <!-- Checkbox -->
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" value="" id="remember" name="remember">
+                        <label class="form-check-label" for="remember">Ingat saya</label>
                     </div>
-
+                
                     <!-- Submit button -->
                     <div class="d-grid mb-4">
                         <button class="btn btn-primary" type="submit">Daftar</button>
                     </div>
-
+                
                     <!-- Register buttons -->
                     <div class="text-center">
                         <p>Sudah punya akun? <a href="{{ route('login') }}">Masuk</a></p>
                     </div>
                 </form>
+                
             </div>
         </div>
     </div>

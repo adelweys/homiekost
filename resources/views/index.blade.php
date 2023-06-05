@@ -87,15 +87,64 @@
                     <h1 class="mb-5"> Jelajahi <span class="text-primary text-uppercase">Homiekost</span></h1>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    @foreach ($costs as $index => $cost)
+    @php
+        $i = 0.1 + ($index * 0.3);
+        $delayClass = 'data-wow-delay="'. $i . 's"';
+        $room = $rooms[$index];
+    @endphp
+
+    <div class="col-lg-4 col-md-6 wow fadeInUp" {{$delayClass}}>
+        <div class="room-item shadow rounded overflow-hidden">
+            <div class="position-relative">
+                <img class="img-fluid" src="img/room-1.jpg" alt="">
+                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">{{$cost->cost_type}}</small>
+            </div>
+            <div class="p-4 mt-2">
+                <div class="d-flex justify-content-between mb-3">
+                    <h5 class="mb-0">{{$cost->cost_name}}</h5>
+                    <div class="ps-2">
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                        <small class="fa fa-star text-primary"></small>
+                    </div>
+                </div>
+                <div class="d-flex mb-3">
+                    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>1 Kasur</small>
+                    <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>K. Mandi Dalam</small>
+                    <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
+                </div>
+                <p class="text-body mb-3">Medan Selayang <br>
+                    {{$room->price}}/ Bulan
+                </p>
+                <div class="d-flex justify-content-between">
+                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="/detailkos">Selengkapnya</a>
+                    <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Ajukan sewa</a>
+                </div>
+            </div>
+        </div>
+    </div>
+@endforeach
+
+                    {{-- @foreach ($costs as $cost)
+                    @foreach ($rooms as $room)
+                    @php
+                    $i = 0.1;
+                    $delayClass = 'data-wow-delay="'. $i . 's"';
+                    $i = $i + 0.3;
+                    @endphp
+                   
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" {{$delayClass}}>
                         <div class="room-item shadow rounded overflow-hidden">
                             <div class="position-relative">
                                 <img class="img-fluid" src="img/room-1.jpg" alt="">
-                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">Campur</small>
+                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">{{$cost -> cost_type}}</small>
                             </div>
                             <div class="p-4 mt-2">
                                 <div class="d-flex justify-content-between mb-3">
-                                    <h5 class="mb-0">Kost Lexus</h5>
+                                    <h5 class="mb-0">{{$cost -> cost_name}}</h5>
                                     <div class="ps-2">
                                         <small class="fa fa-star text-primary"></small>
                                         <small class="fa fa-star text-primary"></small>
@@ -110,7 +159,7 @@
                                     <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
                                 </div>
                                 <p class="text-body mb-3">Medan Selayang <br>
-                                 Rp 850.000/ Bulan
+                                 {{$room -> price}}/ Bulan
                                 </p>
                                 <div class="d-flex justify-content-between">
                                     <a class="btn btn-sm btn-primary rounded py-2 px-4" href="/detailkos">Selengkapnya</a>
@@ -119,75 +168,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="room-item shadow rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/room-2.jpg" alt="">
-                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">Putri</small>
-                            </div>
-                            <div class="p-4 mt-2">
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h5 class="mb-0">Kost Lavender</h5>
-                                    <div class="ps-2">
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                    </div>
-                                </div>
-                                <div class="d-flex mb-3">
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>1 Kasur</small>
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>K. Mandi Dalam</small>
-                                    <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
-                                </div>
-                                <p class="text-body mb-3">
-                                    Medan Baru <br>
-                                    Rp 800.000/ Bulan
-                                </p>
-                                <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">Selengkapnya</a>
-                                    <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Ajukan sewa</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="room-item shadow rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/room-3.jpg" alt="">
-                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">Campur</small>
-                            </div>
-                            <div class="p-4 mt-2">
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h5 class="mb-0">Kost Rose House</h5>
-                                    <div class="ps-2">
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                    </div>
-                                </div>
-                                <div class="d-flex mb-3">
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>1 kasur</small>
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>K. Mandi dalam</small>
-                                    <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
-                                </div>
-                                <p class="text-body mb-3"> 
-                                    Medan Selayang <br>
-                                    Rp 1.400.000/ Bulan
-                                </p>
-                                <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">Selengkapnya</a>
-                                    <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Ajukan sewa</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        
+                    @endforeach
+                        
+                    @endforeach --}}
+                    
                 </div>
                 <div class="col-mb-12" style="text-align: right;">
-                    <a class="btn btn-primary py-2 px-3 mt-2"  style="align-content: right;"href="/kos_card"><i class="bi bi-arrow-right-circle-fill" style="font-size:20px"></i></a>
+                    <a class="btn btn-primary py-2 px-3 mt-2"  style="align-content: right;"href="{{route('cost-list')}}"><i class="bi bi-arrow-right-circle-fill" style="font-size:20px"></i></a>
                 </div>
             </div>
         </div>
