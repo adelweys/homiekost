@@ -15,16 +15,22 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CostController;
 // route untuk index
 Route::get('/', [CostController::class, 'index'])->name('index');
+Route::get('/Cost-List', [CostController::class, 'cost_list'])->name('cost-list');
+
+// route untuk detail kos
+Route::get('/Cost-List/{slug}', [CostController::class, 'show'])->name('detail-kos');
+
 
 Route::get('/About', function () {
-    return view('about');
+    return view('main.about');
 }) -> name('about');
-Route::get('/Cost-List', function () {
-    return view('kos-card');
-}) -> name('cost-list');
+
 Route::get('/Contact', function () {
-    return view('contact');
+    return view('main.contact');
 }) -> name('contact');
+Route::get('/detail', function () {
+    return view('main.detailKos');
+}) -> name('detail');
 // routes/web.php
 
 Route::get('/Owner-Registration-Form', function () {
