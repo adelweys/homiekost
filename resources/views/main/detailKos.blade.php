@@ -1,22 +1,24 @@
-@extends('layouts.master')
+@extends('master')
 
 @section('content')
-    
-
-@include('layouts.banner-top')
-
-        <!-- Carousel Start -->
-        @include('layouts.header-second')
-        <!-- Carousel End -->
 
 
+        <!-- Page Header Start -->
+        <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-1.jpg);">
+            <div class="container-fluid page-header-inner py-4">
+            </div>
+        </div>
+        <!-- Page Header End -->
 
-        {{-- Filtering  --}}
-        @include('layouts.filtering')
+
+        <!-- Filtering Start -->
+        @include('filtering')
+        <!-- Filtering End -->
 
 
+@section('content')
         <!-- About Start -->
-        <div class="container-xxl py-5">
+        <div class="container-fluid py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h1 class="mb-5">Kost <span class="text-primary ">Lavender</span> </h1>
@@ -77,22 +79,17 @@
                                 <div class="row g-3">
                                     <h7>Kamar Mandi Dalam</h7>
                                     <div class="row g-1">
-                                        <div class="col-1 icondetail" style="margin-right: -1.2rem">
-                                            <img src="img/tduduk.svg" style="padding: 0%;" />
+                                        <div class="col-1 icondetail">                                    
+                                            <img src="img/tduduk.svg" style="padding:0%;">
                                         </div>
                                         <div class="col">
                                             <h7>Kloset Duduk</h7>
                                         </div>
                                     </div>
-                                    <h7>Kamar Mandi Dalam</h7>
-                                    <div class="row g-1">
-                                        <div class="col-1 icondetail" style="margin-right: -1.2rem">
-                                            <img src="img/tjongkok.svg" style="padding: 0%;" />
-                                        </div>
-                                        <div class="col">
-                                            <h7>Kloset jongkok</h7>
-                                        </div>
-                                    </div>
+                                    <img src="img/tjongkok.svg" style="padding:0%;">
+
+                                    <h7>Kloset Jongkok</h7>
+                                
                                 </div>
                             </div>
                         </div>
@@ -101,33 +98,33 @@
                     <div class="col-lg-4">
                         <div class="wow fadeInUp" data-wow-delay="0.2s">
                             <!-- FORM KOST START -->
-                            <!-- step 1 start -->
-                            <div class="row g-3">
-                                <div class="col-md-12" style="text-align: center;">
+                                <!-- step 1 start -->
+                                    <div class="row g-3">
+                                        <div class="col-md-12" style="text-align: center;">
+                                        </div>
+                                        <div class="col-md-12" style="height-max: py-30;">
+                                             <img class="img-fluid" src="img/kos1.jpg" alt="">
+                                        </div>
+                                        <div class="col-md-12" style="text-align: right;">
+                                            <a class="btn btn-primary py-2 px-2 mt-2" href="foto.html">lihat foto</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-12" style="max-height: py-30;">
-                                    <img class="img-fluid" src="img/kos1.jpg" alt="">
-                                </div>
-                                <div class="col-md-12" style="text-align: right;">
-                                    <a class="btn btn-primary py-2 px-2 mt-2" href="foto.html">lihat foto</a>
-                                </div>
-                            </div>
+                                <!-- step 1 end -->
+                            </div> 
+                       
+                            </form>
+                            <!-- FORM KOST END -->
                         </div>
-                        <!-- step 1 end -->
                     </div>
-
-                    </form>
-                    <!-- FORM KOST END -->
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    <!-- KAMAR KOST END -->
-    </div>
-    </div>
-    </div>
-    <!-- About End -->
+        <!-- KAMAR KOST END -->
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
 
 
         
@@ -143,3 +140,5 @@
 
     
 @endsection
+
+>>>>>>> Stashed changes

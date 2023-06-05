@@ -36,7 +36,7 @@
 </head>
 
 <body>
-    <div class="container-xxl bg-white p-0">
+    <div class="container-fluid bg-white p-0">
         <!-- Spinner Start -->
         <div id="spinner"
             class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -259,7 +259,7 @@
                                     <div class="row g-3">
                                         <div class="col-md-12" style="text-align: center;">
                                             <h6 class="section-title text-center text-primary text-uppercase">
-                                                Fasilitas 
+                                                Fasilitas
                                             </h6>
                                         </div>
                                                                                 <div class="col-md-12" style="font-weight: bold;">
@@ -390,7 +390,7 @@
         </div>
         <!-- Newsletter Start -->
 
-       
+
 
         <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
@@ -431,7 +431,7 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Homiekost</a>, All Right Reserved. 							
+                            &copy; <a class="border-bottom" href="#">Homiekost</a>, All Right Reserved.
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
@@ -520,7 +520,7 @@
             }
 
         showStep(currentStep);
-        
+
     }
 
     // Event listener untuk tombol Previous dan Next
