@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    
+
 
 @include('layouts.banner-top')
 
@@ -16,7 +16,7 @@
 
 
         <!-- About Start -->
-        <div class="container-xxl py-5">
+        <div class="container-fluid py-5">
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6">
@@ -41,7 +41,7 @@
                                             <div class="column" >
                                                 <h2 class="mb-1" data-toggle="counter-up"> 965 </h2>
                                             </div>
-                                           
+
                                         </div>
                                         <p class="mb-0">Kamar</p>
                                     </div>
@@ -135,7 +135,7 @@
                     $delayClass = 'data-wow-delay="'. $i . 's"';
                     $i = $i + 0.3;
                     @endphp
-                   
+
                     <div class="col-lg-4 col-md-6 wow fadeInUp" {{$delayClass}}>
                         <div class="room-item shadow rounded overflow-hidden">
                             <div class="position-relative">
@@ -168,11 +168,11 @@
                             </div>
                         </div>
                     </div>
-                        
+
                     @endforeach
-                        
+
                     @endforeach --}}
-                    
+
                 </div>
                 <div class="col-mb-12" style="text-align: right;">
                     <a class="btn btn-primary py-2 px-3 mt-2"  style="align-content: right;"href="{{route('cost-list')}}"><i class="bi bi-arrow-right-circle-fill" style="font-size:20px"></i></a>
@@ -308,5 +308,5 @@
         {{-- footer --}}
        @include('layouts.footer')
 
-    
+
 @endsection

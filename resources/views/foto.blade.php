@@ -40,11 +40,11 @@
 
 <body>
        <!-- Foto start -->
-        <div class="container-xxl py-5 wow fadeInUp">
+        <div class="container-fluid py-5 wow fadeInUp">
             <div class="container">
                 <div class="exit" style="text-align: right">
-                    <a href="/detailKos" style="width:50px; color: grey;"><i class="fi fi-br-cross"></i></a>     
-                </div>        
+                    <a href="/detailKos" style="width:50px; color: grey;"><i class="fi fi-br-cross"></i></a>
+                </div>
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="section-title text-center text-primary text-uppercase">Foto</h6>
                     <h1 class="mb-5">KOS <span class="text-primary text-uppercase"> Lavender</h1>

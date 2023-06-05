@@ -2,7 +2,7 @@
 @extends('master')
 
 @section('content')
-    
+
 
         <!-- Page Header Start -->
         <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-1.jpg);">
@@ -29,7 +29,7 @@
 
 @section('content')
         <!-- About Start -->
-        <div class="container-xxl py-5">
+        <div class="container-fluid py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h1 class="mb-5">Kost <span class="text-primary ">Lavender</span> </h1>
@@ -40,7 +40,7 @@
                             <div class="col-md-12">
                                 <img class="img-fluid" src="img/kos1.jpg" alt="">
                             </div>
-        
+
                             <div class="col-md-12">
                                 <h5>Deskripsi Kamar</h5>
                                 <p>
@@ -78,7 +78,7 @@
                                 <div class="row g-3">
                                     <h7>Kamar Mandi Dalam</h7>
                                     <div class="row g-1">
-                                        <div class="col-1 icondetail">                                    
+                                        <div class="col-1 icondetail">
                                             <img src="img/tduduk.svg" style="padding:0%;">
                                         </div>
                                         <div class="col-">
@@ -102,7 +102,7 @@
                                 <div class="col-md-12" style="text-align: right;">
                                     <a class="btn btn-primary py-2 px-2 mt-2" href="/foto">lihat foto</a>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>

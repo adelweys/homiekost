@@ -1,7 +1,7 @@
     @extends('layouts.master')
 
     @section('content')
-    
+
     @include('layouts.banner-top')
 
         <!-- Page Header Start -->
@@ -11,12 +11,12 @@
 
 
         <!-- Filtering Start -->
-        @include('layouts.filtering')   
+        @include('layouts.filtering')
         <!-- Filtering End -->
 
 
         <!-- Room Start -->
-        <div class="container-xxl py-5">
+        <div class="container-fluid py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="section-title text-center text-primary text-uppercase">Pilihan Kos</h6>
@@ -110,7 +110,7 @@
                                     <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>K. Mandi dalam</small>
                                     <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
                                 </div>
-                                <p class="text-body mb-3"> 
+                                <p class="text-body mb-3">
                                     Medan Selayang <br>
                                     Rp 1.400.000/ Bulan
                                 </p>
@@ -208,7 +208,7 @@
                                     <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>K. Mandi dalam</small>
                                     <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
                                 </div>
-                                <p class="text-body mb-3"> 
+                                <p class="text-body mb-3">
                                     Medan Selayang <br>
                                     Rp 1.400.000/ Bulan
                                 </p>
@@ -218,7 +218,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>                  
+                    </div>
                 </div>
             </div>
         </div>
@@ -229,10 +229,10 @@
         @include('layouts.newsletter')
 
         <!-- Newsletter Start -->
-        
+
 
         <!-- Footer Start -->
         @include('layouts.footer')
         <!-- Footer End -->
-    
+
 @endsection
