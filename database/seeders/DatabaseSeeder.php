@@ -122,9 +122,18 @@ class CostSeeder extends Seeder
         $ownerIds = User::whereIn('id', [2, 5])->pluck('id')->toArray();
 
         foreach (range(1, 30) as $index) {
+            $costName = $faker->word;
+            $uniqueCostName = $costName;
+            $count = 1;
+
+            while (Cost::where('cost_name', $uniqueCostName)->exists()) {
+                $uniqueCostName = $costName . '-' . $count;
+                $count++;
+            }
+
             $cost = Cost::create([
                 'user_id' => $faker->randomElement($ownerIds),
-                'cost_name' => $faker->word,
+                'cost_name' => $uniqueCostName,
                 'total_kamar' => $faker->numberBetween(1, 10),
                 'cost_type' => $faker->randomElement(['pria', 'wanita', 'campuran']),
                 'available_room' => $faker->numberBetween(0, 10),
@@ -142,6 +151,7 @@ class CostSeeder extends Seeder
         }
     }
 }
+
 
 class CostFacilitySeeder extends Seeder
 {

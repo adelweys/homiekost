@@ -17,8 +17,8 @@ class CreateCostsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->string('cost_name', 35);
-            $table->string('slug')->unique()->nullable();
+            $table->string('cost_name', 35)->unique();
+            $table->string('slug')->nullable();
             $table->tinyInteger('total_kamar');
             $table->enum('cost_type', ['pria', 'wanita', 'campuran']);
             $table->tinyInteger('available_room');
