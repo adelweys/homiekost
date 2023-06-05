@@ -1,33 +1,20 @@
-<<<<<<< Updated upstream
-@extends('master')
+@extends('layouts.master')
 
 @section('content')
     
 
-        <!-- Page Header Start -->
-        <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-1.jpg);">
-            <div class="container-fluid page-header-inner py-4">
-            </div>
-        </div>
-        <!-- Page Header End -->
+@include('layouts.banner-top')
+
+        <!-- Carousel Start -->
+        @include('layouts.header-second')
+        <!-- Carousel End -->
 
 
-        <!-- Filtering Start -->
-        @include('filtering')
-        <!-- Filtering End -->
 
-=======
-@extends('layouts.app')
-@section('title', 'Kost')
-@section('navbar_active')
-    <a href="/" class="nav-item nav-link">Home</a>
-    <a href="/about" class="nav-item nav-link">About</a>
-    <a href="/kos_card" class="nav-item nav-link   active">Kost</a>
-    <a href="/contact" class="nav-item nav-link">Contact</a>
-@endsection
->>>>>>> Stashed changes
+        {{-- Filtering  --}}
+        @include('layouts.filtering')
 
-@section('content')
+
         <!-- About Start -->
         <div class="container-xxl py-5">
             <div class="container">
@@ -88,21 +75,34 @@
                                     <img src="img/tjongkok.svg" style="padding:0%;">
 
                                     <h7>Kloset Jongkok</h7>
+                                
                                 </div>
                             </div>
+
+
                         </div>
                     </div>
 
                     <div class="col-lg-4">
                         <div class="wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="row g-3">
-                                <div class="col-md-12" style="height-max: py-30;">
-                                    <img class="img-fluid" src="img/kos1.jpg" alt="">
+                            <!-- FORM KOST START -->
+                                <!-- step 1 start -->
+                                    <div class="row g-3">
+                                        <div class="col-md-12" style="text-align: center;">
+                                        </div>
+                                        <div class="col-md-12" style="height-max: py-30;">
+                                             <img class="img-fluid" src="img/kos1.jpg" alt="">
+                                        </div>
+                                        <div class="col-md-12" style="text-align: right;">
+                                            <a class="btn btn-primary py-2 px-2 mt-2" href="foto.html">lihat foto</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-12" style="text-align: right;">
-                                    <a class="btn btn-primary py-2 px-2 mt-2" href="/foto">lihat foto</a>
-                                </div>
+                                <!-- step 1 end -->
                             </div> 
+                       
+                            </form>
+                            <!-- FORM KOST END -->
                         </div>
                     </div>
                 </div>
@@ -112,11 +112,19 @@
                 </div>
             </div>
         </div>
-<<<<<<< Updated upstream
-        <!-- Footer End -->
-        @endsection
-=======
         <!-- About End -->
-@endsection
 
->>>>>>> Stashed changes
+
+        
+
+
+        <!-- Newsletter Start -->
+
+        @include('layouts.newsletter')
+        <!-- Newsletter Start -->
+
+        {{-- footer --}}
+       @include('layouts.footer')
+
+    
+@endsection

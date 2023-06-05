@@ -17,14 +17,15 @@ class CreateRoomsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('cost_id');
             $table->foreign('cost_id')->references('id')->on('costs');
+            $table->string('room_name', 35);
             $table->integer('roomsize');
             $table->enum('tableset', ['yes', 'no']);
             $table->enum('wardrobe', ['yes', 'no']);
+            $table->enum('closet', ['duduk', 'jongkok']);
             $table->enum('bed', ['yes', 'no']);
             $table->enum('fan', ['yes', 'no']);
             $table->enum('ac', ['yes', 'no']);
             $table->enum('electric', ['yes', 'no']);
-            $table->enum('wifi', ['yes', 'no']);
             $table->enum('pam', ['yes', 'no']);
             $table->integer('price');
             $table->string('photo');

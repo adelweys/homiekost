@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Cost extends Model
 {
@@ -21,4 +22,9 @@ class Cost extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function getSlugAttribute()
+{
+    return Str::slug($this->cost_name);
+}
+
 }
