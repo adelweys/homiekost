@@ -2,7 +2,7 @@
 
 @section('content')
 
-@include('layouts.banner-top')
+    @include('layouts.banner-top')
 
     <!-- Page Header Start -->
     @include('layouts.header-second')
@@ -19,7 +19,9 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="mb-5">Kost <span class="text-primary ">Lavender</span> </h1>
+                    <h1 class="mb-5">Kost <span class="text-primary "></span>
+                    {{$cost->cost_name}}
+                    </h1>
                 </div>
                 <div class="row g-5 wow fadeInUp">
                     <div class="col-lg-8">
@@ -31,21 +33,16 @@
                             <div class="col-md-12">
                                 <h5>Deskripsi Kamar</h5>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et
-                                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                    laboris nisi ut aliquip ex
-                                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                    cillum dolore eu fugiat
-                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                    officia deserunt mollit
-                                    anim id est laborum.
+                                    {{$cost->description}}
                                 </p>
                             </div>
                             <hr>
                             <div class="col-md-12">
-                                <h5>Fasilitas Umum</h5>
+                                <h5>Fasilitas Kos</h5>
                                 <div class="row g-3">
+                                    @foreach ($cost->costFacilities as $facility)
+                                        <h7><i class="fi fi-rr-restroom-simple"></i>Kamar Mandi Luar</h7>
+                                    @endforeach
                                     <h7><i class="fi fi-rr-restroom-simple"></i>Kamar Mandi Luar</h7>
                                     <h7><i class="fi fi-rs-restaurant"></i>Dapur</h7>
                                     <h7><i class="fi fi-ts-cars"></i> Parkir Mobil</h7>

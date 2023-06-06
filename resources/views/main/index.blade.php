@@ -3,7 +3,7 @@
 @section('content')
     
 
-@include('layouts.banner-top')
+    @include('layouts.banner-top')
 
         <!-- Carousel Start -->
         @include('layouts.header-utama')
@@ -109,12 +109,12 @@
                         <div class="col-lg-4 col-md-6 wow fadeInUp " data-wow-delay="{{$i}}s">
                             <div class="room-item shadow rounded overflow-hidden">
                                 <div class="position-relative">
-                                    <img class="img-fluid" src="img/room-1.jpg" alt="" href="">
+                                    <a href="{{ route('detailKos', ['slug' => Str::slug($cost->cost_name)]) }}"><img class="img-fluid" src="img/room-1.jpg" alt=""></a>
                                     <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">{{$cost->cost_type}}</small>
                                 </div>
                                 <div class="p-4 mt-2">
                                     <div class="d-flex justify-content-between mb-3">
-                                        <h5 class="mb-0"><a href="">{{$cost->cost_name}}</a></h5>
+                                        <h5 class="mb-0"><a href="{{ route('detailKos', ['slug' => $cost->slug]) }}">{{$cost->cost_name}}</a></h5>
                                         <div class="ps-2">
                                             <small class="fa fa-star text-primary"></small>
                                             <small class="fa fa-star text-primary"></small>
@@ -136,7 +136,7 @@
                                         @endif
                                     </p>
                                     <div class="d-flex justify-content-between">
-                                        <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">Selengkapnya</a>
+                                        <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{{ route('detailKos', ['slug' => $cost->slug]) }}">Selengkapnya</a>
                                         <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Ajukan sewa</a>
                                     </div>
                                 </div>
