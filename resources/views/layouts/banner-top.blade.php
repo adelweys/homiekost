@@ -44,13 +44,32 @@
                         <a class="nav-item nav-link {{ Route::currentRouteName() === 'contact' ? ' active' : '' }}" href="{{ route('contact') }}">Contact</a>
                     </div>
                 </div>
-                
                 @auth
                 <!-- Tombol Logout -->
-                <form action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-flex">Logout<i class="fa fa-arrow-right ms-3"></i></button>
-                </form>
+                    <div class="dropdown show">
+                        <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="flex-shrink-0">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-2.webp"
+                                alt="Generic placeholder image" class="img-fluid rounded-circle border border-dark border-3"
+                                style="width: 50px; padding-right:5px">
+                            </div>
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li class="dropdown-item" href="#">
+                                <button type="submit" style="background-color:white; border:white; font-size:15px">Profile</i></a>
+                            </li>
+                            <li class="dropdown-item" href="#">
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" style="background-color:white; border:white; font-size:15px">Logout</i></a>
+                            </form>
+                            <li>
+                        </div>
+                    </div>
+                 
+                
             @else
                 <!-- Tombol Login -->
                 @guest
