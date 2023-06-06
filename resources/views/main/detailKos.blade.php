@@ -136,4 +136,3 @@
  @include('layouts.footer')
  <!-- Footer End -->
 
-@endsection
