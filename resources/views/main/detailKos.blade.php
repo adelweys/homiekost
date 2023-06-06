@@ -11,7 +11,7 @@
 
 
     <!-- Filtering Start -->
-    @include('layouts.filtering')   
+    {{-- @include('layouts.filtering')    --}}
     <!-- Filtering End -->
 
 

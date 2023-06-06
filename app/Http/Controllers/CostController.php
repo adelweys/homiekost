@@ -23,14 +23,13 @@ class CostController extends Controller
     $costs = Cost::all();
     $rooms = Room::all();
 
-    
     return view('main.kos-card', compact('costs', 'rooms'));
 }
 
     public function show($slug)
 {
     // Cari data kost berdasarkan slug
-    $cost = Cost::where('slug', $slug)->firstOrFail();
+    $cost = Cost::where('slug', $slug)->with('rooms', 'costFacilities')->firstOrFail();
 
     if (!$cost) {
         // Jika kost dengan slug yang diberikan tidak ditemukan, lakukan penanganan kesalahan atau redirect ke halaman lain

@@ -91,7 +91,10 @@
                         $cardCount = 0; // Inisialisasi variabel untuk menghitung jumlah card yang ditampilkan
                         $i = 0.1;
                     @endphp
-                    @foreach ($costs as $index => $cost)
+                    {{-- @foreach ($costs as $index => $cost) --}}
+                    @foreach ($costs as $cost)
+                        
+                    
                         @php
                             
                             
@@ -101,7 +104,8 @@
                             }
                             
                             // Pastikan jumlah data di $rooms mencukupi
-                            $room = isset($rooms[$index]) ? $rooms[$index] : null;
+                            
+                            // $room = isset($rooms[$index]) ? $rooms[$index] : null;
                             $cardCount++;
                             // Tambahkan logika pengaturan default jika data tidak tersedia
                         @endphp
@@ -109,12 +113,12 @@
                         <div class="col-lg-4 col-md-6 wow fadeInUp " data-wow-delay="{{$i}}s">
                             <div class="room-item shadow rounded overflow-hidden">
                                 <div class="position-relative">
-                                    <a href="{{ route('detailKos', ['slug' => Str::slug($cost->cost_name)]) }}"><img class="img-fluid" src="img/room-1.jpg" alt=""></a>
+                                    <a href="{{ route('cost.show', ['slug' => Str::slug($cost->cost_name)]) }}"><img class="img-fluid" src="img/room-1.jpg" alt=""></a>
                                     <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">{{$cost->cost_type}}</small>
                                 </div>
                                 <div class="p-4 mt-2">
                                     <div class="d-flex justify-content-between mb-3">
-                                        <h5 class="mb-0"><a href="{{ route('detailKos', ['slug' => $cost->slug]) }}">{{$cost->cost_name}}</a></h5>
+                                        <h5 class="mb-0"><a href="{{ route('cost.show', ['slug' => $cost->slug]) }}">{{$cost->cost_name}}</a></h5>
                                         <div class="ps-2">
                                             <small class="fa fa-star text-primary"></small>
                                             <small class="fa fa-star text-primary"></small>
@@ -129,23 +133,30 @@
                                         <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
                                     </div>
                                     <p class="text-body mb-3">{{$cost->cost_location}} <br>
-                                        @if ($room)
+                                        @if ($cost->rooms->count() > 0)
+                                        {{ $cost->rooms->min('price') }}/Bulan
+                                    @else
+                                        Data Kamar tidak tersedia
+                                    @endif
+                                    
+                                        
+                                        {{-- @if ($room)
                                             {{$room->price}}/ Bulan
                                         @else
                                             Data kamar tidak tersedia
-                                        @endif
+                                        @endif --}}
                                     </p>
                                     <div class="d-flex justify-content-between">
-                                        <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{{ route('detailKos', ['slug' => $cost->slug]) }}">Selengkapnya</a>
+                                        <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{{ route('cost.show', ['slug' => $cost->slug]) }}">Selengkapnya</a>
                                         <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Ajukan sewa</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                        @if (($index + 1) % 3 == 0)
+                        {{-- @if (($index + 1) % 3 == 0)
                             <div class="w-100"></div> <!-- Menambahkan elemen div dengan class w-100 untuk membuat baris baru setelah setiap 3 kartu -->
-                        @endif
+                        @endif --}}
                         @php
                             $i=$i+0.3;
                             if ($i>0.9) {

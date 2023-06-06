@@ -20,17 +20,13 @@ class Cost extends Model
     
 
     protected $table = 'costs';
-    // public function sluggable(): array
-    // {
-    //     return [
-    //         'slug' => [
-    //             'source' => 'cost_name',
-    //             'unique' => true,
-    //             'separator' => '-',
-    //             'onUpdate' => false,
-    //         ],
-    //     ];
-    // }
+    protected $fillable = ['cost_name', 'slug'];
+
+public function setSlugAttribute($value)
+{
+    $this->attributes['slug'] = Str::slug($value);
+}
+
 
 
     // Relasi One-to-Many dengan model Room
@@ -48,11 +44,5 @@ class Cost extends Model
 {
     return $this->hasOne(CostFacility::class);
 }
-//     public function getSlugAttribute()
-// {
-//     return Str::slug($this->cost_name);
-//     // return $this->getAttribute('slug');
-
-// }
 
 }
