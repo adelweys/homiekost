@@ -40,7 +40,7 @@ public function setSlugAttribute($value)
     {
         return $this->belongsTo(User::class);
     }
-    public function costFacilities()
+    public function costFacility()
 {
     return $this->hasOne(CostFacility::class);
 }

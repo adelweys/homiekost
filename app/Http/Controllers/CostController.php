@@ -9,24 +9,24 @@ use App\Models\Cost;
 use App\Models\Rating;
 use App\Models\Reply;
 use App\Models\Room;
+use App\Models\CostFacility;
 
 class CostController extends Controller
 {
     public function index()
-    {
-        $costs = Cost::all();
-        $rooms = Room::all();
+{
+    $costs = Cost::with(['rooms', 'costFacility'])->get();
 
-        return view('main.index', compact('costs', 'rooms'));
-        
-    }
+    return view('main.index', compact('costs', 'rooms'));
+    
+}
     public function cost_list()
-    {
-        $costs = Cost::all();
-        $rooms = Room::all();
+{
+    $costs = Cost::all();
+    $rooms = Room::all();
 
-        return view('main.kos-card', compact('costs', 'rooms'));
-    }
+    return view('main.kos-card', compact('costs', 'rooms'));
+}
 
     public function show($slug)
     {

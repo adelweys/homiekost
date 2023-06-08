@@ -20,8 +20,15 @@ Route::post('/comment', [CostController::class, 'commentStore'])->name('cost.com
 Route::post('/reply', [CostController::class, 'replyStore'])->name('cost.reply');
 Route::post('/rating', [CostController::class, 'ratingStore'])->name('cost.rating');
 
+
+
+// filtering
+Route::get('/Cost-List/search', [CostController::class, 'cost_list_search'])->name('cost-list-search');
+
 // route untuk detail kos
 Route::get('/Cost-List/{slug}', [CostController::class, 'show'])->name('cost.show');
+
+
 
 
 Route::get('/About', function () {
