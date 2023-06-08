@@ -94,9 +94,12 @@
                                 </div>
                             </div>
                         </div>
-                        
-    @include('partials.rating')
-    @include('partials.comment')
+    @if (auth()->check())
+        @include('partials.rating')
+        @include('partials.comment')
+    @else
+        Log in to comment and rate
+    @endif
 
                     <div class="col-lg-4">
                         <div class="wow fadeInUp" data-wow-delay="0.2s">
