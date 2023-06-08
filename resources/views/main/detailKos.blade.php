@@ -13,6 +13,7 @@
     <!-- Filtering Start -->
     {{-- @include('layouts.filtering')    --}}
     <!-- Filtering End -->
+    
 
 
         <!-- About Start -->
@@ -93,7 +94,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        
+    @include('partials.rating')
+    @include('partials.comment')
 
                     <div class="col-lg-4">
                         <div class="wow fadeInUp" data-wow-delay="0.2s">

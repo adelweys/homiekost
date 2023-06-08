@@ -41,10 +41,10 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-thin-rounded/css/uicons-thin-rounded.css'>
     
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
 
@@ -65,20 +65,24 @@
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 </div>
 
+  <!-- rating.js file -->
+  <script src="{{ asset('js/rating.js') }}"></script>
+
  <!-- JavaScript Libraries -->
- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
- <script src="lib/wow/wow.min.js"></script>
- <script src="lib/easing/easing.min.js"></script>
- <script src="lib/waypoints/waypoints.min.js"></script>
- <script src="lib/counterup/counterup.min.js"></script>
- <script src="lib/owlcarousel/owl.carousel.min.js"></script>
- <script src="lib/tempusdominus/js/moment.min.js"></script>
- <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
- <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+ 
+ <script src="{{ asset('https://code.jquery.com/jquery-3.4.1.min.js') }}"></script>
+ <script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js') }}"></script>
+ <script src="{{ asset('lib/wow/wow.min.js') }}"></script>
+ <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
+ <script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
+ <script src="{{ asset('lib/counterup/counterup.min.js') }}"></script>
+ <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
+ <script src="{{ asset('lib/tempusdominus/js/moment.min.js') }}"></script>
+ <script src="{{ asset('lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
+ <script src="{{ asset('lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 
  <!-- Template Javascript -->
- <script src="js/main.js"></script>
+ <script src="{{ asset('js/main.js') }}"></script>
     
 </body>
 </html>

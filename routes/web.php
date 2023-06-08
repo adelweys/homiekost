@@ -16,6 +16,9 @@ use App\Http\Controllers\CostController;
 // route untuk index
 Route::get('/', [CostController::class, 'index'])->name('index');
 Route::get('/Cost-List', [CostController::class, 'cost_list'])->name('cost-list');
+Route::post('/comment', [CostController::class, 'commentStore'])->name('cost.comment');
+Route::post('/reply', [CostController::class, 'replyStore'])->name('cost.reply');
+Route::post('/rating', [CostController::class, 'ratingStore'])->name('cost.rating');
 
 // route untuk detail kos
 Route::get('/Cost-List/{slug}', [CostController::class, 'show'])->name('cost.show');
