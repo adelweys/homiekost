@@ -14,7 +14,6 @@
         {{-- Filtering --}}
         @include('layouts.filtering')
 
-
         <!-- About Start -->
         <div class="container-xxl py-5">
             <div class="container">
@@ -328,7 +327,7 @@
                                     @endif
                                 </p>
                                 <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">Selengkapnya</a>
+                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{{ route('cost.show', ['slug' => $cost->slug]) }}">Selengkapnya</a>
                                     <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Ajukan sewa</a>
                                 </div>
                             </div>

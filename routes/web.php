@@ -47,10 +47,6 @@ Route::get('/Owner-Registration-Form', function () {
     return view('form');
 })-> name('daftar-penyewa');
 
-
-
-
-
 Route::get('/daftarKamar', function () {
     return view('daftarKamar');
 });

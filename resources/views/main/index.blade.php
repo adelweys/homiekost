@@ -3,7 +3,7 @@
 @section('content')
     
 
-    @include('layouts.banner-top')
+        @include('layouts.banner-top')
 
         <!-- Carousel Start -->
         @include('layouts.header-utama')
@@ -223,7 +223,7 @@
         <!-- Newsletter Start -->
 
         {{-- footer --}}
-       @include('layouts.footer')
+        @include('layouts.footer')
 
     
 @endsection

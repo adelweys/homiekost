@@ -41,9 +41,9 @@
                             <div class="col-md-12">
                                 <h5>Fasilitas Kos</h5>
                                 <div class="row g-3">
-                                    @foreach ($cost->costFacilities as $facility)
+                                    {{-- @foreach ($cost->costFacilities as $facility) --}}
                                         <h7><i class="fi fi-rr-restroom-simple"></i>Kamar Mandi Luar</h7>
-                                    @endforeach
+                                    {{-- @endforeach --}}
                                     <h7><i class="fi fi-rr-restroom-simple"></i>Kamar Mandi Luar</h7>
                                     <h7><i class="fi fi-rs-restaurant"></i>Dapur</h7>
                                     <h7><i class="fi fi-ts-cars"></i> Parkir Mobil</h7>

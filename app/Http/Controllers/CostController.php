@@ -17,22 +17,37 @@ class CostController extends Controller
 {
     $costs = Cost::with(['rooms', 'costFacility'])->get();
 
-    return view('main.index', compact('costs', 'rooms'));
+    return view('main.dd', compact('costs'));
     
 }
     public function cost_list()
 {
-    $costs = Cost::all();
-    $rooms = Room::all();
+    $costs = Cost::with(['rooms', 'costFacility'])->get();
 
-    return view('main.kos-card', compact('costs', 'rooms'));
+    return view('main.kos-card', compact('costs'));
+    
 }
+    
+    public function cost_list_search(Request $request)
+    {
+
+    }
 
     public function show($slug)
     {
         // Cari data kost berdasarkan slug
-        $cost = Cost::where('slug', $slug)->with('rooms', 'costFacilities', 'comment')->firstOrFail();
-        // $cost = Cost::find();
+        // $cost = Cost::where('slug', $slug)->with('rooms', 'costFacilities', 'comments', 'ratings', 'replies')->firstOrFail();
+        // $cost = Cost::findOrFail($slug);
+        // $cost = Cost::where('slug', $slug)->firstOrFail();
+        $cost = Cost::where('slug', $slug)
+        ->with('rooms', 'costFacility', 'comment', 'rating', 'reply')
+        ->firstOrFail();
+
+        // $five = $cost->rating->where('rating', 5)->count();
+        // $four = $cost->rating->where('rating', 4)->count();
+        // $three = $cost->rating->where('rating', 3)->count();
+        // $two = $cost->rating->where('rating', 2)->count();
+        // $one = $cost->rating->where('rating', 1)->count();
 
         // dd($cost);
 
@@ -44,6 +59,7 @@ class CostController extends Controller
         // Ambil data kamar yang terkait dengan kost
         
         
+        // return view('main.detailKos', compact('cost', 'five', 'four', 'three', 'two', 'one'));
         return view('main.detailKos', compact('cost'));
 
     }
