@@ -44,17 +44,27 @@
                         <a class="nav-item nav-link {{ Route::currentRouteName() === 'contact' ? ' active' : '' }}" href="{{ route('contact') }}">Contact</a>
                     </div>
                 </div>
+
                 @auth
+                <!-- notifikasi -->
+                <div class="" style="width:80px;">
+                    <button type="button" class="icon-button">
+                        <span class="material-icons"><i class="fi fi-bs-bell"></i></span>
+                        <span class="icon-button__badge">2</span>
+                    </button>                        
+                </div>
                 <!-- Tombol Logout -->
                     @csrf
                     <div class="dropdown show">
-                        <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="flex-shrink-0">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-2.webp"
-                                alt="Generic placeholder image" class="img-fluid rounded-circle border border-dark border-3"
-                                style="width: 50px; padding-right:5px">
-                            </div>
-                        </a>
+                             <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div style=" width: 160px; height: 60px;  border-radius: 10px; margin-right:15px;">
+                                    <div class="flex-shrink-0">
+                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-2.webp"
+                                        alt="Generic placeholder image" class="img-fluid rounded-circle border border-primary
+                                        border-5" style="margin-right:100px; margin-left:50px;width: 60px; ">
+                                    </div>
+                                </div>
+                            </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <li class="dropdown-item" href="#">
