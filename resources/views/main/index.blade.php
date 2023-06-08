@@ -93,11 +93,9 @@
                     @endphp
                     {{-- @foreach ($costs as $index => $cost) --}}
                     @foreach ($costs as $cost)
-                        
-                    
+               
                         @php
-                            
-                            
+                      
                             // Pastikan jumlah card yang ditampilkan tidak lebih dari 12
                             if ($cardCount >= 9) {
                                 break;
@@ -138,13 +136,7 @@
                                     @else
                                         Data Kamar tidak tersedia
                                     @endif
-                                    
-                                        
-                                        {{-- @if ($room)
-                                            {{$room->price}}/ Bulan
-                                        @else
-                                            Data kamar tidak tersedia
-                                        @endif --}}
+                                
                                     </p>
                                     <div class="d-flex justify-content-between">
                                         <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{{ route('cost.show', ['slug' => $cost->slug]) }}">Selengkapnya</a>
@@ -154,9 +146,6 @@
                             </div>
                         </div>
                         
-                        {{-- @if (($index + 1) % 3 == 0)
-                            <div class="w-100"></div> <!-- Menambahkan elemen div dengan class w-100 untuk membuat baris baru setelah setiap 3 kartu -->
-                        @endif --}}
                         @php
                             $i=$i+0.3;
                             if ($i>0.9) {

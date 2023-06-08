@@ -55,29 +55,31 @@
                 </div>
                 <!-- Tombol Logout -->
                     @csrf
-                    <div class="dropdown show">
-                             <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div style=" width: 160px; height: 60px;  border-radius: 10px; margin-right:15px;">
-                                    <div class="flex-shrink-0">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-2.webp"
-                                        alt="Generic placeholder image" class="img-fluid rounded-circle border border-primary
-                                        border-5" style="margin-right:100px; margin-left:50px;width: 60px; ">
-                                    </div>
-                                </div>
-                            </a>
+                    <div class="dropdown show" >
+                        <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div style=" width: 160px; height: 60px;  border-radius: 10px; margin-right:15px;">
+                            <div class="flex-shrink-0">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-2.webp"
+                                alt="Generic placeholder image" class="img-fluid rounded-circle border border-primary
+                                 border-5" style="margin-right:100px; margin-left:50px;width: 60px; ">
+                       
+                            </div>
+                            </div>
+                        </a>
+                        
 
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li class="dropdown-item" href="#">
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="width:2px">
+                            <li class="dropdown-item" href="#" style="width:2px">
                                 <button type="submit" style="background-color:white; border:white; font-size:15px">Profile</i></a>
                             </li>
-                            <li class="dropdown-item" href="#">
+                            <li class="dropdown-item" href="#" style="width:2px">
                             <form action="{{ route('logout') }}" method="POST">
-                                @csrf
+                                
                                 <button type="submit" style="background-color:white; border:white; font-size:15px">Logout</i></a>
                             </form>
                             <li>
                         </div>
-                    </div>
+                    </div>
                  
                 
             @else

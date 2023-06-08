@@ -17,8 +17,15 @@ use App\Http\Controllers\CostController;
 Route::get('/', [CostController::class, 'index'])->name('index');
 Route::get('/Cost-List', [CostController::class, 'cost_list'])->name('cost-list');
 
+
+
+// filtering
+Route::get('/Cost-List/search', [CostController::class, 'cost_list_search'])->name('cost-list-search');
+
 // route untuk detail kos
 Route::get('/Cost-List/{slug}', [CostController::class, 'show'])->name('cost.show');
+
+
 
 
 Route::get('/About', function () {

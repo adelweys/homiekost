@@ -6,25 +6,30 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Cost;
 use App\Models\Room;
+use App\Models\CostFacility;
 
 class CostController extends Controller
 {
     //
     public function index()
 {
-    $costs = Cost::all();
-    $rooms = Room::all();
+    $costs = Cost::with(['rooms', 'costFacility'])->get();
 
-    return view('main.index', compact('costs', 'rooms'));
+    return view('main.dd', compact('costs'));
     
 }
     public function cost_list()
 {
-    $costs = Cost::all();
-    $rooms = Room::all();
+    $costs = Cost::with(['rooms', 'costFacility'])->get();
 
-    return view('main.kos-card', compact('costs', 'rooms'));
+    return view('main.kos-card', compact('costs'));
+    
 }
+    
+    public function cost_list_search(Request $request)
+    {
+
+    }
 
     public function show($slug)
 {
