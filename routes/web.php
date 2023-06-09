@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\CostController;
+use GuzzleHttp\Middleware;
+
 // route untuk index
 Route::get('/', [CostController::class, 'index'])->name('index');
 Route::get('/Cost-List', [CostController::class, 'cost_list'])->name('cost-list');
@@ -32,6 +34,13 @@ Route::get('/Cost-List/Search', [CostController::class, 'search'])->name('cost-l
 // route untuk detail kos
 Route::get('/Cost-List/{slug}', [CostController::class, 'show'])->name('show');
 
+// route for Middleware
+Route::middleware(['auth.user'])->group(function () {
+    // Route untuk halaman pengaduan/pertanyaan
+    Route::get('/pengaduan', 'MessageController@create')->name('message.create');
+    Route::post('/pengaduan', 'MessageController@store')->name('message.store');
+});
+
 
 
 Route::get('/About', function () {
@@ -41,6 +50,8 @@ Route::get('/About', function () {
 Route::get('/Contact', function () {
     return view('main.contact');
 }) -> name('contact');
+
+
 Route::get('/detail', function () {
     return view('main.detailKos');
 }) -> name('detail');

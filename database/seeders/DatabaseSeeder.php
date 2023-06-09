@@ -137,6 +137,7 @@ class CostSeeder extends Seeder
                 'total_kamar' => $faker->numberBetween(1, 10),
                 'cost_type' => $faker->randomElement(['pria', 'wanita', 'campuran']),
                 'available_room' => $faker->numberBetween(0, 10),
+                'photo' => $faker->imageUrl(),
                 'cost_location' => $faker->randomElement(['Dr. Mansur', 'Jamin Ginting', 'Setia Budi', 'Iskandar muda']),
                 'cost_address' => $faker->address,
                 'description' => $faker->paragraph,

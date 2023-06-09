@@ -41,11 +41,17 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img class="img-fluid" src="{{ asset('img/kos1.jpg') }}" alt="">
+                        <img class="img-fluid" src="img/kos1.jpg" alt="">
                     </div>
                     <div class="col-md-6">
                         <div class="wow fadeInUp" data-wow-delay="0.2s">
-                            <form>
+                            @if(session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+                            <form action="{{ route('message.store') }}" method="POST">
+                                @csrf
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">

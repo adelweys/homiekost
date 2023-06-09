@@ -23,10 +23,10 @@ class CostController extends Controller
 }
     public function cost_list()
 {
-    $costs = Cost::all();
-    $rooms = Room::all();
+    $costs = Cost::with(['rooms', 'costFacility'])->get();
+    
 
-    return view('main.kos-card', compact('costs', 'rooms'));
+    return view('main.kos-card', compact('costs'));
 }
 
 public function show($slug) //show berdasar slug yang diperoleh dari nama
@@ -51,7 +51,12 @@ public function search(Request $request)
     $query = Cost::query();
 
     if ($search) {
-        $query->where('cost_name', 'LIKE', '%' . $search . '%');
+        $query->where(function ($q) use ($search) {
+            $q->whereRaw('LOWER(cost_name) LIKE ?', ['%' . strtolower($search) . '%'])
+              ->orWhere('cost_location', 'LIKE', '%' . $search . '%');
+        });
+        
+        
     }
 
     if ($wilayah) {
@@ -83,6 +88,9 @@ public function search(Request $request)
     $minPrice = $priceRange ? $this->getMinPrice($priceRange) : 0;
     $maxPrice = $priceRange ? $this->getMaxPrice($priceRange) : PHP_INT_MAX;
     $searchQuery = $search;
+
+    // dd($searchQuery);
+
 
     return view('main.kos-card', compact('costs', 'selectedLocation', 'minPrice', 'maxPrice', 'searchQuery'));
 }
