@@ -49,7 +49,7 @@ class CostController extends Controller
         // $two = $cost->rating->where('rating', 2)->count();
         // $one = $cost->rating->where('rating', 1)->count();
 
-        // dd($cost);
+        // dd($cost->reply);
 
         if (!$cost) {
             // Jika kost dengan slug yang diberikan tidak ditemukan, lakukan penanganan kesalahan atau redirect ke halaman lain
