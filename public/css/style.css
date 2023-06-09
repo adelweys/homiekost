@@ -589,3 +589,25 @@ i{
 .review-block-description{
 	font-size:13px;
 }
+.rating {
+    color: gold; /* Set the color of the stars */
+    font-size: 24px; /* Adjust the size of the stars */
+  }
+  
+  .star {
+    display: inline-block;
+    width: 20px; /* Adjust the width of each star */
+    height: 20px; /* Adjust the height of each star */
+    margin-right: 5px; /* Adjust the spacing between stars */
+    background-color: gold; /* Set the background color of the stars */
+    clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+  }
+  .grey-star {
+    display: inline-block;
+    width: 20px; /* Adjust the width of each star */
+    height: 20px; /* Adjust the height of each star */
+    margin-right: 5px; /* Adjust the spacing between stars */
+    background-color: grey; /* Set the background color of the stars */
+    clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+  }
+  

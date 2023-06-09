@@ -1,98 +1,48 @@
 <h1>Your Star Rating</h1>
 @if ($cost->rating)
   @if ($cost->rating->rating == '1')
-  <div class="review-block-rate">
-    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-default btn-grey btn-x" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-default btn-grey btn-x" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
+  <div class="rating">
+    <span class="star"></span>
+    <span class="grey-star"></span>
+    <span class="grey-star"></span>
+    <span class="grey-star"></span>
+    <span class="grey-star"></span>
   </div>
   @endif
   @if ($cost->rating->rating == '2')
-  <div class="review-block-rate">
-    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-default btn-grey btn-x" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
+  <div class="rating">
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="grey-star"></span>
+    <span class="grey-star"></span>
+    <span class="grey-star"></span>
   </div>
   @endif
   @if ($cost->rating->rating == '3')
-  <div class="review-block-rate">
-    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
+  <div class="rating">
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="grey-star"></span>
+    <span class="grey-star"></span>
   </div>
   @endif
   @if ($cost->rating->rating == '4')
-  <div class="review-block-rate">
-    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
+  <div class="rating">
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="grey-star"></span>
   </div>
   @endif
   @if ($cost->rating->rating == '5')
-  <div class="review-block-rate">
-    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    </button>
+  <div class="rating">
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
   </div>
   @endif
   @else
@@ -100,12 +50,14 @@
     @csrf
     <fieldset>
       <span class="star-cb-group">
-        <input type="radio" id="rating-5" name="rating" value="5" /><label for="rating-5">5</label>
-        <input type="radio" id="rating-4" name="rating" value="4" checked="checked" /><label for="rating-4">4</label>
-        <input type="radio" id="rating-3" name="rating" value="3" /><label for="rating-3">3</label>
-        <input type="radio" id="rating-2" name="rating" value="2" /><label for="rating-2">2</label>
-        <input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1">1</label>
-        <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" /><label for="rating-0">0</label>
+        <select class="form-select" aria-label="Default select example" name="rating">
+          <option selected>Rate This Cost</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+          <option value="4">Four</option>
+          <option value="5">Five</option>
+        </select>
       </span>
       <div class="col-lg-12">
         <input type="text" class="form-control my-3" name="review" id="review" cols="30" rows="5" placeholder="Write Your Review Here" />

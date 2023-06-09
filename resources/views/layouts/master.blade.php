@@ -14,7 +14,6 @@
     <!-- Favicon -->
     {{-- <link href="{{asset('/img/favicon.ico')}}" rel="icon"> --}}
     <link href="img/favicon.ico" rel="icon">
-
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,6 +56,7 @@
 
     {{-- start arya --}}
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('sass/rating.scss') }}" rel="stylesheet"
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
