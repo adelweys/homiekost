@@ -8,6 +8,7 @@
     <span class="grey-star"></span>
     <span class="grey-star"></span>
   </div>
+  <h3>{{ $cost->rating->review }}</h3>
   @endif
   @if ($cost->rating->rating == '2')
   <div class="rating">
@@ -17,6 +18,7 @@
     <span class="grey-star"></span>
     <span class="grey-star"></span>
   </div>
+  <h3>{{ $cost->rating->review }}</h3>
   @endif
   @if ($cost->rating->rating == '3')
   <div class="rating">
@@ -26,6 +28,7 @@
     <span class="grey-star"></span>
     <span class="grey-star"></span>
   </div>
+  <h3>{{ $cost->rating->review }}</h3>
   @endif
   @if ($cost->rating->rating == '4')
   <div class="rating">
@@ -35,6 +38,7 @@
     <span class="star"></span>
     <span class="grey-star"></span>
   </div>
+  <h3>{{ $cost->rating->review }}</h3>
   @endif
   @if ($cost->rating->rating == '5')
   <div class="rating">
@@ -44,6 +48,7 @@
     <span class="star"></span>
     <span class="star"></span>
   </div>
+  <h3>{{ $cost->rating->review }}</h3>
   @endif
   @else
   <form action="{{ route('cost.rating') }}" method="post">
