@@ -27,14 +27,23 @@
                     
                     $i = 0.1;
                     @endphp
-                    @foreach ($costs as $cost)
+                    @forelse ($costs as $cost)
                         @foreach ($cost->rooms as $room)
-                           
-                
+                        @php
+                        $price = $room->price;
+                        @endphp
+                                {{-- @php
+                                $selectedRoom = $cost->rooms->where('room_name', $room->room_name)->first();
+                                $minPrice = $selectedRoom ? $selectedRoom->price : 0;
+                                $maxPrice = $selectedRoom ? $selectedRoom->price : 0;
+                                // Ganti 0 dengan nilai default yang sesuai jika $selectedRoom tidak ada
+                                @endphp --}}
+                                @if (($price >= $minPrice && $price <= $maxPrice) && ($cost->cost_location == $selectedLocation) && (str_contains(strtolower($cost->cost_name), strtolower($searchQuery))))                        
+
                             <div class="col-lg-4 col-md-6 wow fadeInUp " data-wow-delay="{{$i}}s">
                                 <div class="room-item shadow rounded overflow-hidden">
                                     <div class="position-relative">
-                                        <a href="{{ route('show',  $cost->slug) }}"><img class="img-fluid" src="img/room-1.jpg" alt=""></a>
+                                        <a href="{{ route('show',  $cost->slug) }}"><img class="img-fluid" src="/img/room-1.jpg" alt=""></a>
                                         <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">{{$cost->cost_type}}</small>
                                     </div>
                                     <div class="p-4 mt-2">
@@ -90,8 +99,11 @@
                                 $i=0.1;
                             }
                             @endphp
+                            @endif
                         @endforeach
-                    @endforeach
+                        @empty
+                            <p>Tidak ada hasil yang sesuai dengan filter yang diberikan.</p>
+                    @endforelse
                 </div>
                  
             </div>
