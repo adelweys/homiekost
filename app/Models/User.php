@@ -47,4 +47,19 @@ class User extends Authenticatable
     {
         return $this->hasMany(Cost::class);
     }
+
+    public function comment()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function reply()
+    {
+        return $this->hasMany(Reply::class);
+    }
+
+    public function rating()
+    {
+        return $this->hasMany(Rating::class);
+    }
 }

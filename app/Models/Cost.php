@@ -45,4 +45,19 @@ public function setSlugAttribute($value)
     return $this->hasOne(CostFacility::class);
 }
 
+    public function comment()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function reply()
+    {
+        return $this->hasMany(Reply::class);
+    }
+
+    public function rating()
+    {
+        return $this->hasOne(Rating::class);
+    }
+
 }
