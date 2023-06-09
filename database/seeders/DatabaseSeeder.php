@@ -172,6 +172,7 @@ class CostFacilitySeeder extends Seeder
                 'car_park' => $faker->randomElement(['yes', 'no']),
                 'bike_park' => $faker->randomElement(['yes', 'no']),
                 'wifi' => $faker->randomElement(['yes', 'no']),
+                'kitchen' => $faker->randomElement(['yes', 'no']),
                 'security' => $faker->randomElement(['yes', 'no']),
                 'electric' => $faker->randomElement(['yes', 'no']),
                 'pam' => $faker->randomElement(['yes', 'no']),

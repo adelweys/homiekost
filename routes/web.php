@@ -23,8 +23,9 @@ Route::get('/Cost-List', [CostController::class, 'cost_list'])->name('cost-list'
 Route::get('/Cost-List/search', [CostController::class, 'cost_list_search'])->name('cost-list-search');
 
 // route untuk detail kos
-Route::get('/Cost-List/{slug}', [CostController::class, 'show'])->name('cost.show');
+Route::get('/Cost-List/{id}/{name}', [CostController::class, 'show_cost_details'])->name('cost-details');
 
+Route::get('/Cost-List/{slug}', [CostController::class, 'show'])->name('show');
 
 
 

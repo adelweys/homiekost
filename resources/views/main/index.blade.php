@@ -112,12 +112,13 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp " data-wow-delay="{{$i}}s">
                         <div class="room-item shadow rounded overflow-hidden">
                             <div class="position-relative">
-                                <a href=""><img class="img-fluid" src="img/room-1.jpg" alt=""></a>
+                                <a href="{{ route('show',  $cost->slug) }}"><img class="img-fluid" src="img/room-1.jpg" alt=""></a>
+                                {{-- <a href="{{ route('cost-details', ['id' => $cost->id, 'name' => $cost->cost_name]) }}"><img class="img-fluid" src="img/room-1.jpg" alt=""></a> --}}
                                 <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">{{$cost->cost_type}}</small>
                             </div>
                             <div class="p-4 mt-2">
                                 <div class="d-flex justify-content-between mb-3">
-                                    <h5 class="mb-0"><a href="">{{$cost->cost_name}}</a></h5>
+                                    <h5 class="mb-0"><a href="{{ route('show',  $cost->slug) }}">{{$cost->cost_name}}</a></h5>
                                     @if ($cheapestRoom)
                                         <h3>{{$cheapestRoom->room_name}}</h3>
                                     @endif
@@ -152,7 +153,7 @@
                                     @endif
                                 </p>
                                 <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">Selengkapnya</a>
+                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{{ route('show',  $cost->slug) }}">Selengkapnya</a>
                                     <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Ajukan sewa</a>
                                 </div>
                             </div>

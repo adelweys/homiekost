@@ -25,6 +25,7 @@ class CreateCostsTable extends Migration
             $table->enum('cost_location', ['Dr. Mansur', 'Jamin Ginting', 'Setia Budi','Iskandar muda']);
             $table->text('cost_address');
             $table->text('description');
+            $table->string('photo');
             $table->string('contact_person', 13);
             $table->string('night_limit', 10);
             $table->text('long_add');
