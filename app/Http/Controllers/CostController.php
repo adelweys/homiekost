@@ -20,10 +20,6 @@ class CostController extends Controller
     // start ariyo
     return view('main.index', compact('costs'));
     // end ariyo
-
-    // start arya
-    return view('main.index', compact('costs', 'rooms'));
-    // end arya
 }
     public function cost_list()
 {
@@ -32,24 +28,17 @@ class CostController extends Controller
 
     return view('main.kos-card', compact('costs', 'rooms'));
 }
-    // start ariyo
-// public function show_cost_details($id, $name)
-// {
-//     $cost = Cost::with(['rooms', 'costFacility'])->find($id);
-//         if (!$cost) {
-//         // Jika kost dengan slug yang diberikan tidak ditemukan, lakukan penanganan kesalahan atau redirect ke halaman lain
-//         abort(404);
-//     }
-//     return view('main.dd', compact('cost'));
-// }
-// show dengan id dan nama
+
 public function show($slug) //show berdasar slug yang diperoleh dari nama
 {
-    $cost = Cost::with(['rooms', 'costFacility'])->where('slug', $slug)->first();
+    $cost = Cost::where('slug', $slug)
+        ->with('rooms', 'costFacility', 'comment', 'rating', 'reply')
+        ->firstOrFail();
+
         if (!$cost) {
-        // Jika kost dengan slug yang diberikan tidak ditemukan, lakukan penanganan kesalahan atau redirect ke halaman lain
-        abort(404);
-    }
+            // Jika kost dengan slug yang diberikan tidak ditemukan, lakukan penanganan kesalahan atau redirect ke halaman lain
+            abort(404);
+        }
     return view('main.detail-kos', compact('cost'));
 }
 
@@ -137,26 +126,6 @@ private function getMaxPrice($priceRange)
     
 
 // start arya
-
-    public function show($slug)
-    {
-        // Cari data kost berdasarkan slug
-        $cost = Cost::where('slug', $slug)->with('rooms', 'costFacilities', 'comment')->firstOrFail();
-        // $cost = Cost::find();
-
-        // dd($cost);
-
-        if (!$cost) {
-            // Jika kost dengan slug yang diberikan tidak ditemukan, lakukan penanganan kesalahan atau redirect ke halaman lain
-            abort(404);
-        }
-        
-        // Ambil data kamar yang terkait dengan kost
-        
-        
-        return view('main.detailKos', compact('cost'));
-
-    }
 
     
     public function commentStore(Request $request)
