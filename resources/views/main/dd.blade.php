@@ -16,79 +16,148 @@
 
 
         <!-- About Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6">
-                        <h6 class="section-title text-start text-primary"></h6>
-                        <h1 class="mb-4">Selamat datang di <span class="text-primary text-uppercase">Homiekost</span></h1>
-                        <p class="mb-4">Homiekost, sebuah website pencarian kos di sekitar Universitas Sumatera Utara. Kini kamu
-                            dapat menemukan kos impian kamu melalui platform digital. </p>
-                        <div class="row g-3 pb-4">
-                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
-                                <div class="border rounded p-1">
-                                    <div class="border rounded text-center p-4">
-                                        <i class="fa fa-hotel fa-2x text-primary mb-2"></i>
-                                        <h2 class="mb-1" data-toggle="counter-up">50</h2>
-                                        <p class="mb-0">Kost</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
-                                <div class="border rounded p-1">
-                                    <div class="border rounded text-center p-4">
-                                        <i class="fa fa-users-cog fa-2x text-primary mb-2"></i>
-                                        <div class="row">
-                                            <div class="column">
-                                                <h2 class="mb-1" data-toggle="counter-up"> 965 </h2>
-                                            </div>
-
-                                        </div>
-                                        <p class="mb-0">Kamar</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
-                                <div class="border rounded p-1">
-                                    <div class="border rounded text-center p-4">
-                                        <i class="fa fa-users fa-2x text-primary mb-2"></i>
-                                        <h2 class="mb-1" data-toggle="counter-up">40</h2>
-                                        <p class="mb-0">Penyewa</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="row g-3">
-                            <div class="col-6 text-end">
-                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="img/kos3.jpg"
-                                    style="margin-top: 25%;">
-                            </div>
-                            <div class="col-6 text-start">
-                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="img/kos10.jpg">
-                            </div>
-                            <div class="col-6 text-end">
-                                <img class="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s" src="img/kos8.jpg">
-                            </div>
-                            <div class="col-6 text-start">
-                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s" src="img/kos2.jpg">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
         <!-- About End -->
 
 
         <!-- Room Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center wow " data-wow-delay="0.1s">
-                    <h1 class="mb-5"> Jelajahi <span class="text-primary text-uppercase">Homiekost</span></h1>
-                </div>
-
+        
+                <div class="container-fluid py-5">
+                    <div class="container">
+                        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                            <h1 class="mb-5">Kost <span class="text-primary ">{{$cost->cost_name}}</span> </h1>
+                        </div>
+                        <div class="row g-5 wow fadeInUp">
+                            <div class="col-lg-8">
+                                <div class="row g-3" style="margin-left: 10%;">
+                                    <div class="col-md-12">
+                                        <img class="img-fluid" src="img/kos1.jpg" alt="">
+                                    </div>
+        
+                                    <div class="col-md-12">
+                                        <h5>Deskripsi Kamar</h5>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                            incididunt ut labore et
+                                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                            laboris nisi ut aliquip ex
+                                            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                            cillum dolore eu fugiat
+                                            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                            officia deserunt mollit
+                                            anim id est laborum.
+                                        </p>
+                                    </div>
+                                    <hr>
+                                    <div class="col-md-12">
+                                        <h5>Fasilitas Umum</h5>
+                                        <div class="row g-3">
+                                            <h7><i class="fi fi-rr-restroom-simple"></i>Kamar Mandi Luar</h7>
+                                            <h7><i class="fi fi-rs-restaurant"></i>Dapur</h7>
+                                            <h7><i class="fi fi-ts-cars"></i> Parkir Mobil</h7>
+                                            <h7><i class="fi fi-rs-motorcycle"></i> Parkir motor</h7>
+                                            <h7><i class="fi fi-br-wifi"></i> WiFi</h7>
+                                            <h7><i class="fi fi-rs-shield-check"></i> Pos Pengaman</h7>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="col-md-12">
+                                        <h5>Fasilitas Kamar</h5>
+                                        <div class="row g-3">
+                                            <h7><i class="fi fi-rr-bed-alt"></i>Kasur</h7>
+                                            <h7>AC</h7>
+                                            <h7><i class="fi fi-rs-chair"></i>Kursi</h7>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="col-md-12">
+                                        <h5>Fasilitas Kamar Mandi</h5>
+                                        <div class="row g-3">
+                                            <h7><i class="fi fi-rr-bed-alt"></i>Kasur</h7>
+                                            <h7><i class="fi fi-rs-chair"></i>Kursi</h7>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h5>Fasilitas Kamar Mandi</h5>
+                                        <div class="row g-3">
+                                            <h7>Kamar Mandi Dalam</h7>
+                                            <div class="row g-1">
+                                                <div class="col-1 icondetail" style="margin-right: -1.2rem">
+                                                    <img src="img/tduduk.svg" style="padding: 0%;" />
+                                                </div>
+                                                <div class="col">
+                                                    <h7>Kloset Duduk</h7>
+                                                </div>
+                                            </div>
+                                            <h7>Kamar Mandi Dalam</h7>
+                                            <div class="row g-1">
+                                                <div class="col-1 icondetail" style="margin-right: -1.2rem">
+                                                    <img src="img/tjongkok.svg" style="padding: 0%;" />
+                                                </div>
+                                                <div class="col">
+                                                    <h7>Kloset jongkok</h7>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-lg-4">
+                                <div class="wow fadeInUp" data-wow-delay="0.2s">
+                                    <!-- FORM KOST START -->
+                                    <!-- step 1 start -->
+                                    <div class="row g-3">
+                                        <div class="col-md-12" style="text-align: center;">
+                                        </div>
+                                        <div class="col-md-12" style="max-height: py-30;">
+                                            <img class="img-fluid" src="img/kos1.jpg" alt="">
+                                        </div>
+                                        <div class="col-md-12" style="text-align: right;">
+                                            <a class="btn btn-primary py-2 px-2 mt-2" href="foto.html">lihat foto</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- step 1 end -->
+                                <div class="card my-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Rp500.000<span class="color-primary"> /bulan</span></h5>
+                                        <p class="card-text">Top 2 Rekomendasi dari Kami.</p>
+                                        <div class="d-grid gap-2">
+                                            <!-- Button trigger modal -->
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                Ajukan Sewa
+                                            </button>
+                                            </div>
+                                            <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Konfirmasi Pengajuan Sewa</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Apakah Anda benar ingin mengajukan sewa ini?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Batal</button>
+                                                        <button type="button" class="btn btn-primary">Konfirmasi</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            </form>
+                            <!-- FORM KOST END -->
+                        </div>
+                    
                 {{-- <div class="row g-4">
                     @php
                     $cardCount = 0; // Inisialisasi variabel untuk menghitung jumlah card yang ditampilkan
@@ -255,11 +324,10 @@
                 </div> --}}
                 
                 {{-- ini adalah comment untuk card dimana card tersebut  dapat mengambil data
-                dari ke 3 tabel, dan show price terendah dari sebuah cost --}}
-
-
-
-                <div class="row g-4">
+                    dari ke 3 tabel, dan show price terendah dari sebuah cost --}}
+                    
+          
+                {{-- <div class="row g-4">
                     @php
                     $cardCount = 0; // Inisialisasi variabel untuk menghitung jumlah card yang ditampilkan
                     $i = 0.1;
@@ -292,7 +360,7 @@
                                 <div class="d-flex justify-content-between mb-3">
                                     <h4 class="mb-0"><a href="">KOS {{$cost->cost_name}}</a></h4>
                                     
-                                    {{-- rating --}}
+                                    <!-- rating -->
                                     <div class="ps-2">
                                         <small class="fa fa-star text-primary"></small>
                                         <small class="fa fa-star text-primary"></small>
@@ -300,7 +368,7 @@
                                         <small class="fa fa-star text-primary"></small>
                                         <small class="fa fa-star text-primary"></small>
                                     </div>
-                                    {{-- end rating --}}
+                                    <!-- end rating -->
                                 </div>
                                 <div class="d-flex justify-content-between mb-3">
                                     @if ($cheapestRoom)
@@ -342,7 +410,10 @@
                     }
                     @endphp
                     @endforeach
-                </div>
+                </div> --}}
+
+                {{-- ini adalah comment untuk card dimana card tersebut  dapat mengambil data
+                    dari ke 3 tabel, dan show price terendah dari sebuah cost dan menampilkan room yang sesuai dengan harga  --}}
 
 
                 

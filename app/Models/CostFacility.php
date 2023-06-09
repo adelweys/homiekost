@@ -16,6 +16,7 @@ class CostFacility extends Model
         'car_park',
         'bike_park',
         'wifi',
+        'kitchen',
         'security',
         'electric',
         'pam',

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->enum('car_park', ['yes', 'no']);
             $table->enum('bike_park', ['yes', 'no']);
             $table->enum('wifi', ['yes', 'no']);
+            $table->enum('kitchen', ['yes', 'no']);
             $table->enum('security', ['yes', 'no']);
             $table->enum('electric', ['yes', 'no']);
             $table->enum('pam', ['yes', 'no']);

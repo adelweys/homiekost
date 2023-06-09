@@ -23,11 +23,14 @@ Route::post('/rating', [CostController::class, 'ratingStore'])->name('cost.ratin
 
 
 // filtering
-Route::get('/Cost-List/search', [CostController::class, 'cost_list_search'])->name('cost-list-search');
+Route::get('/Cost-List/Search', [CostController::class, 'search'])->name('cost-list-search');
+
+// route untuk detail kos dengan id dan nama
+// Route::get('/Cost-List/{id}/{name}', [CostController::class, 'show_cost_details'])->name('cost-details');
+
 
 // route untuk detail kos
-Route::get('/Cost-List/{slug}', [CostController::class, 'show'])->name('cost.show');
-
+Route::get('/Cost-List/{slug}', [CostController::class, 'show'])->name('show');
 
 
 
