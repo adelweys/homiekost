@@ -10,9 +10,6 @@ use App\Models\User;
 use App\Models\Room;
 use App\Models\CostFacility;
 
-
-
-
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -114,6 +111,21 @@ class CostSeeder extends Seeder
     public function run()
     {
         $costs = [
+            [
+                'user_id' => '5',
+                'cost_name' => 'Kos Niken',
+                'total_kamar' => '40',
+                'cost_type' => 'wanita',
+                'available_room' => '4',
+                'photo' => '',
+                'cost_location' => 'Setia Budi',
+                'cost_address' => 'Jalan Setia Budi No. 28F',
+                'description' => 'Kos Bu Niken yang berlokasi di Setia Budi dengan kamar seluas 9 meter persegi atau 3 x 3 meter.',
+                'contact_person' => '083115630741',
+                'night_limit' => '3',
+                'long_add' => '',
+                'lat_add' => '',
+            ],
             [
                 'user_id' => '2',
                 'cost_name' => 'Kos Azis',
@@ -279,6 +291,7 @@ class CostSeeder extends Seeder
                 'long_add' => '',
                 'lat_add' => '',
             ],
+
         ];
 
         foreach ($costs as $cost) {
