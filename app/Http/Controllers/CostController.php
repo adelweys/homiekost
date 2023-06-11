@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\Comment;
-use Illuminate\Http\Request;
+use App\Models\Chat;
 use App\Models\Cost;
-use App\Models\Rating;
-use App\Models\Reply;
 use App\Models\Room;
+use App\Models\User;
+use App\Models\Reply;
+use App\Models\Rating;
+use App\Models\Comment;
 use App\Models\CostFacility;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class CostController extends Controller
 {
@@ -31,16 +34,34 @@ class CostController extends Controller
 
 public function show($slug) //show berdasar slug yang diperoleh dari nama
 {
-    $cost = Cost::where('slug', $slug)
+        $cost = Cost::where('slug', $slug)
         ->with('rooms', 'costFacility', 'comment', 'rating', 'reply')
         ->firstOrFail();
+        
+        $users = User::all();
+
+        $messages = Chat::where(function($query) {
+            $query->where('from_user_id', Auth::id())
+                  ->orWhere('to_user_id', Auth::id());
+        })->orderBy('created_at', 'asc')->get();
 
         if (!$cost) {
             // Jika kost dengan slug yang diberikan tidak ditemukan, lakukan penanganan kesalahan atau redirect ke halaman lain
             abort(404);
         }
-    return view('main.detail-kos', compact('cost'));
+    return view('main.detail-kos', compact('cost', 'messages', 'users'));
 }
+
+public function sendMessage(Request $request)
+    {
+        $message = new Chat;
+        $message->from_user_id = Auth::id();
+        $message->to_user_id = $request->to_user_id;
+        $message->message = $request->message;
+        $message->save();
+
+        return redirect()->back();
+    }
 
 public function search(Request $request)
 {

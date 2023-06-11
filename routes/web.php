@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\CostController;
+use App\Http\Controllers\ChatController;
 use GuzzleHttp\Middleware;
 
 // route untuk index
@@ -22,7 +23,8 @@ Route::post('/comment', [CostController::class, 'commentStore'])->name('cost.com
 Route::post('/reply', [CostController::class, 'replyStore'])->name('cost.reply');
 Route::post('/rating', [CostController::class, 'ratingStore'])->name('cost.rating');
 
-
+// Route::get('/chat', [CostController::class, 'index'])->name('chat.index')->middleware('auth');
+Route::post('/chat/send', [CostController::class, 'sendMessage'])->name('chat.send')->middleware('auth');
 
 // filtering
 Route::get('/Cost-List/Search', [CostController::class, 'search'])->name('cost-list-search');
