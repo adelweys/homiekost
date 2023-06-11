@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -9,22 +10,28 @@ class MessageController extends Controller
 {
     public function create()
     {
-        return view('message.create');
+        return view('main.contact');
     }
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'subject' => 'required',
             'message' => 'required',
+            'username' => 'required',
         ]);
 
-        $message = new Message();
-        $message->user_id = Auth::user()->id;
-        $message->subject = $request->input('subject');
-        $message->message = $request->input('message');
-        $message->save();
+        // Buat pesan baru
+        Message::create([
+            'user_id' => auth()->user()->id,
+            'email' => auth()->user()->email,
+            'subject' => $validatedData['subject'],
+            'message' => $validatedData['message'],
+            'username' => $validatedData['username'],
+            'status' => 'waiting',
+        ]);
 
-        return redirect()->route('message.create')->with('success', 'Pesan berhasil dikirim.');
+        // Redirect ke halaman sukses atau lainnya
+        return redirect()->route('message.create')->with('success', 'Pengaduan berhasil dikirim.');
     }
 }

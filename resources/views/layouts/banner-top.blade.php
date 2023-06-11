@@ -41,7 +41,7 @@
                         <a class="nav-item nav-link {{ Route::currentRouteName() === 'index' ? ' active' : '' }}" href="{{ route('index') }}">Home</a>
                         <a class="nav-item nav-link {{ Route::currentRouteName() === 'cost-list' ? ' active' : '' }}" href="{{ route('cost-list') }}">Kost</a>
                         <a class="nav-item nav-link {{ Route::currentRouteName() === 'about' ? ' active' : '' }}" href="{{ route('about') }}">About</a>
-                        <a class="nav-item nav-link {{ Route::currentRouteName() === 'contact' ? ' active' : '' }}" href="{{ route('contact') }}">Contact</a>
+                        <a class="nav-item nav-link {{ Route::currentRouteName() === 'message.create' ? ' active' : '' }}" href="{{ route('message.create') }}">Contact</a>
                     </div>
                 </div>
 
@@ -54,7 +54,7 @@
                     </button>                        
                 </div>
                 <!-- Tombol Logout -->
-                    @csrf
+                    
                     <div class="dropdown show" >
                         <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div style=" width: 160px; height: 60px;  border-radius: 10px; margin-right:15px;">
@@ -69,15 +69,16 @@
                         
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="width:2px">
-                            <li class="dropdown-item" href="#" style="width:2px">
-                                <button type="submit" style="background-color:white; border:white; font-size:15px">Profile</i></a>
+                            <li class="dropdown-item" href="" style="width:2px">
+                                <button type="submit" style="background-color:white; border:white; font-size:15px"><a href="{{route('profile.edit')}}">Profile</a></button>
                             </li>
-                            <li class="dropdown-item" href="#" style="width:2px">
                             <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <li class="dropdown-item"  style="width:2px">
                                 
-                                <button type="submit" style="background-color:white; border:white; font-size:15px">Logout</i></a>
+                                <button type="submit" style="background-color:white; border:white; font-size:15px">Logout</button>
+                                    <li>
                             </form>
-                            <li>
                         </div>
                     </div>
                  

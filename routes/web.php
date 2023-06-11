@@ -34,12 +34,16 @@ Route::get('/Cost-List/Search', [CostController::class, 'search'])->name('cost-l
 // route untuk detail kos
 Route::get('/Cost-List/{slug}', [CostController::class, 'show'])->name('show');
 
-// route for Middleware
-Route::middleware(['auth.user'])->group(function () {
+// route for Middleware message
+use App\Http\Controllers\MessageController;
+
+Route::middleware(['auth'])->group(function () {
     // Route untuk halaman pengaduan/pertanyaan
-    Route::get('/pengaduan', 'MessageController@create')->name('message.create');
-    Route::post('/pengaduan', 'MessageController@store')->name('message.store');
+    Route::get('/Contact', [MessageController::class, 'create'])->name('message.create');
+    Route::post('/Contact', [MessageController::class, 'store'])->name('message.store');
 });
+
+
 
 
 
@@ -47,9 +51,9 @@ Route::get('/About', function () {
     return view('main.about');
 }) -> name('about');
 
-Route::get('/Contact', function () {
-    return view('main.contact');
-}) -> name('contact');
+// Route::get('/Contact', function () {
+//     return view('main.contact');
+// }) -> name('contact');
 
 
 Route::get('/detail', function () {
@@ -85,15 +89,25 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
-Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+Route::get ('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
+//edit profil
+// Route::get('/Profile', function () {
+//     return view('main.profile');
+// });
 
-Route::get('/service', function () {
-    return view('service');
-});
+use App\Http\Controllers\ProfileController;
+//route edit profil
+Route::get('/Profile/edit', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
+Route::post('/Profile/update', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
+
+
+
+
+
 
 Route::get('/sewa', function () {
     return view('sewa');

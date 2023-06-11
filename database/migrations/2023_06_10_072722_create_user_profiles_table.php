@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateUserProfilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('messages', function (Blueprint $table) {
+        Schema::create('user_profiles', function (Blueprint $table) {
+
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->string('nama');
             $table->string('email');
-            $table->string('subject');
-            $table->text('message');
-            $table->string('username');
-            $table->enum('status', ['replied', 'waiting'])->default('waiting');
+            $table->string('nomor_telepon');
+            $table->string('photo')->default('img/user.svg');
+            $table->string('jenis_kelamin');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
@@ -34,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('messages');
+        Schema::dropIfExists('user_profiles');
     }
-};
+}

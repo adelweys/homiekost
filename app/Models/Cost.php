@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-// use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 
 
@@ -13,19 +13,21 @@ use Illuminate\Support\Str;
 class Cost extends Model
 {
     use HasFactory;
-    // use Sluggable;
-    
-    
+    use Sluggable;
 
-    
 
     protected $table = 'costs';
     protected $fillable = ['cost_name', 'slug'];
 
-public function setSlugAttribute($value)
-{
-    $this->attributes['slug'] = Str::slug($value);
-}
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'cost_name'
+            ]
+        ];
+    }
+
 
 
 

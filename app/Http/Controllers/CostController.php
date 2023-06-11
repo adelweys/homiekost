@@ -92,7 +92,7 @@ public function search(Request $request)
     // dd($searchQuery);
 
 
-    return view('main.kos-card', compact('costs', 'selectedLocation', 'minPrice', 'maxPrice', 'searchQuery'));
+    return view('main.kos-card-search', compact('costs', 'selectedLocation', 'minPrice', 'maxPrice', 'searchQuery'));
 }
 
 private function getMinPrice($priceRange)

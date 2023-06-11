@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -9,8 +10,10 @@ class Message extends Model
     protected $fillable = [
         'user_id',
         'subject',
+        'username',
         'message',
         'email',
+        'status',
     ];
 
     public function user()

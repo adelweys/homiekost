@@ -37,8 +37,8 @@
                                 $minPrice = $selectedRoom ? $selectedRoom->price : 0;
                                 $maxPrice = $selectedRoom ? $selectedRoom->price : 0;
                                 // Ganti 0 dengan nilai default yang sesuai jika $selectedRoom tidak ada
-                                @endphp --}}
-                                @if (($price >= $minPrice && $price <= $maxPrice) && ($cost->cost_location == $selectedLocation) && (str_contains(strtolower($cost->cost_name), strtolower($searchQuery))))
+                                @endphp
+                                @if (($price >= $minPrice && $price <= $maxPrice) && ($cost->cost_location == $selectedLocation) && (str_contains(strtolower($cost->cost_name), strtolower($searchQuery)))) --}}
 
                             <div class="col-lg-4 col-md-6 wow fadeInUp " data-wow-delay="{{$i}}s">
                                 <div class="room-item shadow rounded overflow-hidden">
@@ -99,7 +99,7 @@
                                 $i=0.1;
                             }
                             @endphp
-                            @endif
+                            {{-- @endif --}}
                         @endforeach
                         @empty
                             <p>Tidak ada hasil yang sesuai dengan filter yang diberikan.</p>
