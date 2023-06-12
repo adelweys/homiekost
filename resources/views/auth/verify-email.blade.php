@@ -40,53 +40,26 @@
                     <h3 class="section-title text-center text-primary text-uppercase">Daftar Akun</h3>
                 </div>
 
-                <form action="{{ route('register.submit') }}" method="POST">
+                <form action="{{ route('verification.verify') }}" method="POST">
                     @csrf
                 
-                    <!-- Nama input -->
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="name">Nama</label>
-                        <input type="text" id="name" class="form-control" name="name"  placeholder="Nama" value="{{ old('name') }}" required autofocus>
-                        @error('name')
-                            <span role="alert">{{ $message }}</span>
-                        @enderror
-                    </div>
+                    {{-- <button type="button" class="btn btn-primary" id="send-verification-code">Kirim Kode Verifikasi</button> --}}
                 
-                    <!-- Email input -->
+                                    
+                    <!-- Kode verifikasi input -->
                     <div class="form-outline mb-4">
-                        <label class="form-label" for="email">Email</label>
-                            <input type="email" id="email" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}" required>
-                            @error('email')
-                            <span role="alert">{{ $message }}</span>
-                            @enderror
-                    </div>
-                
-                    <!-- Password input -->
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="password">Kata sandi</label>
-                        <input type="password" id="password" class="form-control" name="password" placeholder="Kata sandi" required>
-                        @error('password')
+                        <label class="form-label" for="verification_code">Kode Verifikasi</label>
+                        <input type="text" id="verification_code" class="form-control" name="verification_code" placeholder="Kode Verifikasi" required>
+                        @error('verification_code')
                         <span role="alert">{{ $message }}</span>
                     @enderror
                     </div>
                 
-                    <!-- Konfirmasi Password input -->
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="password_confirmation">Konfirmasi Kata sandi</label>
-                        <input type="password" id="password_confirmation" class="form-control" name="password_confirmation" placeholder="Konfirmasi Kata sandi" required>
-                    </div>
-                
-                     
-                
-                    <!-- Checkbox -->
-                    <div class="form-check mb-4">
-                        <input class="form-check-input" type="checkbox" value="" id="remember" name="remember">
-                        <label class="form-check-label" for="remember">Ingat saya</label>
-                    </div>
+                   
                 
                     <!-- Submit button -->
                     <div class="d-grid mb-4">
-                        <button class="btn btn-primary" type="submit">Verifikasi Email</button>
+                        <button class="btn btn-primary" type="submit">Daftar</button>
                     </div>
                 
                     <!-- Register buttons -->
@@ -102,16 +75,7 @@
 <!-- Register End -->
 {{-- script tambahan --}}
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const togglePassword = document.querySelector('.password-toggle-icon');
-        const passwordInput = document.querySelector(togglePassword.getAttribute('toggle'));
-
-        togglePassword.addEventListener('click', function () {
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-            this.classList.toggle('toggled');
-        });
-    });
+    
     document.getElementById('send-verification-code').addEventListener('click', function() {
         var emailInput = document.getElementById('email');
         var email = emailInput.value.trim();

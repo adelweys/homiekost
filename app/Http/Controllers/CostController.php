@@ -19,9 +19,11 @@ class CostController extends Controller
     public function index()
 {
     $costs = Cost::with(['rooms', 'costFacility'])->get();
-
+    $ownerCount = User::countOwners();
+    $roomCount = Room::countRooms();
+    $costCount = Cost::countCosts();
     // start ariyo
-    return view('main.index', compact('costs'));
+    return view('main.index', compact('costs','ownerCount','roomCount','costCount'));
     // end ariyo
 }
     public function cost_list()

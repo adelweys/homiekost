@@ -65,25 +65,35 @@
                                             </h5>
                                         </div>
                                         <div class="d-flex mb-3">
-                                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>1 Kasur</small>
-                                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>K. Mandi Dalam</small>
-                                            <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
+                                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i><br>
+                                                @if ($room->bed == 'yes')
+                                                    Tersedia Kasur
+                                                @else
+                                                    Tidak Tersedia Kasur
+                                                @endif</small>
+                                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>
+                                                <br>
+                                                @if ($cost->costFacility->bathroom == 'inside')
+                                                    Kamar Mandi Dalam
+                                                @else
+                                                K.Mandi Luar
+                                                @endif</small>
+                                            <small><i class="fa fa-wifi text-primary me-2"></i>
+                                                <br>
+                                                @if ($cost->costFacility->wifi == 'yes')
+                                                    Tersedia Wifi
+                                                @else
+                                                    Tidak Tersedia Wifi
+                                                @endif</small>
                                         </div>
-                                        <p>Facilities:</p>
-                                        <ul>
-                                            @if ($cost->costFacility)
-                                            <li>wifi : {{ $cost->costFacility->wifi }}</li>
-                                            <li>parkir mobil: {{ $cost->costFacility->car_park }}</li>
-                                            <li>parkir motor:{{ $cost->costFacility->bike_park }}</li>
-                                            @endif
-                                        </ul>
-                                        <p class="text-body mb-3">{{$cost->cost_location}} <br>
+                                        
+                                        <h6>{{$cost->cost_location}}</h6>
+                                        <p class="text-body mb-3"><h4>Rp <span class="color-primary">
                                             @php
                                             $selectedRoom = $cost->rooms->where('room_name', $room->room_name)->first();
                                             $price = $selectedRoom ? $selectedRoom->price : 'Data Kamar tidak tersedia';
                                             @endphp
-                                            {{ $price }}/Bulan
-                                        </p>
+                                            {{ $price }}</span></h4>/ bulan</p>
                                         <div class="d-flex justify-content-between">
                                             <a class="btn btn-sm btn-primary rounded py-2 px-4" 
                                             href="{{ route('show',  $cost->slug) }}">Selengkapnya</a>

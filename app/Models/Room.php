@@ -25,6 +25,10 @@ class Room extends Model
         'price',
         'photo',
     ];
+    public static function countRooms()
+    {
+        return self::count();
+    }
 
     public function cost()
     {

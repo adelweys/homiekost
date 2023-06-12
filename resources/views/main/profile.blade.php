@@ -32,7 +32,7 @@
                 
                             <div class="form-group mb-3">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ $profile->email ?? '' }}">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ $profile->email ?? '' }}" readonly>
                             </div>
                 
                             <div class="form-group mb-3">

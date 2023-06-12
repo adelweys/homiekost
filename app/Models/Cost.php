@@ -27,6 +27,10 @@ class Cost extends Model
             ]
         ];
     }
+    public static function countCosts()
+    {
+        return self::count();
+    }
 
 
 

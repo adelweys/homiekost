@@ -17,7 +17,8 @@ use Tests\Fixtures\Model;
 
 
 
-class User extends Authenticatable 
+class User extends Authenticatable implements MustVerifyEmail
+ 
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -31,8 +32,12 @@ class User extends Authenticatable
         'email',
         'password',
         'level',
-        'photo',
+        
     ];
+    public static function countOwners()
+    {
+        return self::where('level', 'owner')->count();
+    }
 
     /**
      * The attributes that should be hidden for serialization.

@@ -94,6 +94,8 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 Route::get ('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+// Route::get('/verify-email', [AuthController::class, 'showVerifyEmailForm'])->name('verify-email');
+// Route::post('/verify-email', [AuthController::class, 'verifyEmail'])->name('verification.verify');
 
 
 //edit profil

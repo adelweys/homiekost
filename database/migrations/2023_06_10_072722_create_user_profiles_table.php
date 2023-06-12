@@ -19,9 +19,9 @@ class CreateUserProfilesTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('nama');
             $table->string('email');
-            $table->string('nomor_telepon');
-            $table->string('photo')->default('img/user.svg');
-            $table->string('jenis_kelamin');
+            $table->string('nomor_telepon')->nullable();
+            $table->string('photo')->default('img/user.svg')->nullable();
+            $table->string('jenis_kelamin')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
