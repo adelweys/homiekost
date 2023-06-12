@@ -38,7 +38,7 @@
                             <div class="col-md-12">
                                 
                                 @if ($cost->costFacility)
-                                    <img class="img-fluid" src="img/kos1.jpg" alt="">
+                                    <img class="img-fluid" src="/img/kos1.jpg" alt="">
                                     {{-- {{$cost->photo}} --}}
                                 @else
                                     <img class="img-fluid" src="/img/kos1.jpg')}" alt="">
