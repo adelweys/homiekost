@@ -266,9 +266,8 @@
                         @if (auth()->check())
                             @include('partials.rating')
                             @include('partials.comment')
-                            @include('partials.chat')
                         @else
-                            <h6 class="ms-5">Log in to comment and rate</h6>
+                            <h6 class="ms-5">Log in to comment and rate and chat with the owner</h6>
                         @endif
                     </div>
 

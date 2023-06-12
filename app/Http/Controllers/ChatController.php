@@ -9,7 +9,7 @@ use App\Models\User;
 
 class ChatController extends Controller
 {
-    public function index()
+    public function chat()
     {
         $messages = Chat::where(function($query) {
             $query->where('from_user_id', Auth::id())

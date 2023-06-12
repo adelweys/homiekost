@@ -18,6 +18,7 @@ use GuzzleHttp\Middleware;
 
 // route untuk index
 Route::get('/', [CostController::class, 'index'])->name('index');
+Route::get('/chat', [CostController::class, 'chat'])->name('cost.chat');
 Route::get('/Cost-List', [CostController::class, 'cost_list'])->name('cost-list');
 Route::post('/comment', [CostController::class, 'commentStore'])->name('cost.comment');
 Route::post('/reply', [CostController::class, 'replyStore'])->name('cost.reply');
