@@ -30,8 +30,8 @@ class Room extends Model
         return self::count();
     }
 
-    public function cost()
+    public function costs()
     {
-        return $this->belongsTo(Cost::class);
+        return $this->belongsTo(Cost::class, 'id_cost');
     }
 }

@@ -42,14 +42,14 @@ class Cost extends Model
     }
 
     // Relasi Many-to-One dengan model User
-    public function user()
+    public function users()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'id_user');
     }
     public function costFacility()
-{
-    return $this->hasOne(CostFacility::class);
-}
+    {
+        return $this->hasOne(CostFacility::class);
+    }
 
     public function comment()
     {
@@ -65,5 +65,4 @@ class Cost extends Model
     {
         return $this->hasOne(Rating::class);
     }
-
 }

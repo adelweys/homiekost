@@ -25,6 +25,6 @@ class CostFacility extends Model
 
     public function cost()
     {
-        return $this->belongsTo(Cost::class); 
+        return $this->belongsTo(Cost::class, 'id_cost');
     }
 }

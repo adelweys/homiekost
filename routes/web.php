@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\CostController;
+use App\Http\Controllers\Admin\TenantController;
+use App\Http\Controllers\Admin\CostCmsController;
+use App\Http\Controllers\Admin\FasilitasController;
+use App\Http\Controllers\Admin\KamarController;
+use App\Http\Controllers\Admin\OwnerController;
+use App\Http\Controllers\Admin\VerifKosController;
+use App\Http\Controllers\Admin\VerifOwnerController;
 use App\Http\Controllers\ChatController;
 use GuzzleHttp\Middleware;
 
@@ -51,7 +58,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/About', function () {
     return view('main.about');
-}) -> name('about');
+})->name('about');
 
 // Route::get('/Contact', function () {
 //     return view('main.contact');
@@ -60,12 +67,12 @@ Route::get('/About', function () {
 
 Route::get('/detail', function () {
     return view('main.detailKos');
-}) -> name('detail');
+})->name('detail');
 // routes/web.php
 
 Route::get('/Owner-Registration-Form', function () {
     return view('form');
-})-> name('daftar-penyewa');
+})->name('daftar-penyewa');
 
 
 
@@ -91,7 +98,7 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
-Route::get ('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // Route::get('/verify-email', [AuthController::class, 'showVerifyEmailForm'])->name('verify-email');
@@ -128,3 +135,12 @@ Route::get('/testimonial', function () {
 Route::get('/foto', function () {
     return view('foto');
 });
+
+Route::resource('/data-tenant', TenantController::class);
+Route::resource('/data-kos', CostCmsController::class);
+Route::resource('/data-kamar', KamarController::class);
+Route::resource('/data-fasilitas', FasilitasController::class);
+Route::resource('/data-owner', OwnerController::class);
+
+Route::resource('/data-verifkos', VerifKosController::class);
+Route::resource('/data-verifowner', VerifOwnerController::class);
