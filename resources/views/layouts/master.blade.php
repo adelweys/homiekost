@@ -73,10 +73,11 @@
     </div>
     <!-- Spinner End -->
 
-    
-
-    @yield('content')
-
+    <div class="container-fluid page-body-wrapper">
+    <div class="content-wrapper">
+        @yield('content')
+    </div>
+    </div>
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 </div>

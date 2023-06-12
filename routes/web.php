@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\CostController;
+use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\ChatController;
 use GuzzleHttp\Middleware;
 
@@ -46,7 +47,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/Contact', [MessageController::class, 'store'])->name('message.store');
 });
 
-
+Route::resource('/dashboard/posts', DashboardPostController::class);
 
 
 
