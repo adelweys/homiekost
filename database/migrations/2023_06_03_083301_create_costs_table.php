@@ -16,7 +16,7 @@ class CreateCostsTable extends Migration
         Schema::create('costs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->default('1')->nullable();
             $table->string('cost_name', 35)->unique();
             $table->string('slug')->nullable();
             $table->tinyInteger('total_kamar');

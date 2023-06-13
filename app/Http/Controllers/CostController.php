@@ -27,7 +27,6 @@ class CostController extends Controller
     public function cost_list()
 {
     $costs = Cost::with(['rooms', 'costFacility'])->get();
-    
 
     return view('main.kos-card', compact('costs'));
 }

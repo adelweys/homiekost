@@ -41,7 +41,8 @@ class DashboardPostController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'cost_name' => 'required|max:255',
+            'user_id' => 'required',
+            'cost_name' => 'required',
             'slug' => 'required',
             'total_kamar' => 'required',
             'cost_type' => 'required',
@@ -49,11 +50,11 @@ class DashboardPostController extends Controller
             'cost_location' => 'required',
             'cost_address' => 'required',
             'description' => 'required',
-            'photo' => 'image|file|max:5120kb',
+            'photo' => 'image|file',
             'contact_person' => 'required',
             'night_limit' => 'required',
             'long_add' => 'required',
-            'lat_add' => 'required'
+            'lat_add' => 'required',
         ]);
 
         if($request->file('photo')){
@@ -61,6 +62,7 @@ class DashboardPostController extends Controller
         }
 
         $validatedData['user_id'] = auth()->user()->id;
+        // dd($validatedData);
 
         Cost::create($validatedData);
 
@@ -103,7 +105,7 @@ class DashboardPostController extends Controller
     public function update(Request $request, Cost $post)
     {
         $rules = ([
-            'cost_name' => 'required|max:255',
+            'cost_name' => 'required',
             'slug' => 'required',
             'total_kamar' => 'required',
             'cost_type' => 'required',

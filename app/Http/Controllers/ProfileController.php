@@ -9,7 +9,6 @@ use App\Models\User;
 use App\Models\UserProfile;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-
 class ProfileController extends Controller
 {
     public function edit()

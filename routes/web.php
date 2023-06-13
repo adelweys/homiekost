@@ -108,11 +108,6 @@ use App\Http\Controllers\ProfileController;
 Route::get('/Profile/edit', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
 Route::post('/Profile/update', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
 
-
-
-
-
-
 Route::get('/sewa', function () {
     return view('sewa');
 });
