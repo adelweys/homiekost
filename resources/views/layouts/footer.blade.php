@@ -12,8 +12,8 @@
             <div class="col-md-6 col-lg-3">
                 <h6 class="section-title text-start text-primary text-uppercase mb-4">Contact</h6>
                 <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Medan, Indonesia</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62 123 456 789</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@homiekost.com</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62 823 789 980</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>homiekost@gmail.com</p>
                 <div class="d-flex pt-2">
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
