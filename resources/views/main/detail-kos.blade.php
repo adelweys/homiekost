@@ -38,7 +38,7 @@
                             <div class="col-md-12">
                                 
                                 @if ($cost->costFacility)
-                                    <img class="img-fluid" src="img/kos1.jpg" alt="">
+                                    <img class="img-fluid" src="/img/kos1.jpg" alt="">
                                     {{-- {{$cost->photo}} --}}
                                 @else
                                     <img class="img-fluid" src="/img/kos1.jpg')}" alt="">
@@ -268,7 +268,7 @@
                             @include('partials.comment')
                             @include('partials.chat')
                         @else
-                            <h6 class="ms-5">Log in to comment and rate</h6>
+                            <h6 class="ms-5">Log in to comment and rate and chat with the owner</h6>
                         @endif
                     </div>
 

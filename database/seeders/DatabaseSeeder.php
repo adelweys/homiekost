@@ -113,7 +113,7 @@ class CostSeeder extends Seeder
         $costs = [
             [
                 'user_id' => '5',
-                'cost_name' => 'Kos Niken',
+                'cost_name' => 'Niken',
                 'total_kamar' => '40',
                 'cost_type' => 'wanita',
                 'available_room' => '4',
@@ -128,7 +128,7 @@ class CostSeeder extends Seeder
             ],
             [
                 'user_id' => '2',
-                'cost_name' => 'Kos Azis',
+                'cost_name' => 'Azis',
                 'total_kamar' => '5',
                 'cost_type' => 'pria',
                 'available_room' => '2',
@@ -143,7 +143,7 @@ class CostSeeder extends Seeder
             ],
             [
                 'user_id' => '2',
-                'cost_name' => 'Kos Ariyo',
+                'cost_name' => 'Ariyo',
                 'total_kamar' => '9',
                 'cost_type' => 'wanita',
                 'available_room' => '5',
@@ -158,7 +158,7 @@ class CostSeeder extends Seeder
             ],
             [
                 'user_id' => '2',
-                'cost_name' => 'Kos Susan',
+                'cost_name' => 'Susan',
                 'total_kamar' => '9',
                 'cost_type' => 'wanita',
                 'available_room' => '5',
@@ -173,7 +173,7 @@ class CostSeeder extends Seeder
             ],
             [
                 'user_id' => '2',
-                'cost_name' => 'Kos Budi',
+                'cost_name' => 'Budi',
                 'total_kamar' => '5',
                 'cost_type' => 'wanita',
                 'available_room' => '4',
@@ -188,7 +188,7 @@ class CostSeeder extends Seeder
             ],
             [
                 'user_id' => '2',
-                'cost_name' => 'Kos Santi',
+                'cost_name' => 'Santi',
                 'total_kamar' => '6',
                 'cost_type' => 'campuran',
                 'available_room' => '3',
@@ -203,7 +203,7 @@ class CostSeeder extends Seeder
             ],
             [
                 'user_id' => '2',
-                'cost_name' => 'Kos Sandi',
+                'cost_name' => 'Sandi',
                 'total_kamar' => '10',
                 'cost_type' => 'pria',
                 'available_room' => '1',
@@ -218,7 +218,7 @@ class CostSeeder extends Seeder
             ],
             [
                 'user_id' => '5',
-                'cost_name' => 'Kos Rossy',
+                'cost_name' => 'Rossy',
                 'total_kamar' => '8',
                 'cost_type' => 'wanita',
                 'available_room' => '3',
@@ -233,7 +233,7 @@ class CostSeeder extends Seeder
             ],
             [
                 'user_id' => '5',
-                'cost_name' => 'Kos Harry',
+                'cost_name' => 'Harry',
                 'total_kamar' => '4',
                 'cost_type' => 'pria',
                 'available_room' => '1',
@@ -248,7 +248,7 @@ class CostSeeder extends Seeder
             ],
             [
                 'user_id' => '5',
-                'cost_name' => 'Kos Sani',
+                'cost_name' => 'Sani',
                 'total_kamar' => '6',
                 'cost_type' => 'pria',
                 'available_room' => '2',
@@ -263,7 +263,7 @@ class CostSeeder extends Seeder
             ],
             [
                 'user_id' => '5',
-                'cost_name' => 'Kos Andi',
+                'cost_name' => 'Andi',
                 'total_kamar' => '7',
                 'cost_type' => 'campuran',
                 'available_room' => '3',
@@ -278,7 +278,7 @@ class CostSeeder extends Seeder
             ],
             [
                 'user_id' => '5',
-                'cost_name' => 'Kos Kelly',
+                'cost_name' => 'Kelly',
                 'total_kamar' => '7',
                 'cost_type' => 'campuran',
                 'available_room' => '2',

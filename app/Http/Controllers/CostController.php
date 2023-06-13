@@ -54,6 +54,22 @@ public function show($slug) //show berdasar slug yang diperoleh dari nama
     return view('main.detail-kos', compact('cost', 'messages', 'users'));
 }
 
+public function chat()
+    {
+        $cost = Cost::with('rooms', 'costFacility', 'comment', 'rating', 'reply')
+        ->firstOrFail();
+        
+        $messages = Chat::where(function($query) {
+            $query->where('from_user_id', Auth::id())
+                  ->orWhere('to_user_id', Auth::id());
+        })->orderBy('created_at', 'asc')->get();
+        // by niken /|/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\\\\/
+        $users = User::all();
+
+        return view('main/chat', compact('messages', 'users', 'cost'));
+    }
+
+
 public function sendMessage(Request $request)
     {
         $message = new Chat;
