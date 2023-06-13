@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    
+
 @include('layouts.header-second')
 
 {{-- css tambahan --}}
@@ -31,7 +31,7 @@
     }
 </style>
 
-        <!-- Register Start -->
+<!-- Register Start -->
 <div class="container mt-5">
     <div class="row d-flex justify-content-center">
         <div class="col-md-6">
@@ -42,59 +42,68 @@
 
                 <form action="{{ route('register.submit') }}" method="POST">
                     @csrf
-                
+
                     <!-- Nama input -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="name">Nama</label>
-                        <input type="text" id="name" class="form-control" name="name"  placeholder="Nama" value="{{ old('name') }}" required autofocus>
+                        <input type="text" id="name" class="form-control @error('name') is-invalid @enderror"
+                            name="name" value="{{ old('name') }}" required autofocus>
                         @error('name')
-                            <span role="alert">{{ $message }}</span>
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
                         @enderror
                     </div>
-                
+
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="email">Email</label>
-                            <input type="email" id="email" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}" required>
-                            @error('email')
-                            <span role="alert">{{ $message }}</span>
-                            @enderror
+                        <input type="email" id="email" class="form-control @error('email') is-invalid @enderror"
+                            name="email" placeholder="Email" value="{{ old('email') }}" required>
+                        @error('email')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
                     </div>
-                
+
                     <!-- Password input -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="password">Kata sandi</label>
-                        <input type="password" id="password" class="form-control" name="password" placeholder="Kata sandi" required>
+                        <input type="password" id="password"
+                            class="form-control @error('password') is-invalid @enderror" name="password"
+                            placeholder="Kata sandi" required>
                         @error('password')
-                        <span role="alert">{{ $message }}</span>
-                    @enderror
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
                     </div>
-                
+
                     <!-- Konfirmasi Password input -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="password_confirmation">Konfirmasi Kata sandi</label>
-                        <input type="password" id="password_confirmation" class="form-control" name="password_confirmation" placeholder="Konfirmasi Kata sandi" required>
+                        <input type="password" id="password_confirmation" class="form-control"
+                            name="password_confirmation" placeholder="Konfirmasi Kata sandi" required>
                     </div>
-                
-                     
-                
+
                     <!-- Checkbox -->
                     <div class="form-check mb-4">
                         <input class="form-check-input" type="checkbox" value="" id="remember" name="remember">
                         <label class="form-check-label" for="remember">Ingat saya</label>
                     </div>
-                
+
                     <!-- Submit button -->
                     <div class="d-grid mb-4">
                         <button class="btn btn-primary" type="submit">Verifikasi Email</button>
                     </div>
-                
+
                     <!-- Register buttons -->
                     <div class="text-center">
                         <p>Sudah punya akun? <a href="{{ route('login') }}">Masuk</a></p>
                     </div>
                 </form>
-                
+
             </div>
         </div>
     </div>
@@ -132,7 +141,5 @@
             });
     });
 </script>
-                <!-- Footer Start -->
-                <!-- Footer End -->
-
-
+<!-- Footer Start -->
+<!-- Footer End -->

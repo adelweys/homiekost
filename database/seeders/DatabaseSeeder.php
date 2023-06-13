@@ -298,9 +298,9 @@ class CostSeeder extends Seeder
             $cost['slug'] = Str::slug($cost['cost_name']);
             DB::table('costs')->insert($cost);
         }
-        
 
-        
+
+
 
         $faker = Faker::create();
 

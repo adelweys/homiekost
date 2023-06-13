@@ -33,9 +33,7 @@ class AuthController extends Controller
             return redirect()->intended('/');
         } else {
             // Authentication failed
-            throw ValidationException::withMessages([
-                'email' => 'Invalid email or password.',
-            ]);
+            return back()->with('loginError', 'Login Failed! Email atau Password anda tidak valid');
         }
     }
 
@@ -59,7 +57,7 @@ class AuthController extends Controller
             'email_verified' => false,
             'verification_code' => mt_rand(100000, 999999), // Generate 6-digit verification code
         ]);
-        
+
         $user->save();
         Auth::login($user);
 
@@ -91,7 +89,7 @@ class AuthController extends Controller
 
     //     return redirect('/');
     // }
-    
+
 
     // public function showVerifyEmailForm()
     // {
