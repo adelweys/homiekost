@@ -13,22 +13,22 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 class ProfileController extends Controller
 {
     public function edit()
-{
-    $user = Auth::user();
-    $profile = $user->profile;
+    {
+        $user = Auth::user();
+        $profile = $user->profile;
 
-    // Jika profile belum ada, buat profile baru menggunakan data user saat ini
-    if (!$profile) {
-        $profileData = [
-            'user_id' => $user->id,
-            'nama' => $user->name,
-            'email' => $user->email,
-        ];
-        $profile = UserProfile::create($profileData);
+        // Jika profile belum ada, buat profile baru menggunakan data user saat ini
+        if (!$profile) {
+            $profileData = [
+                'user_id' => $user->id,
+                'nama' => $user->name,
+                'email' => $user->email,
+            ];
+            $profile = UserProfile::create($profileData);
+        }
+
+        return view('main.profile', compact('user', 'profile'));
     }
-
-    return view('main.profile', compact('user', 'profile'));
-}
 
 
     public function update(Request $request)
@@ -64,24 +64,24 @@ class ProfileController extends Controller
     // {
     //     $user = Auth::user();
     //     $profile = $user->profile;
-    
+
     //     $profileData = [
     //         'nama' => $request->input('name'),
     //         'email' => $request->input('email'),
     //         'nomor_telepon' => $request->input('nomor_telepon'),
     //         'jenis_kelamin' => $request->input('jenis_kelamin'),
     //     ];
-    
+
     //     if ($profile) {
     //         $profile->update($profileData);
     //     } else {
     //         $profileData['user_id'] = $user->id; // Menambahkan user_id ke $profileData
     //         UserProfile::create($profileData);
     //     }
-    
+
     //     return redirect()->route('profile.edit')->with('success', 'Profile updated successfully');
     // }
-    
+
     // public function update(Request $request)
     // {
     //     $user = Auth::user();
@@ -94,7 +94,7 @@ class ProfileController extends Controller
     //         'nomor_telepon' => $request->input('nomor_telepon'),
     //         'jenis_kelamin' => $request->input('jenis_kelamin'),
     //     ];
-        
+
     //     if ($profile) {
     //         $profile->update($profileData);
     //     } else {
