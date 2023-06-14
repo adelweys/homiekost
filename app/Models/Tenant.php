@@ -11,10 +11,7 @@ class Tenant extends Model
 
     protected $table = 'tenants';
 
-    protected $primaryKey = 'id_tenant';
-
     protected $fillable = [
-        'id_tenant',
         'id_cost',
         'name',
         'username',
@@ -25,7 +22,7 @@ class Tenant extends Model
         'photo',
     ];
 
-    public function costs()
+    public function cost()
     {
         return $this->belongsTo(Cost::class, 'id_cost');
     }

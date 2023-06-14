@@ -90,4 +90,22 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Chat::class);
     }
 
+    public function leveladmin($role)
+    {
+        if ($this->role === $role) {
+            return 'admin';
+        } else {
+            return 'user';
+        }
+    }
+
+    public function levelowner($role)
+    {
+        if ($this->role === $role) {
+            return 'owner';
+        } else {
+            return 'user';
+        }
+    }
+
 }

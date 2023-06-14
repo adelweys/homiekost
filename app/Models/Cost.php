@@ -65,4 +65,9 @@ class Cost extends Model
     {
         return $this->hasOne(Rating::class);
     }
+    public function tenants()
+{
+    return $this->belongsTo(Tenant::class, 'id_cost');
+}
+
 }

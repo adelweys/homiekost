@@ -15,7 +15,7 @@ class CreateTenantsTable extends Migration
     {
         Schema::create('tenants', function (Blueprint $table) {
             $table->id('id_tenant');
-            $table->unsignedBigInteger('id_cost');
+            $table->foreignId('id_cost')->constrained('costs');
             $table->string('name');
             $table->string('username', 25);
             $table->string('email')->unique();
@@ -25,8 +25,6 @@ class CreateTenantsTable extends Migration
             $table->string('photo')->nullable();
             $table->rememberToken();
             $table->timestamps();
-
-            $table->foreign('id_cost')->references('id_cost')->on('costs');
         });
     }
 

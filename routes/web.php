@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,16 +12,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\CostController;
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\KamarController;
+use App\Http\Controllers\Admin\OwnerController;
 use App\Http\Controllers\Admin\TenantController;
 use App\Http\Controllers\Admin\CostCmsController;
 use App\Http\Controllers\Admin\FasilitasController;
-use App\Http\Controllers\Admin\KamarController;
-use App\Http\Controllers\Admin\OwnerController;
-use App\Http\Controllers\Admin\VerifKosController;
-use App\Http\Controllers\Admin\VerifOwnerController;
-use App\Http\Controllers\ChatController;
-use GuzzleHttp\Middleware;
+use App\Http\Controllers\Admin\VerifOwnerController;    
 
 // route untuk index
 Route::get('/', [CostController::class, 'index'])->name('index');
@@ -45,7 +47,7 @@ Route::get('/Cost-List/Search', [CostController::class, 'search'])->name('cost-l
 Route::get('/Cost-List/{slug}', [CostController::class, 'show'])->name('show');
 
 // route for Middleware message
-use App\Http\Controllers\MessageController;
+use App\Http\Controllers\Admin\AdmOwnerController;
 
 Route::middleware(['auth'])->group(function () {
     // Route untuk halaman pengaduan/pertanyaan
@@ -95,7 +97,7 @@ Route::get('/forms', function () {
     return view('forms');
 });
 
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Admin\VerifKosController;
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
@@ -111,7 +113,6 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 //     return view('main.profile');
 // });
 
-use App\Http\Controllers\ProfileController;
 //route edit profil
 Route::get('/Profile/edit', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
 Route::post('/Profile/update', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
@@ -137,11 +138,21 @@ Route::get('/foto', function () {
     return view('foto');
 });
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::resource('/data-tenant', TenantController::class);
-Route::resource('/data-kos', CostCmsController::class);
+Route::resource('/data-kos', CostController::class);
 Route::resource('/data-kamar', KamarController::class);
 Route::resource('/data-fasilitas', FasilitasController::class);
 Route::resource('/data-owner', OwnerController::class);
 
 Route::resource('/data-verifkos', VerifKosController::class);
 Route::resource('/data-verifowner', VerifOwnerController::class);
+
+Route::group(['prefix' => 'admin-owner'], function () {
+    Route::get('/profile', [AdmOwnerController::class, 'index'])->name('adm-own.index');
+    Route::get('/profile/edit', [AdmOwnerController::class, 'edit'])->name('adm-own.edit');
+    Route::put('/profile/{user}', [AdmOwnerController::class, 'store'])->name('adm-own.update');
+    Route::get('/ubah-password', [AdmOwnerController::class, 'reset'])->name('adm-own.reset');
+    Route::post('/ubah-password', [AdmOwnerController::class, 'updatePass'])->name('adm-own.updatePass');
+});
