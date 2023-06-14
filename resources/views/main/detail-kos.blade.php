@@ -36,14 +36,14 @@
                     <div class="col-lg-8">
                         <div class="row g-3" style="margin-left: 10%;">
                             <div class="col-md-12">
-                                
+
                                 @if ($cost->costFacility)
                                     <img class="img-fluid" src="/img/kos1.jpg" alt="">
                                     {{-- {{$cost->photo}} --}}
                                 @else
                                     <img class="img-fluid" src="/img/kos1.jpg')}" alt="">
                                 @endif
-                                
+   
                             </div>
 
                             <div class="col-md-12">
@@ -263,10 +263,102 @@
                             
                             @endforeach
                         </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="rating-block">
+                                    <h4>Average user rating</h4>
+                                    <h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
+                                    <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <h4>Rating breakdown</h4>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;">  <span class="glyphicon glyphicon-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">{{ $cost->rating ? $cost->rating->where('rating', 5)->count() : 0 }}</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;"><span class="glyphicon glyphicon-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">{{ $cost->rating ? $cost->rating->where('rating', 4)->count() : 0 }}</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;"><span class="glyphicon glyphicon-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                          <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
+                                            <span class="sr-only">60% Complete (danger)</span>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">{{ $cost->rating ? $cost->rating->where('rating', 3)->count() : 0 }}</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;"><span class="glyphicon glyphicon-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 40%">
+                                            <span class="sr-only">40% Complete (danger)</span>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">{{ $cost->rating ? $cost->rating->where('rating', 2)->count() : 0 }}</div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="pull-left" style="width:35px; line-height:1;">
+                                        <div style="height:9px; margin:5px 0;"><span class="glyphicon glyphicon-star"></span></div>
+                                    </div>
+                                    <div class="pull-left" style="width:180px;">
+                                        <div class="progress" style="height:9px; margin:8px 0;">
+                                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 20%">
+                                            <span class="sr-only">20% Complete (danger)</span>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right" style="margin-left:10px;">{{ $cost->rating ? $cost->rating->where('rating', 1)->count() : 0 }}</div>
+                                </div>
+                            </div>
+                          </div>
+                        
                         @if (auth()->check())
                             @include('partials.rating')
                             @include('partials.comment')
-                            @include('partials.chat')
+                            {{-- @include('partials.chat')   --}}
                         @else
                             <h6 class="ms-5">Log in to comment and rate and chat with the owner</h6>
                         @endif

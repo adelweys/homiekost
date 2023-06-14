@@ -14,13 +14,17 @@
                     <h6 class="section-title text-start text-primary"></h6>
                     <h1 class="mb-4">Status         <span class="text-primary text-uppercase">Kos Anda</span></h1>
                     <div class="row g-3 pb-4">
-                        @foreach($kos as $sewa)
-                        <h3>Kos <span class="text-primary text-uppercase">{{ $sewa->cost->cost_name }} </span> yang sudah anda pesan dalam keadaan @if ($sewa->status == 'aktif')
-                            <span class="text-secondary text-uppercase">{{ $sewa->status }} </span>
+                        @if (auth()->user()->sewa)
+                            @foreach($kos as $sewa)
+                            <h3>Kos <span class="text-primary text-uppercase">{{ $sewa->cost->cost_name }} </span> yang sudah anda pesan dalam keadaan @if ($sewa->status == 'aktif')
+                                <span class="text-secondary text-uppercase">{{ $sewa->status }} </span>
+                            @else
+                                <span class="text-danger text-uppercase">{{ $sewa->status }} </span>
+                            @endif</h3>
+                            @endforeach
                         @else
-                            <span class="text-danger text-uppercase">{{ $sewa->status }} </span>
-                        @endif</h3>
-                        @endforeach
+                            <h3>Anda Belum memesan kos</h3>
+                        @endif
                     </div>
                 </div>
             </div>

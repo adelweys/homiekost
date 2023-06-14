@@ -48,6 +48,10 @@ public function show($slug) //show berdasar slug yang diperoleh dari nama
         $cost = Cost::where('slug', $slug)
         ->with('rooms', 'costFacility', 'comment', 'rating', 'reply', 'users')
         ->firstOrFail();
+
+        $cost_id = $cost->id;
+
+        $averageRating = Rating::where('cost_id', $cost_id)->avg('rating');
         
         $users = User::all();
 
@@ -60,7 +64,7 @@ public function show($slug) //show berdasar slug yang diperoleh dari nama
             // Jika kost dengan slug yang diberikan tidak ditemukan, lakukan penanganan kesalahan atau redirect ke halaman lain
             abort(404);
         }
-    return view('main.detail-kos', compact('cost', 'messages', 'users'));
+    return view('main.detail-kos', compact('cost', 'messages', 'users', 'averageRating'));
 }
 
 public function sewa($slug)

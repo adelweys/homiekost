@@ -39,7 +39,6 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-<<<<<<< HEAD
                         <a class="nav-item nav-link {{ Route::currentRouteName() === 'index' ? ' active' : '' }}" href="{{ route('index') }}">Home</a>
                         <a class="nav-item nav-link {{ Route::currentRouteName() === 'cost-list' ? ' active' : '' }}" href="{{ route('cost-list') }}">Kost</a>
                         <a class="nav-item nav-link {{ Route::currentRouteName() === 'about' ? ' active' : '' }}" href="{{ route('about') }}">About</a>
@@ -47,16 +46,6 @@
                         @auth
                             <a class="nav-item nav-link {{ Route::currentRouteName() === 'cost.kos' ? ' active' : '' }}" href="{{ route('cost.kos') }}">Kos Anda</a>
                         @endauth
-=======
-                        <a class="nav-item nav-link {{ Route::currentRouteName() === 'index' ? ' active' : '' }}"
-                            href="{{ route('index') }}">Home</a>
-                        <a class="nav-item nav-link {{ Route::currentRouteName() === 'cost-list' ? ' active' : '' }}"
-                            href="{{ route('cost-list') }}">Kost</a>
-                        <a class="nav-item nav-link {{ Route::currentRouteName() === 'about' ? ' active' : '' }}"
-                            href="{{ route('about') }}">About</a>
-                        <a class="nav-item nav-link {{ Route::currentRouteName() === 'message.create' ? ' active' : '' }}"
-                            href="{{ route('message.create') }}">Contact</a>
->>>>>>> 427bfdd034c800bb4e681f85a40e384a0e9c15c4
                     </div>
                 </div>
 
