@@ -2,9 +2,10 @@
 <div class="container-fluid bg-dark px-0">
     <div class="row gx-0">
         <div class="col-lg-3 bg-dark d-none d-lg-block">
-            <a href="{{ route('index') }}" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+            <a href="{{ route('index') }}"
+                class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
                 <h1 class="m-0 text-light text-uppercase">Homiekost<span class="color-primary">.</span></h1>
-                
+
             </a>
         </div>
         <div class="col-lg-9">
@@ -38,6 +39,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
+<<<<<<< HEAD
                         <a class="nav-item nav-link {{ Route::currentRouteName() === 'index' ? ' active' : '' }}" href="{{ route('index') }}">Home</a>
                         <a class="nav-item nav-link {{ Route::currentRouteName() === 'cost-list' ? ' active' : '' }}" href="{{ route('cost-list') }}">Kost</a>
                         <a class="nav-item nav-link {{ Route::currentRouteName() === 'about' ? ' active' : '' }}" href="{{ route('about') }}">About</a>
@@ -45,6 +47,16 @@
                         @auth
                             <a class="nav-item nav-link {{ Route::currentRouteName() === 'cost.kos' ? ' active' : '' }}" href="{{ route('cost.kos') }}">Kos Anda</a>
                         @endauth
+=======
+                        <a class="nav-item nav-link {{ Route::currentRouteName() === 'index' ? ' active' : '' }}"
+                            href="{{ route('index') }}">Home</a>
+                        <a class="nav-item nav-link {{ Route::currentRouteName() === 'cost-list' ? ' active' : '' }}"
+                            href="{{ route('cost-list') }}">Kost</a>
+                        <a class="nav-item nav-link {{ Route::currentRouteName() === 'about' ? ' active' : '' }}"
+                            href="{{ route('about') }}">About</a>
+                        <a class="nav-item nav-link {{ Route::currentRouteName() === 'message.create' ? ' active' : '' }}"
+                            href="{{ route('message.create') }}">Contact</a>
+>>>>>>> 427bfdd034c800bb4e681f85a40e384a0e9c15c4
                     </div>
                 </div>
 
@@ -54,45 +66,45 @@
                     <button type="button" class="icon-button">
                         <span class="material-icons"><i class="fi fi-bs-bell"></i></span>
                         <span class="icon-button__badge">2</span>
-                    </button>                        
+                    </button>
                 </div>
                 <!-- Tombol Logout -->
-                    
-                    <div class="dropdown show" >
-                        <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div style=" width: 160px; height: 60px;  border-radius: 10px; margin-right:15px;">
-                            <div class="flex-shrink-0">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-2.webp"
-                                alt="Generic placeholder image" class="img-fluid rounded-circle border border-primary
-                                 border-5" style="margin-right:100px; margin-left:50px;width: 60px; ">
-                       
-                            </div>
-                            </div>
-                        </a>
-                        
 
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="width:2px">
-                            <li class="dropdown-item" href="" style="width:2px">
-                                <button type="submit" style="background-color:white; border:white; font-size:15px"><a href="{{route('profile.edit')}}">Profile</a></button>
-                            </li>
-                            <form action="{{ route('logout') }}" method="POST">
-                                @csrf
-                                <li class="dropdown-item"  style="width:2px">
-                                
-                                <button type="submit" style="background-color:white; border:white; font-size:15px">Logout</button>
-                                    <li>
-                            </form>
+                <div class="dropdown show">
+                    <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <div style=" width: 160px; height: 60px;  border-radius: 10px; margin-right:15px;">
+                            <div class="flex-shrink-10">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-2.webp"
+                                    alt="Generic placeholder image" class="img-fluid rounded-circle border border-primary
+                                 border-5" style="margin-right:100px; margin-left:50px;width: 60px; ">
+                            </div>
                         </div>
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li class="dropdown-item" href="">
+                            <button type="submit" style="background-color:none; border:none; font-size:15px"><a
+                                    href="{{route('profile.edit')}}">Profile</a></button>
+                        </li>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <li class="dropdown-item">
+                                <button type="submit"
+                                    style="background-color:none; border:none; font-size:15px">Logout</button>
+                            <li>
+                        </form>
                     </div>
-                 
-                
-            @else
+                </div>
+
+                @else
                 <!-- Tombol Login -->
                 @guest
-                    <a href="{{ route('login') }}" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-flex">Login<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="{{ route('login') }}" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-flex">Login<i
+                        class="fa fa-arrow-right ms-3"></i></a>
                 @endguest
-            @endauth
-            
+                @endauth
+
             </nav>
         </div>
     </div>

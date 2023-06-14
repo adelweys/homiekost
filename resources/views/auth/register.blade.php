@@ -50,7 +50,11 @@
                             name="name" value="{{ old('name') }}" required autofocus>
                         @error('name')
                         <div class="invalid-feedback">
-                            {{ $message }}
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
                         </div>
                         @enderror
                     </div>
@@ -62,7 +66,11 @@
                             name="email" placeholder="Email" value="{{ old('email') }}" required>
                         @error('email')
                         <div class="invalid-feedback">
-                            {{ $message }}
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
                         </div>
                         @enderror
                     </div>
@@ -75,7 +83,11 @@
                             placeholder="Kata sandi" required>
                         @error('password')
                         <div class="invalid-feedback">
-                            {{ $message }}
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
                         </div>
                         @enderror
                     </div>
