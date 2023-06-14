@@ -9,6 +9,7 @@ use App\Models\Cost;
 use App\Models\User;
 use App\Models\Room;
 use App\Models\CostFacility;
+use App\Models\Sewa;
 
 class DatabaseSeeder extends Seeder
 {
@@ -30,6 +31,8 @@ class DatabaseSeeder extends Seeder
 
         // Menjalankan seeder cost facility
         $this->call(CostFacilitySeeder::class);
+        // Menjalankan seeder cost facility
+        $this->call(SewaSeeder::class);
     }
 }
 
@@ -68,6 +71,16 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'User',
             'email' => 'user@example.com',
+            'password' => Hash::make('password'),
+            'level' => 'user',
+            'remember_token' => Str::random(10),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        // Seed data user user
+        DB::table('users')->insert([
+            'name' => 'User2',
+            'email' => 'userr@example.com',
             'password' => Hash::make('password'),
             'level' => 'user',
             'remember_token' => Str::random(10),
@@ -123,6 +136,7 @@ class CostSeeder extends Seeder
                 'description' => 'Kos Bu Niken yang berlokasi di Setia Budi dengan kamar seluas 9 meter persegi atau 3 x 3 meter.',
                 'contact_person' => '083115630741',
                 'night_limit' => '3',
+                'harga_bulan' => 1000000,
                 'long_add' => '',
                 'lat_add' => '',
             ],
@@ -138,6 +152,7 @@ class CostSeeder extends Seeder
                 'description' => 'Kos Pak Azis yang berlokasi di Iskandar muda dengan kamar seluas 12 meter persegi atau 4 x 3 meter.',
                 'contact_person' => '081223146587',
                 'night_limit' => '2',
+                'harga_bulan' => 1000000,
                 'long_add' => '',
                 'lat_add' => '',
             ],
@@ -153,6 +168,7 @@ class CostSeeder extends Seeder
                 'description' => 'Kos Pak Azis yang berlokasi di Iskandar muda dengan kamar seluas 12 meter persegi atau 4 x 3 meter.',
                 'contact_person' => '083265458195',
                 'night_limit' => '2',
+                'harga_bulan' => 1000000,
                 'long_add' => '',
                 'lat_add' => '',
             ],
@@ -168,6 +184,7 @@ class CostSeeder extends Seeder
                 'description' => 'Kos Bu Susan yang berlokasi di Dr. Mansur dengan kamar seluas 16 meter persegi atau 4 x 4 meter.',
                 'contact_person' => '083265458195',
                 'night_limit' => '2',
+                'harga_bulan' => 1000000,
                 'long_add' => '',
                 'lat_add' => '',
             ],
@@ -183,6 +200,7 @@ class CostSeeder extends Seeder
                 'description' => 'Kos Pak Budi yang berlokasi di Dr. Mansur dengan kamar seluas 20 meter persegi atau 5 x 4 meter.',
                 'contact_person' => '084658973121',
                 'night_limit' => '1',
+                'harga_bulan' => 1000000,
                 'long_add' => '',
                 'lat_add' => '',
             ],
@@ -198,6 +216,7 @@ class CostSeeder extends Seeder
                 'description' => 'Kos Bu Santi yang berlokasi di Dr. Mansur dengan kamar seluas 20 meter persegi atau 5 x 4 meter.',
                 'contact_person' => '082345646545',
                 'night_limit' => '4',
+                'harga_bulan' => 1000000,
                 'long_add' => '',
                 'lat_add' => '',
             ],
@@ -213,6 +232,7 @@ class CostSeeder extends Seeder
                 'description' => 'Kos Pak Sandi yang berlokasi di Iskandar Muda dengan kamar seluas 12 meter persegi atau 3 x 4 meter.',
                 'contact_person' => '082346531291',
                 'night_limit' => '1',
+                'harga_bulan' => 1000000,
                 'long_add' => '',
                 'lat_add' => '',
             ],
@@ -228,6 +248,7 @@ class CostSeeder extends Seeder
                 'description' => 'Kos Bu Rossy yang berlokasi di Iskandar Muda dengan kamar seluas 12 meter persegi atau 3 x 4 meter.',
                 'contact_person' => '081398624299',
                 'night_limit' => '1',
+                'harga_bulan' => 1000000,
                 'long_add' => '',
                 'lat_add' => '',
             ],
@@ -243,6 +264,7 @@ class CostSeeder extends Seeder
                 'description' => 'Kos Pak Harry yang berlokasi di Setia Budi dengan kamar seluas 9 meter persegi atau 3 x 3 meter.',
                 'contact_person' => '083149134751',
                 'night_limit' => '1',
+                'harga_bulan' => 1000000,
                 'long_add' => '',
                 'lat_add' => '',
             ],
@@ -258,6 +280,7 @@ class CostSeeder extends Seeder
                 'description' => 'Kos Bu Sani yang berlokasi di Iskandar Muda dengan kamar seluas 16 meter persegi atau 4 x 4 meter.',
                 'contact_person' => '082546543199',
                 'night_limit' => '2',
+                'harga_bulan' => 1000000,
                 'long_add' => '',
                 'lat_add' => '',
             ],
@@ -273,6 +296,7 @@ class CostSeeder extends Seeder
                 'description' => 'Kos Pak Andi yang berlokasi di Dr. Mansur dengan kamar seluas 12 meter persegi atau 3 x 4 meter.',
                 'contact_person' => '082546543199',
                 'night_limit' => '3',
+                'harga_bulan' => 1000000,
                 'long_add' => '',
                 'lat_add' => '',
             ],
@@ -288,6 +312,7 @@ class CostSeeder extends Seeder
                 'description' => 'Kos Bu Kelly yang berlokasi di Iskandar Muda dengan kamar seluas 9 meter persegi atau 3 x 3 meter.',
                 'contact_person' => '083149134751',
                 'night_limit' => '1',
+                'harga_bulan' => 1000000,
                 'long_add' => '',
                 'lat_add' => '',
             ],
@@ -328,6 +353,7 @@ class CostSeeder extends Seeder
                 'description' => $faker->paragraph,
                 'contact_person' => $faker->unique(true)->numberBetween(100000000000, 999999999999),
                 'night_limit' => $faker->numberBetween(1, 10),
+                'harga_bulan' => $faker->numberBetween(100000, 1000000),
                 'long_add' => $faker->longitude,
                 'lat_add' => $faker->latitude,
             ]);
@@ -401,5 +427,32 @@ class RoomSeeder extends Seeder
                 ]);
             }
         }
+    }
+}
+class SewaSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        Sewa::create([
+            'user_id' => '3',
+            'cost_id' => '2',
+            'durasi' => '3 bulan',
+            'harga' => 3000000,
+            'nomor' => '083115630741',
+            'status' => 'nonaktif',
+        ]);
+        Sewa::create([
+            'user_id' => '4',
+            'cost_id' => '2',
+            'durasi' => '1 bulan',
+            'harga' => 1000000,
+            'nomor' => '083115630741',
+            'status' => 'nonaktif',
+        ]);
     }
 }

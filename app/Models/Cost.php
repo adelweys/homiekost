@@ -66,8 +66,13 @@ class Cost extends Model
         return $this->hasOne(Rating::class);
     }
     public function tenants()
-{
-    return $this->belongsTo(Tenant::class, 'id_cost');
-}
+    {
+        return $this->belongsTo(Tenant::class, 'id_cost');
+    }
+
+    public function sewa()
+    {
+        return $this->hasMany(Sewa::class);
+    }
 
 }

@@ -26,6 +26,7 @@
     <div class="sidebar-heading">
         Interface
     </div>
+    @if(auth()->user()->level == 'admin')
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
@@ -38,8 +39,12 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Verifikasi:</h6>
-                <a class="collapse-item" href="{{ url('data-verifowner') }}">Pemilik Kos</a>
-                <a class="collapse-item" href="{{ url('data-verifkos') }}">Pengajuan Kos</a>
+                @if(auth()->user()->level == 'admin')
+                    <a class="collapse-item" href="{{ url('data-verifowner') }}">Pemilik Kos</a>
+                    <a class="collapse-item" href="{{ url('data-verifkos') }}">Pengajuan Kos</a>
+                @elseif(auth()->user()->level == 'owner')
+                    <a class="collapse-item" href="{{ url('owner') }}">Pengajuan Kos</a>
+                @endif
             </div>
         </div>
     </li>
@@ -53,27 +58,28 @@
         <div id="collapseUtilities2" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Data:</h6>
-                <a class="collapse-item" href="{{ url('data-owner') }}">
-                    <i class="fas fa-fw fa-user-tie"></i>
-                    <span>Data Owner</span>
-                </a>
-                <a class="collapse-item" href="{{ url('data-tenant') }}">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>Data Tenant</span>
-                </a>
-                <a class="collapse-item" href="{{ url('data-kos') }}">
-                    <i class="fas fa-fw fa-warehouse"></i>
-                    <span>Data Kos</span>
-                </a>
-                <a class="collapse-item" href="{{ url('data-kamar') }}">
-                    <i class="fas fa-fw fa-bed"></i>
-                    <span>Data Kamar</span>
-                </a>
-                <a class="collapse-item" href="{{ url('data-fasilitas') }}">
-                    <i class="fas fa-fw fa-wifi"></i>
-                    <span>Data Fasilitas Kos</span>
-                </a>
+                    <h6 class="collapse-header">Data:</h6>
+                    <a class="collapse-item" href="{{ url('data-owner') }}">
+                        <i class="fas fa-fw fa-user-tie"></i>
+                        <span>Data Owner</span>
+                    </a>
+                    <a class="collapse-item" href="{{ url('data-tenant') }}">
+                        <i class="fas fa-fw fa-user"></i>
+                        <span>Data Tenant</span>
+                    </a>
+                    <a class="collapse-item" href="{{ url('data-kos') }}">
+                        <i class="fas fa-fw fa-warehouse"></i>
+                        <span>Data Kos</span>
+                    </a>
+                    <a class="collapse-item" href="{{ url('data-kamar') }}">
+                        <i class="fas fa-fw fa-bed"></i>
+                        <span>Data Kamar</span>
+                    </a>
+                    <a class="collapse-item" href="{{ url('data-fasilitas') }}">
+                        <i class="fas fa-fw fa-wifi"></i>
+                        <span>Data Fasilitas Kos</span>
+                    </a>
+                    
             </div>
         </div>
     </li>
@@ -85,7 +91,9 @@
         <a class="nav-link" href="menjadipemilik.html">
             <i class="fas fa-fw fa-inbox"></i>
             <span>Menjadi Pemilik Kos</span></a>
-    </li>
+    </li>   
+    @elseif(auth()->user()->level == 'owner')
+    @endif
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

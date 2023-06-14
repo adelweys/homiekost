@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\Cost;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\Cost;
+use App\Models\Sewa;
 
-class VerifKosController extends Controller
+class PemilikController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,9 @@ class VerifKosController extends Controller
      */
     public function index()
     {
-        $vekos = Cost::with('users');
-        // dd($vekos);
-        return view('pages.admin.verif-kos.index', ['vekos' => $vekos]);
+        return view('pages.owner.index', [
+            'cost' => Cost::where('user_id', auth()->user()->id)->get()
+        ]);
     }
 
     /**
@@ -49,7 +50,16 @@ class VerifKosController extends Controller
      */
     public function show($id)
     {
-        //
+        $cost = Cost::findOrFail($id);
+
+        $sewa = Sewa::get();
+
+        // Check if the authenticated user is the owner of the cost
+        if ($cost->user_id != auth()->user()->id) {
+            return redirect()->route('home')->with('error', 'Unauthorized access.');
+        }
+
+        return view('pages.owner.show', compact('cost', 'sewa'));
     }
 
     /**
@@ -72,8 +82,13 @@ class VerifKosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Sewa::where('id', $id)->update([
+            'status' => $request->status
+        ]);
+
+        return back()->with('success', 'Data berhasil diupdate');
     }
+
 
     /**
      * Remove the specified resource from storage.

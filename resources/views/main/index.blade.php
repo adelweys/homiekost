@@ -165,7 +165,17 @@
                                         <div class="d-flex justify-content-between">
                                             <a class="btn btn-sm btn-primary rounded py-2 px-4" 
                                             href="{{ route('show',  $cost->slug) }}">Selengkapnya</a>
-                                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Ajukan sewa</a>
+                                            @auth
+                                                @if (auth()->user()->id !== $cost->user_id)
+                                                    <a class="btn btn-sm btn-dark rounded py-2 px-4" href="{{ route('sewa', $cost->slug) }}">Ajukan sewa</a>
+                                                @endif
+                                                {{-- @php
+                                                    $userHasSewa = \App\Models\Sewa::where('user_id', auth()->user()->id)->exists();
+                                                @endphp
+                                                @if (!$userHasSewa)
+                                                    <a class="btn btn-sm btn-dark rounded py-2 px-4" href="{{ route('sewa', $cost->slug) }}">Ajukan sewa</a>
+                                                @endif --}}
+                                            @endauth
                                         </div>
                                     </div>
                                 </div>

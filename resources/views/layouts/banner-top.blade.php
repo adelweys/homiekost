@@ -42,6 +42,9 @@
                         <a class="nav-item nav-link {{ Route::currentRouteName() === 'cost-list' ? ' active' : '' }}" href="{{ route('cost-list') }}">Kost</a>
                         <a class="nav-item nav-link {{ Route::currentRouteName() === 'about' ? ' active' : '' }}" href="{{ route('about') }}">About</a>
                         <a class="nav-item nav-link {{ Route::currentRouteName() === 'message.create' ? ' active' : '' }}" href="{{ route('message.create') }}">Contact</a>
+                        @auth
+                            <a class="nav-item nav-link {{ Route::currentRouteName() === 'cost.kos' ? ' active' : '' }}" href="{{ route('cost.kos') }}">Kos Anda</a>
+                        @endauth
                     </div>
                 </div>
 

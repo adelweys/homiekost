@@ -61,6 +61,7 @@
     <!-- Template Stylesheet -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     {{-- end arya --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
@@ -83,6 +84,13 @@
 
   <!-- rating.js file -->
   <script src="{{ asset('js/rating.js') }}"></script>
+This code uses jQuery to listen for changes in the selected duration and calculates the total price by multiplying the base price with the selected duration. The updatePrice function is called initially on page load and whenever the duration selection changes. The calculated total price is then displayed in the disabled input field with the id harga.
+
+
+
+
+
+
 
   {{-- start ariyo  --}}
 

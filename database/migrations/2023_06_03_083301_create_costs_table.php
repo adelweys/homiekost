@@ -28,6 +28,7 @@ class CreateCostsTable extends Migration
             $table->string('photo');
             $table->string('contact_person', 13);
             $table->string('night_limit', 10);
+            $table->integer('harga_bulan')->default(10000);
             $table->text('long_add');
             $table->text('lat_add');
             $table->timestamps();

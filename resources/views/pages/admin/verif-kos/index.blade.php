@@ -25,16 +25,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($vekos as $i => $vk)
+                    @foreach ($vekos as $vk)
+                    {{-- {{ dd($vk->users) }} --}}
                     <tr>
                         <td>
-                            {{ $i += 1 }}
+                            {{ $loop->iteration }}
                         </td>
                         <td>
                             {{ $vk->cost_name }}
                         </td>
                         <td>
-                            {{ $vk->users->name }}
+                            {{ $vk->name }}
                         </td>
                         <td>
                             {{ $vk->cost_address }}

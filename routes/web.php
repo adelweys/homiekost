@@ -12,16 +12,20 @@ use GuzzleHttp\Middleware;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\CostController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\PemilikController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\KamarController;
 use App\Http\Controllers\Admin\OwnerController;
 use App\Http\Controllers\Admin\TenantController;
-use App\Http\Controllers\Admin\CostCmsController;
+use App\Http\Controllers\Admin\AdmOwnerController;
+use App\Http\Controllers\Admin\VerifKosController;
 use App\Http\Controllers\Admin\FasilitasController;
 use App\Http\Controllers\Admin\VerifOwnerController;    
 
@@ -32,6 +36,7 @@ Route::get('/Cost-List', [CostController::class, 'cost_list'])->name('cost-list'
 Route::post('/comment', [CostController::class, 'commentStore'])->name('cost.comment');
 Route::post('/reply', [CostController::class, 'replyStore'])->name('cost.reply');
 Route::post('/rating', [CostController::class, 'ratingStore'])->name('cost.rating');
+Route::get('/kos', [CostController::class, 'kos'])->name('cost.kos');
 
 // Route::get('/chat', [CostController::class, 'index'])->name('chat.index')->middleware('auth');
 Route::post('/chat/send', [CostController::class, 'sendMessage'])->name('chat.send')->middleware('auth');
@@ -45,9 +50,11 @@ Route::get('/Cost-List/Search', [CostController::class, 'search'])->name('cost-l
 
 // route untuk detail kos
 Route::get('/Cost-List/{slug}', [CostController::class, 'show'])->name('show');
+Route::get('/sewa/{slug}', [CostController::class, 'sewa'])->name('sewa');
+Route::post('/sewa', [CostController::class, 'sewaStore'])->name('sewaStore');
 
 // route for Middleware message
-use App\Http\Controllers\Admin\AdmOwnerController;
+use App\Http\Controllers\Admin\CostCmsController;
 
 Route::middleware(['auth'])->group(function () {
     // Route untuk halaman pengaduan/pertanyaan
@@ -97,7 +104,6 @@ Route::get('/forms', function () {
     return view('forms');
 });
 
-use App\Http\Controllers\Admin\VerifKosController;
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
@@ -156,3 +162,6 @@ Route::group(['prefix' => 'admin-owner'], function () {
     Route::get('/ubah-password', [AdmOwnerController::class, 'reset'])->name('adm-own.reset');
     Route::post('/ubah-password', [AdmOwnerController::class, 'updatePass'])->name('adm-own.updatePass');
 });
+
+
+Route::resource('/owner', PemilikController::class);

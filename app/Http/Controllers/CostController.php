@@ -9,7 +9,7 @@ use App\Models\User;
 use App\Models\Reply;
 use App\Models\Rating;
 use App\Models\Comment;
-use App\Models\CostFacility;
+use App\Models\Sewa;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -17,15 +17,24 @@ use Illuminate\Support\Facades\Auth;
 class CostController extends Controller
 {
     public function index()
-{
-    $costs = Cost::with(['rooms', 'costFacility'])->get();
-    $ownerCount = User::countOwners();
-    $roomCount = Room::countRooms();
-    $costCount = Cost::countCosts();
-    // start ariyo
-    return view('main.index', compact('costs','ownerCount','roomCount','costCount'));
-    // end ariyo
-}
+    {
+        $userr = Auth::user();
+        $costs = Cost::with(['rooms', 'costFacility'])->get();
+        $ownerCount = User::countOwners();
+        $roomCount = Room::countRooms();
+        $costCount = Cost::countCosts();
+
+        // start ariyo
+        return view('main.index', compact('costs','ownerCount','roomCount','costCount', 'userr'));
+        // end ariyo
+    }
+    public function kos()
+    {
+        $id = auth()->user()->id;
+        $kos = Sewa::where('user_id', $id)->get();
+        // dd($kos);
+        return view('main.kos', compact('kos'));
+    }
     public function cost_list()
 {
     $costs = Cost::with(['rooms', 'costFacility'])->get();
@@ -37,7 +46,7 @@ class CostController extends Controller
 public function show($slug) //show berdasar slug yang diperoleh dari nama
 {
         $cost = Cost::where('slug', $slug)
-        ->with('rooms', 'costFacility', 'comment', 'rating', 'reply')
+        ->with('rooms', 'costFacility', 'comment', 'rating', 'reply', 'users')
         ->firstOrFail();
         
         $users = User::all();
@@ -53,6 +62,55 @@ public function show($slug) //show berdasar slug yang diperoleh dari nama
         }
     return view('main.detail-kos', compact('cost', 'messages', 'users'));
 }
+
+public function sewa($slug)
+{
+    $cost = Cost::where('slug', $slug)
+        ->with('rooms', 'costFacility', 'comment', 'rating', 'reply', 'users')
+        ->firstOrFail();
+
+    $users = User::all();
+    // dd($cost);
+
+    $messages = Chat::where(function($query) {
+        $query->where('from_user_id', Auth::id())
+                ->orWhere('to_user_id', Auth::id());
+    })->orderBy('created_at', 'asc')->get();
+
+    return view('main.sewa', compact('cost', 'messages', 'users'));
+}
+
+public function sewaStore(Request $request)
+{
+    $cost = Cost::find($request->cost_id);
+    $harga_bulan = $cost->harga_bulan;
+    $durasi = $request->durasi;
+    $harga = $durasi * $harga_bulan;
+
+    Sewa::create([
+        'user_id' => $request->user_id,
+        'cost_id' => $request->cost_id,
+        'durasi' => $durasi,
+        'harga' => $harga,
+        'nomor' => $request->nomor,
+    ]);
+
+    return redirect('/Cost-List')->with('success', 'Sewa Submmitted successfully');
+}
+
+public function update(Request $request, $id)
+    {
+        $sewa = Sewa::find($id);
+        $sewa->user_id = $request->user_id;
+        $sewa->cost_id = $request->cost_id;
+        $sewa->durasi = $request->durasi;
+        $sewa->harga = $request->harga;
+        $sewa->nomor = $request->nomor;
+        $sewa->status = $request->status;
+        $sewa->save();
+
+        return back()->with('success', 'Sewa updated successfully');
+    }
 
 public function chat()
     {
@@ -210,5 +268,6 @@ private function getMaxPrice($priceRange)
         return back();
     }
 // end arya
+
 }
 

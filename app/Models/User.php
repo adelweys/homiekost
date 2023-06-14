@@ -108,4 +108,9 @@ class User extends Authenticatable implements MustVerifyEmail
         }
     }
 
+    public function sewa()
+    {
+        return $this->hasOne(Sewa::class);
+    }
+
 }
