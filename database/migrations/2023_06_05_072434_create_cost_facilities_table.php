@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('cost_facilities', function (Blueprint $table) {
             $table->unsignedBigInteger('cost_id');
-            $table->foreign('cost_id')->references('id')->on('costs');
+            $table->foreign('cost_id')->references('id')->on('costs')->onDelete('cascade');
             $table->enum('car_park', ['yes', 'no']);
             $table->enum('bike_park', ['yes', 'no']);
             $table->enum('wifi', ['yes', 'no']);

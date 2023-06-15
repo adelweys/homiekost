@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Cost;
 use App\Models\Tenant;
-use Alert;
+use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,7 +17,7 @@ class TenantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() : View
     {
         $tenant = Tenant::OrderBy('name', 'asc')->get();
 
@@ -28,7 +29,7 @@ class TenantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create() : View
     {
         $cost = Cost::all();
         return view('pages.admin.tenant.create', [
@@ -91,7 +92,7 @@ class TenantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id_tenant)
+    public function edit($id_tenant) : View
     {
         $tenant = Tenant::find($id_tenant);
         $cost = Cost::all();

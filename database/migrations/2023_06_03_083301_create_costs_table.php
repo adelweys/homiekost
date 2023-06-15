@@ -22,15 +22,16 @@ class CreateCostsTable extends Migration
             $table->tinyInteger('total_kamar');
             $table->enum('cost_type', ['pria', 'wanita', 'campuran']);
             $table->tinyInteger('available_room');
-            $table->enum('cost_location', ['Dr. Mansur', 'Jamin Ginting', 'Setia Budi','Iskandar muda']);
+            $table->enum('cost_location', ['Dr. Mansur', 'Jamin Ginting', 'Setia Budi','Iskandar Muda']);
             $table->text('cost_address');
             $table->text('description');
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->string('contact_person', 13);
             $table->string('night_limit', 10);
             $table->integer('harga_bulan')->default(10000);
-            $table->text('long_add');
-            $table->text('lat_add');
+            $table->double('lat_add', 10, 8)->nullable(); // Kolom 'latitude' dengan presisi 10 digit dan 8 digit di belakang koma
+            $table->double('long_add', 11, 8)->nullable(); // Kolom 'longitude' dengan presisi 11 digit dan 8 digit di belakang koma
+            $table->enum('status', ['accept', 'reject','waiting']);
             $table->timestamps();
         });
     }

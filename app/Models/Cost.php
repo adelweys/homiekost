@@ -7,17 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Cviebrock\EloquentSluggable\Sluggable;
 
-
-
-
 class Cost extends Model
 {
     use HasFactory;
     use Sluggable;
 
-
     protected $table = 'costs';
-    protected $fillable = ['cost_name', 'slug'];
+    protected $fillable = ['cost_name', 'slug','total_kamar', 'available_room', 'cost_location', 'cost_address', 'description', 'contact_person', 'night_limit', 'long_add', 'lat_add'];
 
     public function sluggable(): array
     {
@@ -27,13 +23,11 @@ class Cost extends Model
             ]
         ];
     }
+
     public static function countCosts()
     {
         return self::count();
     }
-
-
-
 
     // Relasi One-to-Many dengan model Room
     public function rooms()
@@ -46,6 +40,7 @@ class Cost extends Model
     {
         return $this->belongsTo(User::class, 'id_user');
     }
+
     public function costFacility()
     {
         return $this->hasOne(CostFacility::class);
@@ -65,6 +60,7 @@ class Cost extends Model
     {
         return $this->hasOne(Rating::class);
     }
+
     public function tenants()
     {
         return $this->belongsTo(Tenant::class, 'id_cost');
@@ -74,5 +70,4 @@ class Cost extends Model
     {
         return $this->hasMany(Sewa::class);
     }
-
 }

@@ -125,7 +125,7 @@ class CostSeeder extends Seeder
     {
         $costs = [
             [
-                'user_id' => '5',
+                'user_id' => '6',
                 'cost_name' => 'Niken',
                 'total_kamar' => '40',
                 'cost_type' => 'wanita',
@@ -137,8 +137,8 @@ class CostSeeder extends Seeder
                 'contact_person' => '083115630741',
                 'night_limit' => '3',
                 'harga_bulan' => 1000000,
-                'long_add' => '',
-                'lat_add' => '',
+                'long_add' => 0,
+                'lat_add' => 0,
             ],
             [
                 'user_id' => '2',
@@ -153,8 +153,8 @@ class CostSeeder extends Seeder
                 'contact_person' => '081223146587',
                 'night_limit' => '2',
                 'harga_bulan' => 1000000,
-                'long_add' => '',
-                'lat_add' => '',
+                'long_add' => 0,
+                'lat_add' => 0,
             ],
             [
                 'user_id' => '2',
@@ -169,8 +169,8 @@ class CostSeeder extends Seeder
                 'contact_person' => '083265458195',
                 'night_limit' => '2',
                 'harga_bulan' => 1000000,
-                'long_add' => '',
-                'lat_add' => '',
+                'long_add' => 0,
+                'lat_add' => 0,
             ],
             [
                 'user_id' => '2',
@@ -185,8 +185,8 @@ class CostSeeder extends Seeder
                 'contact_person' => '083265458195',
                 'night_limit' => '2',
                 'harga_bulan' => 1000000,
-                'long_add' => '',
-                'lat_add' => '',
+                'long_add' => 0,
+                'lat_add' => 0,
             ],
             [
                 'user_id' => '2',
@@ -201,8 +201,8 @@ class CostSeeder extends Seeder
                 'contact_person' => '084658973121',
                 'night_limit' => '1',
                 'harga_bulan' => 1000000,
-                'long_add' => '',
-                'lat_add' => '',
+                'long_add' => 0,
+                'lat_add' => 0,
             ],
             [
                 'user_id' => '2',
@@ -217,8 +217,8 @@ class CostSeeder extends Seeder
                 'contact_person' => '082345646545',
                 'night_limit' => '4',
                 'harga_bulan' => 1000000,
-                'long_add' => '',
-                'lat_add' => '',
+                'long_add' => 0,
+                'lat_add' => 0,
             ],
             [
                 'user_id' => '2',
@@ -233,11 +233,11 @@ class CostSeeder extends Seeder
                 'contact_person' => '082346531291',
                 'night_limit' => '1',
                 'harga_bulan' => 1000000,
-                'long_add' => '',
-                'lat_add' => '',
+                'long_add' => 0,
+                'lat_add' => 0,
             ],
             [
-                'user_id' => '5',
+                'user_id' => '6',
                 'cost_name' => 'Rossy',
                 'total_kamar' => '8',
                 'cost_type' => 'wanita',
@@ -249,11 +249,11 @@ class CostSeeder extends Seeder
                 'contact_person' => '081398624299',
                 'night_limit' => '1',
                 'harga_bulan' => 1000000,
-                'long_add' => '',
-                'lat_add' => '',
+                'long_add' => 0,
+                'lat_add' => 0,
             ],
             [
-                'user_id' => '5',
+                'user_id' => '6',
                 'cost_name' => 'Harry',
                 'total_kamar' => '4',
                 'cost_type' => 'pria',
@@ -265,11 +265,11 @@ class CostSeeder extends Seeder
                 'contact_person' => '083149134751',
                 'night_limit' => '1',
                 'harga_bulan' => 1000000,
-                'long_add' => '',
-                'lat_add' => '',
+                'long_add' => 0,
+                'lat_add' => 0,
             ],
             [
-                'user_id' => '5',
+                'user_id' => '6',
                 'cost_name' => 'Sani',
                 'total_kamar' => '6',
                 'cost_type' => 'pria',
@@ -281,11 +281,11 @@ class CostSeeder extends Seeder
                 'contact_person' => '082546543199',
                 'night_limit' => '2',
                 'harga_bulan' => 1000000,
-                'long_add' => '',
-                'lat_add' => '',
+                'long_add' => 0,
+                'lat_add' => 0,
             ],
             [
-                'user_id' => '5',
+                'user_id' => '6',
                 'cost_name' => 'Andi',
                 'total_kamar' => '7',
                 'cost_type' => 'campuran',
@@ -297,11 +297,11 @@ class CostSeeder extends Seeder
                 'contact_person' => '082546543199',
                 'night_limit' => '3',
                 'harga_bulan' => 1000000,
-                'long_add' => '',
-                'lat_add' => '',
+                'long_add' => 0,
+                'lat_add' => 0,
             ],
             [
-                'user_id' => '5',
+                'user_id' => '6',
                 'cost_name' => 'Kelly',
                 'total_kamar' => '7',
                 'cost_type' => 'campuran',
@@ -313,8 +313,8 @@ class CostSeeder extends Seeder
                 'contact_person' => '083149134751',
                 'night_limit' => '1',
                 'harga_bulan' => 1000000,
-                'long_add' => '',
-                'lat_add' => '',
+                'long_add' => 0,
+                'lat_add' => 0,
             ],
 
         ];
@@ -329,18 +329,18 @@ class CostSeeder extends Seeder
 
         $faker = Faker::create();
 
-        $ownerIds = User::whereIn('id', [2, 5])->pluck('id')->toArray();
-
+        $ownerIds = User::whereIn('id', [2, 6])->pluck('id')->toArray();
+        
         foreach (range(1, 30) as $index) {
             $costName = $faker->word;
             $uniqueCostName = $costName;
             $count = 1;
-
+        
             while (Cost::where('cost_name', $uniqueCostName)->exists()) {
                 $uniqueCostName = $costName . '-' . $count;
                 $count++;
             }
-
+        
             $cost = Cost::create([
                 'user_id' => $faker->randomElement($ownerIds),
                 'cost_name' => $uniqueCostName,
@@ -351,13 +351,14 @@ class CostSeeder extends Seeder
                 'cost_location' => $faker->randomElement(['Dr. Mansur', 'Jamin Ginting', 'Setia Budi', 'Iskandar Muda']),
                 'cost_address' => $faker->address,
                 'description' => $faker->paragraph,
-                'contact_person' => $faker->unique(true)->numberBetween(100000000000, 999999999999),
+                'contact_person' => '08' . $faker->unique()->numberBetween(1000000000, 9999999999),
                 'night_limit' => $faker->numberBetween(1, 10),
                 'harga_bulan' => $faker->numberBetween(100000, 1000000),
-                'long_add' => $faker->longitude,
-                'lat_add' => $faker->latitude,
+                'status' => $faker->randomElement(['accept', 'reject', 'waiting']),
+                'long_add' => $faker->longitude, // Menghasilkan nilai acak longitude
+                'lat_add' => $faker->latitude, // Menghasilkan nilai acak latitude
             ]);
-
+        
             $cost->slug = Str::slug($cost->cost_name);
             $cost->save();
         }

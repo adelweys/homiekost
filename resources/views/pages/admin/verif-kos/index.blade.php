@@ -35,7 +35,7 @@
                             {{ $vk->cost_name }}
                         </td>
                         <td>
-                            {{ $vk->name }}
+                            {{ $vk->name}}
                         </td>
                         <td>
                             {{ $vk->cost_address }}

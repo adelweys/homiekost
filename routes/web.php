@@ -147,7 +147,8 @@ Route::get('/foto', function () {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/data-tenant', TenantController::class);
-Route::resource('/data-kos', CostController::class);
+// Route::get('/data-kos', CostCmsController::class);
+Route::resource('/data-kos', CostCmsController::class);
 Route::resource('/data-kamar', KamarController::class);
 Route::resource('/data-fasilitas', FasilitasController::class);
 Route::resource('/data-owner', OwnerController::class);

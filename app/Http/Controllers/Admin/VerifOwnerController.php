@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Contracts\View\View;
+
 use Illuminate\Http\Request;
 
 class VerifOwnerController extends Controller
@@ -13,7 +15,7 @@ class VerifOwnerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() : View
     {
         $owner = User::OrderBy('name', 'asc')->where('level', 'owner')->get();
         return view('pages.admin.verif-owner.index', ['owner' => $owner]);

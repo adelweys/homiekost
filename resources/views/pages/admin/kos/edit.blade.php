@@ -18,9 +18,9 @@
             <a href="{{ route('data-kos.index') }}" class="btn btn-primary">Kembali</a>
         </div>
         <div class="card-body p-0">
-            <form action="{{ route('data-kos.update', $cost->id_cost) }}" method="POST">
+            <form action="{{ route('data-kos.update', $cost->id) }}" method="POST">
                 @csrf
-                @method('put')
+                @method('PUT')
                 <div class="card-body">
                     <label for="">Nama Kos</label>
                     <input type="text" name="cost_name" class="form-control" value="{{ $cost->cost_name }}" required>
@@ -54,38 +54,56 @@
                     <label for="">Total Kamar</label>
                     <input type="text" name="total_kamar" class="form-control" value="{{ $cost->total_kamar }}"
                         required>
+                        @error('total_kamar')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
                 </div>
                 <div class="card-body">
                     <label for="">Kamar Tersedia</label>
                     <input type="text" name="available_room" class="form-control" value="{{ $cost->available_room }}"
                         required>
+                        @error('available_room')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
                 </div>
                 <div class="card-body">
                     <label for="">Jam Malam</label>
                     <input type="text" name="night_limit" class="form-control" value="{{ $cost->night_limit }}"
                         required>
+                        @error('night_limit')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
                 </div>
                 <div class="card-body">
                     <label for="">Titik Lokasi Long</label>
                     <input type="text" name="long_add" class="form-control" value="{{ $cost->long_add }}" required>
+                    @error('long_add')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="card-body">
                     <label for="">Titik Lokasi Lat</label>
                     <input type="text" name="lat_add" class="form-control" value="{{ $cost->lat_add }}" required>
+                    @error('lat_add')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="card-body">
                     <label for="">Contact Person</label>
                     <input type="text" name="contact_person" class="form-control" value="{{ $cost->contact_person }}"
                         required>
+                        @error('contact_person')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
                 </div>
                 <div class="card-body">
                     <div class="form-group">
                         <label for="cost_location">Lokasi Kos</label>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="cost_location" id="Dr Mansur"
-                                value="Dr Mansur" checked>
+                                value="Dr. Mansur" checked>
                             <label class="form-check-label" for="Dr Mansur">
-                                Dr Mansur
+                                Dr. Mansur
                             </label>
                         </div>
                         <div class="form-check">
@@ -137,6 +155,8 @@
                     </div>
                 </div>
                 <div class="card-footer text-right">
+                    <input type="hidden" name="_method" value="PUT">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </form>

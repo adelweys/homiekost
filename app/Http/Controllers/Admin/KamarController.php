@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Room;
 use App\Models\Cost;
-use Alert;
+use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Contracts\View\View;
+
 use Illuminate\Http\Request;
 
 class KamarController extends Controller
@@ -15,7 +17,7 @@ class KamarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() : View
     {
         $room = Room::OrderBy('room_name', 'asc')->get();
 
@@ -27,7 +29,7 @@ class KamarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create() : View
     {
         $cost = Cost::all();
         return view('pages.admin.kamar.create', [
@@ -100,7 +102,7 @@ class KamarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id_room)
+    public function edit($id_room) : View
     {
         $room = Room::find($id_room);
         $cost = Cost::all();

@@ -53,13 +53,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($cost as $i => $kos)
+                            @foreach ($vekos as $i => $kos)
                             <tr>
                                 <td>
-                                    {{ $i += 1 }}
+                                    {{ $i + 1 }}
                                 </td>
                                 <td>
-                                    {{ $kos->users->name }}
+                                    {{ $kos->name }}
                                 </td>
                                 <td>
                                     {{ $kos->cost_name }}
@@ -94,30 +94,44 @@
                                 <td>
                                     {{ $kos->lat_add }}
                                 </td>
-                                <td style="text-align: center;"><a href="{{ route('data-kos.edit', $kos->id_cost) }}"
-                                        class="btn btn-primary btn-icon-split">
+                                <td style="text-align: center;">
+                                    <a href="{{ route('data-kos.edit', $kos->id) }}" class="btn btn-primary btn-icon-split">
                                         <span class="icon">
                                             <i class="fas fa-pencil-alt"></i>
                                         </span>
                                     </a>
                                 </td>
                                 <td style="text-align: center;">
-                                    <form action="{{ url('data-kos', $kos->id_cost) }}" class="d-inline" method="POST"
-                                        id="delete{{ $kos->id_cost }}">
+                                    <form action="{{ url('data-kos', $kos->id) }}" class="d-inline" method="POST"
+                                        id="delete{{ $kos->id }}">
                                         @csrf
                                         @method('delete')
                                         <button type="button" class="btn btn-danger"
-                                            onclick="deleteData({{ $kos->id_cost }})">Hapus</button>
+                                            onclick="deleteData({{ $kos->id }})">Hapus</button>
                                     </form>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
+                    
                 </div>
             </div>
         </div>
     </div>
+    @if (session('alert'))
+    <script>
+        Swal.fire({
+            icon: '{{ session('alert')['type'] }}',
+            title: '{{ session('alert')['title'] }}',
+            text: '{{ session('alert')['message'] }}',
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+        });
+    </script>
+@endif
 
     <!-- /.container-fluid -->
     @endsection
@@ -146,6 +160,8 @@
             }
         })
     }
+    
+
     </script>
 
     @endpush

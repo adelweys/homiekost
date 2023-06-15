@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use Alert;
+use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class OwnerController extends Controller
@@ -25,7 +26,7 @@ class OwnerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create() : View
     {
         return view('pages.admin.owner.create');
     }
@@ -76,7 +77,7 @@ class OwnerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id) : View
     {
         $owner = User::find($id);
         return view('pages.admin.owner.edit', ['owner' => $owner]);

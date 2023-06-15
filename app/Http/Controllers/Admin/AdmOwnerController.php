@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
+use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Contracts\View\View;
+
 
 class AdmOwnerController extends Controller
 {
@@ -13,7 +16,7 @@ class AdmOwnerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index()  : View
     {
         return view('profile.admin.index');
     }
@@ -24,7 +27,7 @@ class AdmOwnerController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function home()
+    public function home() : View
     {
         return view('pages.admin.dashboard');
     }

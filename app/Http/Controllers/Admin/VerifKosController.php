@@ -5,6 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Cost;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\DB;
+
+
 
 class VerifKosController extends Controller
 {
@@ -13,12 +18,21 @@ class VerifKosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $vekos = Cost::with('users');
-        // dd($vekos);
-        return view('pages.admin.verif-kos.index', ['vekos' => $vekos]);
-    }
+
+     
+     public function index(): View
+     {
+        $vekos = Cost::join('users', 'costs.user_id', '=', 'users.id')
+        ->select('costs.*', 'users.name')
+        ->where('costs.status', 'waiting')
+        ->orderBy('costs.cost_name')
+        ->get();
+         
+         return view('pages.admin.verif-kos.index', compact('vekos'));
+     }
+     
+
+    
 
     /**
      * Show the form for creating a new resource.

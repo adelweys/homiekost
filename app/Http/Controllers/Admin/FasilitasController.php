@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Cost;
 use App\Models\CostFacility;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class FasilitasController extends Controller
 {
@@ -14,7 +16,7 @@ class FasilitasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $facy = CostFacility::orderBy('bathroom', 'asc')->get();
         return view('pages.admin.fasilitas.index', ['facy' => $facy]);
@@ -25,7 +27,7 @@ class FasilitasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
         $aset = Cost::all();
         return view('pages.admin.fasilitas.create', [
@@ -92,7 +94,7 @@ class FasilitasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id_cost)
+    public function edit($id_cost): View
     {
         $aset = CostFacility::find($id_cost);
         $costfacy = Cost::all();
