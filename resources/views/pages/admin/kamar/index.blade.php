@@ -53,13 +53,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($room as $i => $kamar)
+                            @foreach ($rooms as $i => $kamar)
                             <tr>
                                 <td>
-                                    {{ $i += 1 }}
+                                    {{ $i + 1 }}
                                 </td>
                                 <td>
-                                    {{ $kamar->costs->cost_name }}
+                                    {{ $kamar->cost_name }}
                                 </td>
                                 <td>
                                     {{ $kamar->room_name }}
@@ -94,27 +94,28 @@
                                 <td>
                                     {{ $kamar->price }}
                                 </td>
-                                <td style="text-align: center;"><a
-                                        href="{{ route('data-kamar.edit', $kamar->id_room) }}"
-                                        class="btn btn-primary btn-icon-split">
+                                <td style="text-align: center;">
+                                    <a href="{{ route('data-kamar.edit', $kamar->id) }}" class="btn btn-primary btn-icon-split">
                                         <span class="icon">
                                             <i class="fas fa-pencil-alt"></i>
                                         </span>
                                     </a>
                                 </td>
                                 <td style="text-align: center;">
-                                    <form action="{{ url('data-kamar', $kamar->id_kamar) }}" class="d-inline"
-                                        method="POST" id="delete{{ $kamar->id_kamar }}">
+                                    <form action="{{ url('data-kamar', $kamar->id) }}" class="d-inline" method="POST"
+                                        id="delete{{ $kamar->id_kamar }}">
                                         @csrf
                                         @method('delete')
-                                        <button type="button" class="btn btn-danger"
-                                            onclick="deleteData({{ $kamar->id_kamar }})">Hapus</button>
+                                        <button type="button" class="btn btn-danger" onclick="deleteData({{ $kamar->id_kamar }})">
+                                            Hapus
+                                        </button>
                                     </form>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
+                    
                 </div>
             </div>
         </div>

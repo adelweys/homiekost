@@ -17,12 +17,17 @@ class KamarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() : View
-    {
-        $room = Room::OrderBy('room_name', 'asc')->get();
 
-        return view('pages.admin.kamar.index', ['room' => $room]);
-    }
+public function index(): View
+{
+    $rooms = Room::join('costs', 'rooms.cost_id', '=', 'costs.id')
+        ->where('costs.status', 'accept')
+        ->orderBy('rooms.room_name', 'asc')
+        ->get();
+
+    return view('pages.admin.kamar.index', compact('rooms'));
+}
+
 
     /**
      * Show the form for creating a new resource.

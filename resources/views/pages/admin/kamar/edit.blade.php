@@ -18,7 +18,7 @@
             <a href="{{ route('data-kamar.index') }}" class="btn btn-primary">Kembali</a>
         </div>
         <div class="card-body p-0">
-            <form action="{{ route('data-kamar.update', $room->id_room) }}" method="POST">
+            <form action="{{ route('data-kamar.update', $room->id) }}" method="POST">
                 @csrf
                 @method('put')
                 <div class="card-body">
